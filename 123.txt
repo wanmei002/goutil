@@ -1,0 +1,3303 @@
+"".newWriteChan STEXT nosplit size=21 args=0x20 locals=0x0 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:36)	TEXT	"".newWriteChan(SB), NOSPLIT|ABIInternal, $0-32
+	0x0000 00000 (mr/mapreduce.go:36)	FUNCDATA	$0, gclocals·c55e845a0a62e9baae6c740db5a20866(SB)
+	0x0000 00000 (mr/mapreduce.go:36)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0000 00000 (mr/mapreduce.go:37)	MOVQ	"".write+8(SP), AX
+	0x0005 00005 (mr/mapreduce.go:37)	MOVQ	AX, "".~r2+24(SP)
+	0x000a 00010 (mr/mapreduce.go:37)	MOVQ	"".done+16(SP), AX
+	0x000f 00015 (mr/mapreduce.go:37)	MOVQ	AX, "".~r2+32(SP)
+	0x0014 00020 (mr/mapreduce.go:37)	RET
+	0x0000 48 8b 44 24 08 48 89 44 24 18 48 8b 44 24 10 48  H.D$.H.D$.H.D$.H
+	0x0010 89 44 24 20 c3                                   .D$ .
+"".writeChan.Writer STEXT size=140 args=0x20 locals=0x30 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:48)	TEXT	"".writeChan.Writer(SB), ABIInternal, $48-32
+	0x0000 00000 (mr/mapreduce.go:48)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:48)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:48)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:48)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:48)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:48)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:48)	JLS	130
+	0x0016 00022 (mr/mapreduce.go:48)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:48)	SUBQ	$48, SP
+	0x001a 00026 (mr/mapreduce.go:48)	MOVQ	BP, 40(SP)
+	0x001f 00031 (mr/mapreduce.go:48)	LEAQ	40(SP), BP
+	0x0024 00036 (mr/mapreduce.go:48)	FUNCDATA	$0, gclocals·eb531acb5904ccae6b8487875667de48(SB)
+	0x0024 00036 (mr/mapreduce.go:48)	FUNCDATA	$1, gclocals·2589ca35330fc0fce83503f4569854a0(SB)
+	0x0024 00036 (mr/mapreduce.go:48)	FUNCDATA	$2, "".writeChan.Writer.stkobj(SB)
+	0x0024 00036 (mr/mapreduce.go:50)	MOVQ	$0, (SP)
+	0x002c 00044 (mr/mapreduce.go:50)	MOVQ	"".w+64(SP), AX
+	0x0031 00049 (mr/mapreduce.go:50)	MOVQ	AX, 8(SP)
+	0x0036 00054 (mr/mapreduce.go:50)	PCDATA	$1, $0
+	0x0036 00054 (mr/mapreduce.go:50)	CALL	runtime.selectnbrecv(SB)
+	0x003b 00059 (mr/mapreduce.go:50)	CMPB	16(SP), $0
+	0x0040 00064 (mr/mapreduce.go:50)	JEQ	76
+	0x0042 00066 (mr/mapreduce.go:51)	PCDATA	$1, $-1
+	0x0042 00066 (mr/mapreduce.go:51)	MOVQ	40(SP), BP
+	0x0047 00071 (mr/mapreduce.go:51)	ADDQ	$48, SP
+	0x004b 00075 (mr/mapreduce.go:51)	RET
+	0x004c 00076 (mr/mapreduce.go:53)	MOVQ	"".val+72(SP), AX
+	0x0051 00081 (mr/mapreduce.go:53)	MOVQ	AX, ""..autotmp_3+24(SP)
+	0x0056 00086 (mr/mapreduce.go:53)	MOVQ	"".val+80(SP), AX
+	0x005b 00091 (mr/mapreduce.go:53)	MOVQ	AX, ""..autotmp_3+32(SP)
+	0x0060 00096 (mr/mapreduce.go:53)	MOVQ	"".w+56(SP), AX
+	0x0065 00101 (mr/mapreduce.go:53)	MOVQ	AX, (SP)
+	0x0069 00105 (mr/mapreduce.go:53)	LEAQ	""..autotmp_3+24(SP), AX
+	0x006e 00110 (mr/mapreduce.go:53)	MOVQ	AX, 8(SP)
+	0x0073 00115 (mr/mapreduce.go:53)	PCDATA	$1, $1
+	0x0073 00115 (mr/mapreduce.go:53)	CALL	runtime.chansend1(SB)
+	0x0078 00120 (mr/mapreduce.go:50)	MOVQ	40(SP), BP
+	0x007d 00125 (mr/mapreduce.go:50)	ADDQ	$48, SP
+	0x0081 00129 (mr/mapreduce.go:50)	RET
+	0x0082 00130 (mr/mapreduce.go:50)	NOP
+	0x0082 00130 (mr/mapreduce.go:48)	PCDATA	$1, $-1
+	0x0082 00130 (mr/mapreduce.go:48)	PCDATA	$0, $-2
+	0x0082 00130 (mr/mapreduce.go:48)	CALL	runtime.morestack_noctxt(SB)
+	0x0087 00135 (mr/mapreduce.go:48)	PCDATA	$0, $-1
+	0x0087 00135 (mr/mapreduce.go:48)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 6c 48 83 ec 30 48 89 6c 24 28 48  H;a.vlH..0H.l$(H
+	0x0020 8d 6c 24 28 48 c7 04 24 00 00 00 00 48 8b 44 24  .l$(H..$....H.D$
+	0x0030 40 48 89 44 24 08 e8 00 00 00 00 80 7c 24 10 00  @H.D$.......|$..
+	0x0040 74 0a 48 8b 6c 24 28 48 83 c4 30 c3 48 8b 44 24  t.H.l$(H..0.H.D$
+	0x0050 48 48 89 44 24 18 48 8b 44 24 50 48 89 44 24 20  HH.D$.H.D$PH.D$ 
+	0x0060 48 8b 44 24 38 48 89 04 24 48 8d 44 24 18 48 89  H.D$8H..$H.D$.H.
+	0x0070 44 24 08 e8 00 00 00 00 48 8b 6c 24 28 48 83 c4  D$......H.l$(H..
+	0x0080 30 c3 e8 00 00 00 00 e9 74 ff ff ff              0.......t...
+	rel 12+4 t=17 TLS+0
+	rel 55+4 t=8 runtime.selectnbrecv+0
+	rel 116+4 t=8 runtime.chansend1+0
+	rel 131+4 t=8 runtime.morestack_noctxt+0
+"".writeChan.Load STEXT size=106 args=0x20 locals=0x28 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:58)	TEXT	"".writeChan.Load(SB), ABIInternal, $40-32
+	0x0000 00000 (mr/mapreduce.go:58)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:58)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:58)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:58)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:58)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:58)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:58)	JLS	99
+	0x0016 00022 (mr/mapreduce.go:58)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:58)	SUBQ	$40, SP
+	0x001a 00026 (mr/mapreduce.go:58)	MOVQ	BP, 32(SP)
+	0x001f 00031 (mr/mapreduce.go:58)	LEAQ	32(SP), BP
+	0x0024 00036 (mr/mapreduce.go:58)	FUNCDATA	$0, gclocals·48fa3758e632e1b97d3b7251e66d0b97(SB)
+	0x0024 00036 (mr/mapreduce.go:58)	FUNCDATA	$1, gclocals·2dd975a5d416a941d0db91113f946ec3(SB)
+	0x0024 00036 (mr/mapreduce.go:58)	FUNCDATA	$2, "".writeChan.Load.stkobj(SB)
+	0x0024 00036 (mr/mapreduce.go:59)	XORPS	X0, X0
+	0x0027 00039 (mr/mapreduce.go:59)	MOVUPS	X0, ""..autotmp_2+16(SP)
+	0x002c 00044 (mr/mapreduce.go:59)	MOVQ	"".w+48(SP), AX
+	0x0031 00049 (mr/mapreduce.go:59)	MOVQ	AX, (SP)
+	0x0035 00053 (mr/mapreduce.go:59)	LEAQ	""..autotmp_2+16(SP), AX
+	0x003a 00058 (mr/mapreduce.go:59)	MOVQ	AX, 8(SP)
+	0x003f 00063 (mr/mapreduce.go:59)	PCDATA	$1, $1
+	0x003f 00063 (mr/mapreduce.go:59)	NOP
+	0x0040 00064 (mr/mapreduce.go:59)	CALL	runtime.chanrecv1(SB)
+	0x0045 00069 (mr/mapreduce.go:59)	MOVQ	""..autotmp_2+16(SP), AX
+	0x004a 00074 (mr/mapreduce.go:59)	MOVQ	""..autotmp_2+24(SP), CX
+	0x004f 00079 (mr/mapreduce.go:59)	MOVQ	AX, "".~r0+64(SP)
+	0x0054 00084 (mr/mapreduce.go:59)	MOVQ	CX, "".~r0+72(SP)
+	0x0059 00089 (mr/mapreduce.go:59)	MOVQ	32(SP), BP
+	0x005e 00094 (mr/mapreduce.go:59)	ADDQ	$40, SP
+	0x0062 00098 (mr/mapreduce.go:59)	RET
+	0x0063 00099 (mr/mapreduce.go:59)	NOP
+	0x0063 00099 (mr/mapreduce.go:58)	PCDATA	$1, $-1
+	0x0063 00099 (mr/mapreduce.go:58)	PCDATA	$0, $-2
+	0x0063 00099 (mr/mapreduce.go:58)	CALL	runtime.morestack_noctxt(SB)
+	0x0068 00104 (mr/mapreduce.go:58)	PCDATA	$0, $-1
+	0x0068 00104 (mr/mapreduce.go:58)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 4d 48 83 ec 28 48 89 6c 24 20 48  H;a.vMH..(H.l$ H
+	0x0020 8d 6c 24 20 0f 57 c0 0f 11 44 24 10 48 8b 44 24  .l$ .W...D$.H.D$
+	0x0030 30 48 89 04 24 48 8d 44 24 10 48 89 44 24 08 90  0H..$H.D$.H.D$..
+	0x0040 e8 00 00 00 00 48 8b 44 24 10 48 8b 4c 24 18 48  .....H.D$.H.L$.H
+	0x0050 89 44 24 40 48 89 4c 24 48 48 8b 6c 24 20 48 83  .D$@H.L$HH.l$ H.
+	0x0060 c4 28 c3 e8 00 00 00 00 eb 96                    .(........
+	rel 12+4 t=17 TLS+0
+	rel 65+4 t=8 runtime.chanrecv1+0
+	rel 100+4 t=8 runtime.morestack_noctxt+0
+"".buildSource STEXT size=138 args=0x10 locals=0x30 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:64)	TEXT	"".buildSource(SB), ABIInternal, $48-16
+	0x0000 00000 (mr/mapreduce.go:64)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:64)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:64)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:64)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:64)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:64)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:64)	JLS	128
+	0x0016 00022 (mr/mapreduce.go:64)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:64)	SUBQ	$48, SP
+	0x001a 00026 (mr/mapreduce.go:64)	MOVQ	BP, 40(SP)
+	0x001f 00031 (mr/mapreduce.go:64)	LEAQ	40(SP), BP
+	0x0024 00036 (mr/mapreduce.go:64)	FUNCDATA	$0, gclocals·69c8abe0d2280b641caedd7f008b2cfa(SB)
+	0x0024 00036 (mr/mapreduce.go:64)	FUNCDATA	$1, gclocals·663f8c6bfa83aa777198789ce63d9ab4(SB)
+	0x0024 00036 (mr/mapreduce.go:65)	LEAQ	type.chan interface {}(SB), AX
+	0x002b 00043 (mr/mapreduce.go:65)	MOVQ	AX, (SP)
+	0x002f 00047 (mr/mapreduce.go:65)	MOVQ	$0, 8(SP)
+	0x0038 00056 (mr/mapreduce.go:65)	PCDATA	$1, $0
+	0x0038 00056 (mr/mapreduce.go:65)	CALL	runtime.makechan(SB)
+	0x003d 00061 (mr/mapreduce.go:65)	MOVQ	16(SP), AX
+	0x0042 00066 (mr/mapreduce.go:65)	MOVQ	AX, "".source+32(SP)
+	0x0047 00071 (mr/mapreduce.go:66)	MOVL	$16, (SP)
+	0x004e 00078 (mr/mapreduce.go:66)	LEAQ	"".buildSource.func1·f(SB), CX
+	0x0055 00085 (mr/mapreduce.go:66)	MOVQ	CX, 8(SP)
+	0x005a 00090 (mr/mapreduce.go:66)	MOVQ	"".generate+56(SP), CX
+	0x005f 00095 (mr/mapreduce.go:66)	MOVQ	CX, 24(SP)
+	0x0064 00100 (mr/mapreduce.go:66)	PCDATA	$1, $1
+	0x0064 00100 (mr/mapreduce.go:66)	CALL	runtime.newproc(SB)
+	0x0069 00105 (mr/mapreduce.go:74)	MOVQ	"".source+32(SP), AX
+	0x006e 00110 (mr/mapreduce.go:74)	MOVQ	AX, "".~r1+64(SP)
+	0x0073 00115 (mr/mapreduce.go:74)	MOVQ	40(SP), BP
+	0x0078 00120 (mr/mapreduce.go:74)	ADDQ	$48, SP
+	0x007c 00124 (mr/mapreduce.go:74)	RET
+	0x007d 00125 (mr/mapreduce.go:74)	NOP
+	0x007d 00125 (mr/mapreduce.go:64)	PCDATA	$1, $-1
+	0x007d 00125 (mr/mapreduce.go:64)	PCDATA	$0, $-2
+	0x007d 00125 (mr/mapreduce.go:64)	NOP
+	0x0080 00128 (mr/mapreduce.go:64)	CALL	runtime.morestack_noctxt(SB)
+	0x0085 00133 (mr/mapreduce.go:64)	PCDATA	$0, $-1
+	0x0085 00133 (mr/mapreduce.go:64)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 6a 48 83 ec 30 48 89 6c 24 28 48  H;a.vjH..0H.l$(H
+	0x0020 8d 6c 24 28 48 8d 05 00 00 00 00 48 89 04 24 48  .l$(H......H..$H
+	0x0030 c7 44 24 08 00 00 00 00 e8 00 00 00 00 48 8b 44  .D$..........H.D
+	0x0040 24 10 48 89 44 24 20 c7 04 24 10 00 00 00 48 8d  $.H.D$ ..$....H.
+	0x0050 0d 00 00 00 00 48 89 4c 24 08 48 8b 4c 24 38 48  .....H.L$.H.L$8H
+	0x0060 89 4c 24 18 e8 00 00 00 00 48 8b 44 24 20 48 89  .L$......H.D$ H.
+	0x0070 44 24 40 48 8b 6c 24 28 48 83 c4 30 c3 0f 1f 00  D$@H.l$(H..0....
+	0x0080 e8 00 00 00 00 e9 76 ff ff ff                    ......v...
+	rel 12+4 t=17 TLS+0
+	rel 39+4 t=16 type.chan interface {}+0
+	rel 57+4 t=8 runtime.makechan+0
+	rel 81+4 t=16 "".buildSource.func1·f+0
+	rel 101+4 t=8 runtime.newproc+0
+	rel 129+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce STEXT size=943 args=0x38 locals=0xc8 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:77)	TEXT	"".MapReduce(SB), ABIInternal, $200-56
+	0x0000 00000 (mr/mapreduce.go:77)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:77)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:77)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:77)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:77)	LEAQ	-72(SP), AX
+	0x0015 00021 (mr/mapreduce.go:77)	CMPQ	AX, 16(CX)
+	0x0019 00025 (mr/mapreduce.go:77)	PCDATA	$0, $-2
+	0x0019 00025 (mr/mapreduce.go:77)	JLS	933
+	0x001f 00031 (mr/mapreduce.go:77)	PCDATA	$0, $-1
+	0x001f 00031 (mr/mapreduce.go:77)	SUBQ	$200, SP
+	0x0026 00038 (mr/mapreduce.go:77)	MOVQ	BP, 192(SP)
+	0x002e 00046 (mr/mapreduce.go:77)	LEAQ	192(SP), BP
+	0x0036 00054 (mr/mapreduce.go:77)	FUNCDATA	$0, gclocals·751e8636352eea60da75083ed51943bf(SB)
+	0x0036 00054 (mr/mapreduce.go:77)	FUNCDATA	$1, gclocals·537bdca1857557ed1be82d5cb0955f48(SB)
+	0x0036 00054 (mr/mapreduce.go:77)	FUNCDATA	$2, "".MapReduce.stkobj(SB)
+	0x0036 00054 (mr/mapreduce.go:78)	MOVQ	"".generate+208(SP), AX
+	0x003e 00062 (mr/mapreduce.go:78)	MOVQ	AX, (SP)
+	0x0042 00066 (mr/mapreduce.go:78)	PCDATA	$1, $1
+	0x0042 00066 (mr/mapreduce.go:78)	CALL	"".buildSource(SB)
+	0x0047 00071 (mr/mapreduce.go:78)	MOVQ	8(SP), AX
+	0x004c 00076 (mr/mapreduce.go:78)	MOVQ	AX, "".source+112(SP)
+	0x0051 00081 (mr/mapreduce.go:82)	LEAQ	type.chan interface {}(SB), CX
+	0x0058 00088 (mr/mapreduce.go:82)	MOVQ	CX, (SP)
+	0x005c 00092 (mr/mapreduce.go:82)	MOVQ	$0, 8(SP)
+	0x0065 00101 (mr/mapreduce.go:82)	PCDATA	$1, $2
+	0x0065 00101 (mr/mapreduce.go:82)	CALL	runtime.makechan(SB)
+	0x006a 00106 (mr/mapreduce.go:82)	MOVQ	16(SP), AX
+	0x006f 00111 (mr/mapreduce.go:82)	MOVQ	AX, "".errChan+128(SP)
+	0x0077 00119 (mr/mapreduce.go:84)	LEAQ	type.sync/atomic.Value(SB), CX
+	0x007e 00126 (mr/mapreduce.go:84)	MOVQ	CX, (SP)
+	0x0082 00130 (mr/mapreduce.go:84)	PCDATA	$1, $3
+	0x0082 00130 (mr/mapreduce.go:84)	CALL	runtime.newobject(SB)
+	0x0087 00135 (mr/mapreduce.go:84)	MOVQ	8(SP), AX
+	0x008c 00140 (mr/mapreduce.go:84)	MOVQ	AX, ""..autotmp_58+144(SP)
+	0x0094 00148 (mr/mapreduce.go:86)	LEAQ	type.sync.Once(SB), CX
+	0x009b 00155 (mr/mapreduce.go:86)	MOVQ	CX, (SP)
+	0x009f 00159 (mr/mapreduce.go:86)	PCDATA	$1, $4
+	0x009f 00159 (mr/mapreduce.go:86)	NOP
+	0x00a0 00160 (mr/mapreduce.go:86)	CALL	runtime.newobject(SB)
+	0x00a5 00165 (mr/mapreduce.go:86)	MOVQ	8(SP), AX
+	0x00aa 00170 (mr/mapreduce.go:86)	MOVQ	AX, "".&cancelOnce+152(SP)
+	0x00b2 00178 (mr/mapreduce.go:87)	LEAQ	type.noalg.struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} }(SB), CX
+	0x00b9 00185 (mr/mapreduce.go:87)	MOVQ	CX, (SP)
+	0x00bd 00189 (mr/mapreduce.go:87)	PCDATA	$1, $5
+	0x00bd 00189 (mr/mapreduce.go:87)	NOP
+	0x00c0 00192 (mr/mapreduce.go:87)	CALL	runtime.newobject(SB)
+	0x00c5 00197 (mr/mapreduce.go:87)	MOVQ	8(SP), AX
+	0x00ca 00202 (mr/mapreduce.go:87)	MOVQ	AX, ""..autotmp_59+136(SP)
+	0x00d2 00210 (mr/mapreduce.go:87)	LEAQ	"".MapReduce.func1(SB), CX
+	0x00d9 00217 (mr/mapreduce.go:87)	MOVQ	CX, (AX)
+	0x00dc 00220 (mr/mapreduce.go:87)	PCDATA	$0, $-2
+	0x00dc 00220 (mr/mapreduce.go:87)	CMPL	runtime.writeBarrier(SB), $0
+	0x00e3 00227 (mr/mapreduce.go:87)	JNE	873
+	0x00e9 00233 (mr/mapreduce.go:87)	MOVQ	""..autotmp_58+144(SP), CX
+	0x00f1 00241 (mr/mapreduce.go:87)	MOVQ	CX, 8(AX)
+	0x00f5 00245 (mr/mapreduce.go:87)	MOVQ	"".&cancelOnce+152(SP), DX
+	0x00fd 00253 (mr/mapreduce.go:87)	MOVQ	DX, 16(AX)
+	0x0101 00257 (mr/mapreduce.go:87)	MOVQ	"".errChan+128(SP), DX
+	0x0109 00265 (mr/mapreduce.go:87)	MOVQ	DX, 24(AX)
+	0x010d 00269 (mr/mapreduce.go:100)	PCDATA	$0, $-1
+	0x010d 00269 (mr/mapreduce.go:100)	LEAQ	type.chan interface {}(SB), AX
+	0x0114 00276 (mr/mapreduce.go:100)	MOVQ	AX, (SP)
+	0x0118 00280 (mr/mapreduce.go:100)	MOVQ	$0, 8(SP)
+	0x0121 00289 (mr/mapreduce.go:100)	PCDATA	$1, $6
+	0x0121 00289 (mr/mapreduce.go:100)	CALL	runtime.makechan(SB)
+	0x0126 00294 (mr/mapreduce.go:100)	MOVQ	16(SP), AX
+	0x012b 00299 (mr/mapreduce.go:100)	MOVQ	AX, "".write+104(SP)
+	0x0130 00304 (mr/mapreduce.go:101)	LEAQ	type.chan struct {}(SB), CX
+	0x0137 00311 (mr/mapreduce.go:101)	MOVQ	CX, (SP)
+	0x013b 00315 (mr/mapreduce.go:101)	MOVQ	$0, 8(SP)
+	0x0144 00324 (mr/mapreduce.go:101)	PCDATA	$1, $7
+	0x0144 00324 (mr/mapreduce.go:101)	CALL	runtime.makechan(SB)
+	0x0149 00329 (mr/mapreduce.go:101)	MOVQ	16(SP), AX
+	0x014e 00334 (mr/mapreduce.go:101)	MOVQ	AX, "".write.done+88(SP)
+	0x0153 00339 (mr/mapreduce.go:104)	LEAQ	type.chan interface {}(SB), CX
+	0x015a 00346 (mr/mapreduce.go:104)	MOVQ	CX, (SP)
+	0x015e 00350 (mr/mapreduce.go:104)	MOVQ	$0, 8(SP)
+	0x0167 00359 (mr/mapreduce.go:104)	PCDATA	$1, $8
+	0x0167 00359 (mr/mapreduce.go:104)	CALL	runtime.makechan(SB)
+	0x016c 00364 (mr/mapreduce.go:104)	MOVQ	16(SP), AX
+	0x0171 00369 (mr/mapreduce.go:104)	MOVQ	AX, "".write+96(SP)
+	0x0176 00374 (mr/mapreduce.go:106)	MOVL	$40, (SP)
+	0x017d 00381 (mr/mapreduce.go:106)	LEAQ	"".MapReduce.func2·f(SB), CX
+	0x0184 00388 (mr/mapreduce.go:106)	MOVQ	CX, 8(SP)
+	0x0189 00393 (mr/mapreduce.go:106)	MOVQ	"".reducer+224(SP), CX
+	0x0191 00401 (mr/mapreduce.go:106)	MOVQ	CX, 16(SP)
+	0x0196 00406 (mr/mapreduce.go:106)	MOVQ	AX, 24(SP)
+	0x019b 00411 (mr/mapreduce.go:106)	MOVQ	"".write+104(SP), CX
+	0x01a0 00416 (mr/mapreduce.go:106)	MOVQ	CX, 32(SP)
+	0x01a5 00421 (mr/mapreduce.go:106)	MOVQ	"".write.done+88(SP), DX
+	0x01aa 00426 (mr/mapreduce.go:106)	MOVQ	DX, 40(SP)
+	0x01af 00431 (mr/mapreduce.go:106)	MOVQ	""..autotmp_59+136(SP), BX
+	0x01b7 00439 (mr/mapreduce.go:106)	MOVQ	BX, 48(SP)
+	0x01bc 00444 (mr/mapreduce.go:106)	PCDATA	$1, $9
+	0x01bc 00444 (mr/mapreduce.go:106)	NOP
+	0x01c0 00448 (mr/mapreduce.go:106)	CALL	runtime.newproc(SB)
+	0x01c5 00453 (mr/mapreduce.go:116)	MOVL	$56, (SP)
+	0x01cc 00460 (mr/mapreduce.go:116)	LEAQ	"".MapReduce.func3·f(SB), AX
+	0x01d3 00467 (mr/mapreduce.go:116)	MOVQ	AX, 8(SP)
+	0x01d8 00472 (mr/mapreduce.go:116)	MOVQ	"".write+96(SP), AX
+	0x01dd 00477 (mr/mapreduce.go:116)	MOVQ	AX, 16(SP)
+	0x01e2 00482 (mr/mapreduce.go:116)	MOVQ	"".write.done+88(SP), CX
+	0x01e7 00487 (mr/mapreduce.go:116)	MOVQ	CX, 24(SP)
+	0x01ec 00492 (mr/mapreduce.go:116)	MOVQ	"".source+112(SP), DX
+	0x01f1 00497 (mr/mapreduce.go:116)	MOVQ	DX, 32(SP)
+	0x01f6 00502 (mr/mapreduce.go:116)	MOVQ	"".mapper+216(SP), DX
+	0x01fe 00510 (mr/mapreduce.go:116)	MOVQ	DX, 40(SP)
+	0x0203 00515 (mr/mapreduce.go:116)	MOVQ	AX, 48(SP)
+	0x0208 00520 (mr/mapreduce.go:116)	MOVQ	CX, 56(SP)
+	0x020d 00525 (mr/mapreduce.go:116)	MOVQ	""..autotmp_59+136(SP), AX
+	0x0215 00533 (mr/mapreduce.go:116)	MOVQ	AX, 64(SP)
+	0x021a 00538 (mr/mapreduce.go:116)	PCDATA	$1, $10
+	0x021a 00538 (mr/mapreduce.go:116)	CALL	runtime.newproc(SB)
+	0x021f 00543 (mr/mapreduce.go:152)	XORPS	X0, X0
+	0x0222 00546 (mr/mapreduce.go:152)	MOVUPS	X0, ""..autotmp_33+176(SP)
+	0x022a 00554 (mr/mapreduce.go:152)	MOVQ	"".write+104(SP), AX
+	0x022f 00559 (mr/mapreduce.go:152)	MOVQ	AX, (SP)
+	0x0233 00563 (mr/mapreduce.go:152)	LEAQ	""..autotmp_33+176(SP), AX
+	0x023b 00571 (mr/mapreduce.go:152)	MOVQ	AX, 8(SP)
+	0x0240 00576 (mr/mapreduce.go:152)	PCDATA	$1, $11
+	0x0240 00576 (mr/mapreduce.go:152)	CALL	runtime.chanrecv2(SB)
+	0x0245 00581 (mr/mapreduce.go:152)	MOVQ	""..autotmp_33+176(SP), AX
+	0x024d 00589 (mr/mapreduce.go:152)	MOVQ	""..autotmp_33+184(SP), CX
+	0x0255 00597 (mr/mapreduce.go:152)	MOVBLZX	16(SP), DX
+	0x025a 00602 (mr/mapreduce.go:152)	TESTB	DL, DL
+	0x025c 00604 (mr/mapreduce.go:153)	XORPS	X0, X0
+	0x025f 00607 (mr/mapreduce.go:153)	MOVUPS	X0, sync/atomic.x+160(SP)
+	0x0267 00615 (<unknown line number>)	NOP
+	0x0267 00615 ($GOROOT\src\sync\atomic\value.go:30)	MOVQ	""..autotmp_58+144(SP), BX
+	0x026f 00623 ($GOROOT\src\sync\atomic\value.go:30)	MOVQ	(BX), SI
+	0x0272 00626 ($GOROOT\src\sync\atomic\value.go:31)	TESTQ	SI, SI
+	0x0275 00629 ($GOROOT\src\sync\atomic\value.go:31)	JEQ	650
+	0x0277 00631 ($GOROOT\src\sync\atomic\value.go:31)	MOVQ	SI, DI
+	0x027a 00634 ($GOROOT\src\sync\atomic\value.go:31)	NOP
+	0x0280 00640 ($GOROOT\src\sync\atomic\value.go:31)	CMPQ	SI, $-1
+	0x0284 00644 ($GOROOT\src\sync\atomic\value.go:31)	JNE	848
+	0x028a 00650 (mr/mapreduce.go:153)	MOVUPS	X0, sync/atomic.x+160(SP)
+	0x0292 00658 (mr/mapreduce.go:153)	MOVQ	sync/atomic.x+160(SP), BX
+	0x029a 00666 (mr/mapreduce.go:153)	MOVQ	sync/atomic.x+168(SP), SI
+	0x02a2 00674 (mr/mapreduce.go:155)	TESTQ	BX, BX
+	0x02a5 00677 (mr/mapreduce.go:155)	JNE	773
+	0x02a7 00679 (mr/mapreduce.go:152)	TESTB	DL, DL
+	0x02a9 00681 (mr/mapreduce.go:152)	MOVL	$0, DX
+	0x02ae 00686 (mr/mapreduce.go:152)	MOVL	$0, BX
+	0x02b3 00691 (mr/mapreduce.go:158)	PCDATA	$1, $-1
+	0x02b3 00691 (mr/mapreduce.go:158)	JEQ	733
+	0x02b5 00693 (mr/mapreduce.go:161)	MOVQ	AX, "".~r3+232(SP)
+	0x02bd 00701 (mr/mapreduce.go:161)	MOVQ	CX, "".~r3+240(SP)
+	0x02c5 00709 (mr/mapreduce.go:161)	MOVUPS	X0, "".~r4+248(SP)
+	0x02cd 00717 (mr/mapreduce.go:161)	MOVQ	192(SP), BP
+	0x02d5 00725 (mr/mapreduce.go:161)	ADDQ	$200, SP
+	0x02dc 00732 (mr/mapreduce.go:161)	RET
+	0x02dd 00733 (mr/mapreduce.go:159)	MOVUPS	X0, "".~r3+232(SP)
+	0x02e5 00741 (mr/mapreduce.go:159)	MOVQ	DX, "".~r4+248(SP)
+	0x02ed 00749 (mr/mapreduce.go:159)	MOVQ	BX, "".~r4+256(SP)
+	0x02f5 00757 (mr/mapreduce.go:159)	MOVQ	192(SP), BP
+	0x02fd 00765 (mr/mapreduce.go:159)	ADDQ	$200, SP
+	0x0304 00772 (mr/mapreduce.go:159)	RET
+	0x0305 00773 (mr/mapreduce.go:152)	MOVB	DL, ""..autotmp_60+79(SP)
+	0x0309 00777 (mr/mapreduce.go:152)	MOVQ	AX, "".res.type+80(SP)
+	0x030e 00782 (mr/mapreduce.go:152)	MOVQ	CX, "".res.data+120(SP)
+	0x0313 00787 (mr/mapreduce.go:156)	LEAQ	type.error(SB), AX
+	0x031a 00794 (mr/mapreduce.go:156)	MOVQ	AX, (SP)
+	0x031e 00798 (mr/mapreduce.go:156)	MOVQ	BX, 8(SP)
+	0x0323 00803 (mr/mapreduce.go:156)	MOVQ	SI, 16(SP)
+	0x0328 00808 (mr/mapreduce.go:156)	PCDATA	$1, $12
+	0x0328 00808 (mr/mapreduce.go:156)	CALL	runtime.assertE2I(SB)
+	0x032d 00813 (mr/mapreduce.go:159)	MOVQ	24(SP), DX
+	0x0332 00818 (mr/mapreduce.go:159)	MOVQ	32(SP), BX
+	0x0337 00823 (mr/mapreduce.go:152)	MOVBLZX	""..autotmp_60+79(SP), AX
+	0x033c 00828 (mr/mapreduce.go:152)	TESTB	AL, AL
+	0x033e 00830 (mr/mapreduce.go:161)	MOVQ	"".res.type+80(SP), AX
+	0x0343 00835 (mr/mapreduce.go:161)	MOVQ	"".res.data+120(SP), CX
+	0x0348 00840 (mr/mapreduce.go:153)	XORPS	X0, X0
+	0x034b 00843 (mr/mapreduce.go:156)	JMP	691
+	0x0350 00848 ($GOROOT\src\sync\atomic\value.go:35)	MOVQ	8(BX), BX
+	0x0354 00852 ($GOROOT\src\sync\atomic\value.go:37)	MOVQ	DI, sync/atomic.x+160(SP)
+	0x035c 00860 ($GOROOT\src\sync\atomic\value.go:38)	MOVQ	BX, sync/atomic.x+168(SP)
+	0x0364 00868 (mr/mapreduce.go:153)	JMP	658
+	0x0369 00873 (mr/mapreduce.go:87)	PCDATA	$0, $-2
+	0x0369 00873 (mr/mapreduce.go:87)	LEAQ	8(AX), DI
+	0x036d 00877 (mr/mapreduce.go:87)	MOVQ	""..autotmp_58+144(SP), CX
+	0x0375 00885 (mr/mapreduce.go:87)	CALL	runtime.gcWriteBarrierCX(SB)
+	0x037a 00890 (mr/mapreduce.go:87)	LEAQ	16(AX), DI
+	0x037e 00894 (mr/mapreduce.go:87)	MOVQ	"".&cancelOnce+152(SP), DX
+	0x0386 00902 (mr/mapreduce.go:87)	CALL	runtime.gcWriteBarrierDX(SB)
+	0x038b 00907 (mr/mapreduce.go:87)	LEAQ	24(AX), DI
+	0x038f 00911 (mr/mapreduce.go:87)	MOVQ	"".errChan+128(SP), DX
+	0x0397 00919 (mr/mapreduce.go:87)	CALL	runtime.gcWriteBarrierDX(SB)
+	0x039c 00924 (mr/mapreduce.go:87)	NOP
+	0x03a0 00928 (mr/mapreduce.go:87)	JMP	269
+	0x03a5 00933 (mr/mapreduce.go:87)	NOP
+	0x03a5 00933 (mr/mapreduce.go:77)	PCDATA	$1, $-1
+	0x03a5 00933 (mr/mapreduce.go:77)	PCDATA	$0, $-2
+	0x03a5 00933 (mr/mapreduce.go:77)	CALL	runtime.morestack_noctxt(SB)
+	0x03aa 00938 (mr/mapreduce.go:77)	PCDATA	$0, $-1
+	0x03aa 00938 (mr/mapreduce.go:77)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 8d 44 24 b8 48 3b 41 10 0f 86 86 03 00 00 48  H.D$.H;A.......H
+	0x0020 81 ec c8 00 00 00 48 89 ac 24 c0 00 00 00 48 8d  ......H..$....H.
+	0x0030 ac 24 c0 00 00 00 48 8b 84 24 d0 00 00 00 48 89  .$....H..$....H.
+	0x0040 04 24 e8 00 00 00 00 48 8b 44 24 08 48 89 44 24  .$.....H.D$.H.D$
+	0x0050 70 48 8d 0d 00 00 00 00 48 89 0c 24 48 c7 44 24  pH......H..$H.D$
+	0x0060 08 00 00 00 00 e8 00 00 00 00 48 8b 44 24 10 48  ..........H.D$.H
+	0x0070 89 84 24 80 00 00 00 48 8d 0d 00 00 00 00 48 89  ..$....H......H.
+	0x0080 0c 24 e8 00 00 00 00 48 8b 44 24 08 48 89 84 24  .$.....H.D$.H..$
+	0x0090 90 00 00 00 48 8d 0d 00 00 00 00 48 89 0c 24 90  ....H......H..$.
+	0x00a0 e8 00 00 00 00 48 8b 44 24 08 48 89 84 24 98 00  .....H.D$.H..$..
+	0x00b0 00 00 48 8d 0d 00 00 00 00 48 89 0c 24 0f 1f 00  ..H......H..$...
+	0x00c0 e8 00 00 00 00 48 8b 44 24 08 48 89 84 24 88 00  .....H.D$.H..$..
+	0x00d0 00 00 48 8d 0d 00 00 00 00 48 89 08 83 3d 00 00  ..H......H...=..
+	0x00e0 00 00 00 0f 85 80 02 00 00 48 8b 8c 24 90 00 00  .........H..$...
+	0x00f0 00 48 89 48 08 48 8b 94 24 98 00 00 00 48 89 50  .H.H.H..$....H.P
+	0x0100 10 48 8b 94 24 80 00 00 00 48 89 50 18 48 8d 05  .H..$....H.P.H..
+	0x0110 00 00 00 00 48 89 04 24 48 c7 44 24 08 00 00 00  ....H..$H.D$....
+	0x0120 00 e8 00 00 00 00 48 8b 44 24 10 48 89 44 24 68  ......H.D$.H.D$h
+	0x0130 48 8d 0d 00 00 00 00 48 89 0c 24 48 c7 44 24 08  H......H..$H.D$.
+	0x0140 00 00 00 00 e8 00 00 00 00 48 8b 44 24 10 48 89  .........H.D$.H.
+	0x0150 44 24 58 48 8d 0d 00 00 00 00 48 89 0c 24 48 c7  D$XH......H..$H.
+	0x0160 44 24 08 00 00 00 00 e8 00 00 00 00 48 8b 44 24  D$..........H.D$
+	0x0170 10 48 89 44 24 60 c7 04 24 28 00 00 00 48 8d 0d  .H.D$`..$(...H..
+	0x0180 00 00 00 00 48 89 4c 24 08 48 8b 8c 24 e0 00 00  ....H.L$.H..$...
+	0x0190 00 48 89 4c 24 10 48 89 44 24 18 48 8b 4c 24 68  .H.L$.H.D$.H.L$h
+	0x01a0 48 89 4c 24 20 48 8b 54 24 58 48 89 54 24 28 48  H.L$ H.T$XH.T$(H
+	0x01b0 8b 9c 24 88 00 00 00 48 89 5c 24 30 0f 1f 40 00  ..$....H.\$0..@.
+	0x01c0 e8 00 00 00 00 c7 04 24 38 00 00 00 48 8d 05 00  .......$8...H...
+	0x01d0 00 00 00 48 89 44 24 08 48 8b 44 24 60 48 89 44  ...H.D$.H.D$`H.D
+	0x01e0 24 10 48 8b 4c 24 58 48 89 4c 24 18 48 8b 54 24  $.H.L$XH.L$.H.T$
+	0x01f0 70 48 89 54 24 20 48 8b 94 24 d8 00 00 00 48 89  pH.T$ H..$....H.
+	0x0200 54 24 28 48 89 44 24 30 48 89 4c 24 38 48 8b 84  T$(H.D$0H.L$8H..
+	0x0210 24 88 00 00 00 48 89 44 24 40 e8 00 00 00 00 0f  $....H.D$@......
+	0x0220 57 c0 0f 11 84 24 b0 00 00 00 48 8b 44 24 68 48  W....$....H.D$hH
+	0x0230 89 04 24 48 8d 84 24 b0 00 00 00 48 89 44 24 08  ..$H..$....H.D$.
+	0x0240 e8 00 00 00 00 48 8b 84 24 b0 00 00 00 48 8b 8c  .....H..$....H..
+	0x0250 24 b8 00 00 00 0f b6 54 24 10 84 d2 0f 57 c0 0f  $......T$....W..
+	0x0260 11 84 24 a0 00 00 00 48 8b 9c 24 90 00 00 00 48  ..$....H..$....H
+	0x0270 8b 33 48 85 f6 74 13 48 89 f7 66 0f 1f 44 00 00  .3H..t.H..f..D..
+	0x0280 48 83 fe ff 0f 85 c6 00 00 00 0f 11 84 24 a0 00  H............$..
+	0x0290 00 00 48 8b 9c 24 a0 00 00 00 48 8b b4 24 a8 00  ..H..$....H..$..
+	0x02a0 00 00 48 85 db 75 5e 84 d2 ba 00 00 00 00 bb 00  ..H..u^.........
+	0x02b0 00 00 00 74 28 48 89 84 24 e8 00 00 00 48 89 8c  ...t(H..$....H..
+	0x02c0 24 f0 00 00 00 0f 11 84 24 f8 00 00 00 48 8b ac  $.......$....H..
+	0x02d0 24 c0 00 00 00 48 81 c4 c8 00 00 00 c3 0f 11 84  $....H..........
+	0x02e0 24 e8 00 00 00 48 89 94 24 f8 00 00 00 48 89 9c  $....H..$....H..
+	0x02f0 24 00 01 00 00 48 8b ac 24 c0 00 00 00 48 81 c4  $....H..$....H..
+	0x0300 c8 00 00 00 c3 88 54 24 4f 48 89 44 24 50 48 89  ......T$OH.D$PH.
+	0x0310 4c 24 78 48 8d 05 00 00 00 00 48 89 04 24 48 89  L$xH......H..$H.
+	0x0320 5c 24 08 48 89 74 24 10 e8 00 00 00 00 48 8b 54  \$.H.t$......H.T
+	0x0330 24 18 48 8b 5c 24 20 0f b6 44 24 4f 84 c0 48 8b  $.H.\$ ..D$O..H.
+	0x0340 44 24 50 48 8b 4c 24 78 0f 57 c0 e9 63 ff ff ff  D$PH.L$x.W..c...
+	0x0350 48 8b 5b 08 48 89 bc 24 a0 00 00 00 48 89 9c 24  H.[.H..$....H..$
+	0x0360 a8 00 00 00 e9 29 ff ff ff 48 8d 78 08 48 8b 8c  .....)...H.x.H..
+	0x0370 24 90 00 00 00 e8 00 00 00 00 48 8d 78 10 48 8b  $.........H.x.H.
+	0x0380 94 24 98 00 00 00 e8 00 00 00 00 48 8d 78 18 48  .$.........H.x.H
+	0x0390 8b 94 24 80 00 00 00 e8 00 00 00 00 0f 1f 40 00  ..$...........@.
+	0x03a0 e9 68 fd ff ff e8 00 00 00 00 e9 51 fc ff ff     .h.........Q...
+	rel 12+4 t=17 TLS+0
+	rel 67+4 t=8 "".buildSource+0
+	rel 84+4 t=16 type.chan interface {}+0
+	rel 102+4 t=8 runtime.makechan+0
+	rel 122+4 t=16 type.sync/atomic.Value+0
+	rel 131+4 t=8 runtime.newobject+0
+	rel 151+4 t=16 type.sync.Once+0
+	rel 161+4 t=8 runtime.newobject+0
+	rel 181+4 t=16 type.noalg.struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} }+0
+	rel 193+4 t=8 runtime.newobject+0
+	rel 213+4 t=16 "".MapReduce.func1+0
+	rel 222+4 t=16 runtime.writeBarrier+-1
+	rel 272+4 t=16 type.chan interface {}+0
+	rel 290+4 t=8 runtime.makechan+0
+	rel 307+4 t=16 type.chan struct {}+0
+	rel 325+4 t=8 runtime.makechan+0
+	rel 342+4 t=16 type.chan interface {}+0
+	rel 360+4 t=8 runtime.makechan+0
+	rel 384+4 t=16 "".MapReduce.func2·f+0
+	rel 449+4 t=8 runtime.newproc+0
+	rel 463+4 t=16 "".MapReduce.func3·f+0
+	rel 539+4 t=8 runtime.newproc+0
+	rel 577+4 t=8 runtime.chanrecv2+0
+	rel 790+4 t=16 type.error+0
+	rel 809+4 t=8 runtime.assertE2I+0
+	rel 886+4 t=8 runtime.gcWriteBarrierCX+0
+	rel 903+4 t=8 runtime.gcWriteBarrierDX+0
+	rel 920+4 t=8 runtime.gcWriteBarrierDX+0
+	rel 934+4 t=8 runtime.morestack_noctxt+0
+"".main STEXT size=399 args=0x0 locals=0x80 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:165)	TEXT	"".main(SB), ABIInternal, $128-0
+	0x0000 00000 (mr/mapreduce.go:165)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:165)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:165)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:165)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:165)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:165)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:165)	JLS	389
+	0x001a 00026 (mr/mapreduce.go:165)	PCDATA	$0, $-1
+	0x001a 00026 (mr/mapreduce.go:165)	ADDQ	$-128, SP
+	0x001e 00030 (mr/mapreduce.go:165)	MOVQ	BP, 120(SP)
+	0x0023 00035 (mr/mapreduce.go:165)	LEAQ	120(SP), BP
+	0x0028 00040 (mr/mapreduce.go:165)	FUNCDATA	$0, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0028 00040 (mr/mapreduce.go:165)	FUNCDATA	$1, gclocals·d527b79a98f329c2ba624a68e7df03d6(SB)
+	0x0028 00040 (mr/mapreduce.go:165)	FUNCDATA	$2, "".main.stkobj(SB)
+	0x0028 00040 (mr/mapreduce.go:173)	LEAQ	type.[6]int(SB), AX
+	0x002f 00047 (mr/mapreduce.go:173)	MOVQ	AX, (SP)
+	0x0033 00051 (mr/mapreduce.go:173)	PCDATA	$1, $0
+	0x0033 00051 (mr/mapreduce.go:173)	CALL	runtime.newobject(SB)
+	0x0038 00056 (mr/mapreduce.go:173)	MOVQ	8(SP), AX
+	0x003d 00061 (mr/mapreduce.go:173)	MOVQ	AX, ""..autotmp_47+80(SP)
+	0x0042 00066 (mr/mapreduce.go:173)	MOVQ	$1, (AX)
+	0x0049 00073 (mr/mapreduce.go:173)	MOVQ	$2, 8(AX)
+	0x0051 00081 (mr/mapreduce.go:173)	MOVQ	$3, 16(AX)
+	0x0059 00089 (mr/mapreduce.go:173)	MOVQ	$4, 24(AX)
+	0x0061 00097 (mr/mapreduce.go:173)	MOVQ	$5, 32(AX)
+	0x0069 00105 (mr/mapreduce.go:173)	MOVQ	$6, 40(AX)
+	0x0071 00113 (mr/mapreduce.go:174)	LEAQ	type.noalg.struct { F uintptr; "".uid []int }(SB), CX
+	0x0078 00120 (mr/mapreduce.go:174)	MOVQ	CX, (SP)
+	0x007c 00124 (mr/mapreduce.go:174)	PCDATA	$1, $1
+	0x007c 00124 (mr/mapreduce.go:174)	NOP
+	0x0080 00128 (mr/mapreduce.go:174)	CALL	runtime.newobject(SB)
+	0x0085 00133 (mr/mapreduce.go:174)	MOVQ	8(SP), AX
+	0x008a 00138 (mr/mapreduce.go:174)	LEAQ	"".main.func1(SB), CX
+	0x0091 00145 (mr/mapreduce.go:174)	MOVQ	CX, (AX)
+	0x0094 00148 (mr/mapreduce.go:174)	MOVQ	$6, 16(AX)
+	0x009c 00156 (mr/mapreduce.go:174)	MOVQ	$6, 24(AX)
+	0x00a4 00164 (mr/mapreduce.go:174)	PCDATA	$0, $-2
+	0x00a4 00164 (mr/mapreduce.go:174)	CMPL	runtime.writeBarrier(SB), $0
+	0x00ab 00171 (mr/mapreduce.go:174)	JNE	368
+	0x00b1 00177 (mr/mapreduce.go:174)	MOVQ	""..autotmp_47+80(SP), CX
+	0x00b6 00182 (mr/mapreduce.go:174)	MOVQ	CX, 8(AX)
+	0x00ba 00186 (mr/mapreduce.go:197)	PCDATA	$0, $-1
+	0x00ba 00186 (mr/mapreduce.go:197)	MOVQ	AX, (SP)
+	0x00be 00190 (mr/mapreduce.go:197)	LEAQ	"".main.func2·f(SB), AX
+	0x00c5 00197 (mr/mapreduce.go:197)	MOVQ	AX, 8(SP)
+	0x00ca 00202 (mr/mapreduce.go:197)	LEAQ	"".main.func3·f(SB), AX
+	0x00d1 00209 (mr/mapreduce.go:197)	MOVQ	AX, 16(SP)
+	0x00d6 00214 (mr/mapreduce.go:197)	PCDATA	$1, $0
+	0x00d6 00214 (mr/mapreduce.go:197)	CALL	"".MapReduce(SB)
+	0x00db 00219 (mr/mapreduce.go:199)	MOVQ	24(SP), AX
+	0x00e0 00224 (mr/mapreduce.go:199)	MOVQ	32(SP), CX
+	0x00e5 00229 (mr/mapreduce.go:199)	MOVQ	40(SP), DX
+	0x00ea 00234 (mr/mapreduce.go:199)	MOVQ	48(SP), BX
+	0x00ef 00239 (mr/mapreduce.go:199)	TESTQ	DX, DX
+	0x00f2 00242 (mr/mapreduce.go:199)	JEQ	248
+	0x00f4 00244 (mr/mapreduce.go:199)	MOVQ	8(DX), DX
+	0x00f8 00248 (mr/mapreduce.go:199)	XORPS	X0, X0
+	0x00fb 00251 (mr/mapreduce.go:199)	MOVUPS	X0, ""..autotmp_24+88(SP)
+	0x0100 00256 (mr/mapreduce.go:199)	MOVUPS	X0, ""..autotmp_24+104(SP)
+	0x0105 00261 (mr/mapreduce.go:199)	MOVQ	AX, ""..autotmp_24+88(SP)
+	0x010a 00266 (mr/mapreduce.go:199)	MOVQ	CX, ""..autotmp_24+96(SP)
+	0x010f 00271 (mr/mapreduce.go:199)	MOVQ	DX, ""..autotmp_24+104(SP)
+	0x0114 00276 (mr/mapreduce.go:199)	MOVQ	BX, ""..autotmp_24+112(SP)
+	0x0119 00281 (<unknown line number>)	NOP
+	0x0119 00281 ($GOROOT\src\fmt\print.go:213)	MOVQ	os.Stdout(SB), AX
+	0x0120 00288 ($GOROOT\src\fmt\print.go:213)	LEAQ	go.itab.*os.File,io.Writer(SB), CX
+	0x0127 00295 ($GOROOT\src\fmt\print.go:213)	MOVQ	CX, (SP)
+	0x012b 00299 ($GOROOT\src\fmt\print.go:213)	MOVQ	AX, 8(SP)
+	0x0130 00304 ($GOROOT\src\fmt\print.go:213)	LEAQ	go.string."res:{%v}; err:{%v}\n"(SB), AX
+	0x0137 00311 ($GOROOT\src\fmt\print.go:213)	MOVQ	AX, 16(SP)
+	0x013c 00316 ($GOROOT\src\fmt\print.go:213)	MOVQ	$19, 24(SP)
+	0x0145 00325 ($GOROOT\src\fmt\print.go:213)	LEAQ	""..autotmp_24+88(SP), AX
+	0x014a 00330 ($GOROOT\src\fmt\print.go:213)	MOVQ	AX, 32(SP)
+	0x014f 00335 ($GOROOT\src\fmt\print.go:213)	MOVQ	$2, 40(SP)
+	0x0158 00344 ($GOROOT\src\fmt\print.go:213)	MOVQ	$2, 48(SP)
+	0x0161 00353 ($GOROOT\src\fmt\print.go:213)	CALL	fmt.Fprintf(SB)
+	0x0166 00358 (mr/mapreduce.go:199)	MOVQ	120(SP), BP
+	0x016b 00363 (mr/mapreduce.go:199)	SUBQ	$-128, SP
+	0x016f 00367 (mr/mapreduce.go:199)	RET
+	0x0170 00368 (mr/mapreduce.go:174)	PCDATA	$0, $-2
+	0x0170 00368 (mr/mapreduce.go:174)	LEAQ	8(AX), DI
+	0x0174 00372 (mr/mapreduce.go:174)	MOVQ	""..autotmp_47+80(SP), CX
+	0x0179 00377 (mr/mapreduce.go:174)	CALL	runtime.gcWriteBarrierCX(SB)
+	0x017e 00382 (mr/mapreduce.go:174)	NOP
+	0x0180 00384 (mr/mapreduce.go:174)	JMP	186
+	0x0185 00389 (mr/mapreduce.go:174)	NOP
+	0x0185 00389 (mr/mapreduce.go:165)	PCDATA	$1, $-1
+	0x0185 00389 (mr/mapreduce.go:165)	PCDATA	$0, $-2
+	0x0185 00389 (mr/mapreduce.go:165)	CALL	runtime.morestack_noctxt(SB)
+	0x018a 00394 (mr/mapreduce.go:165)	PCDATA	$0, $-1
+	0x018a 00394 (mr/mapreduce.go:165)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 6b 01 00 00 48 83 c4 80 48 89  H;a...k...H...H.
+	0x0020 6c 24 78 48 8d 6c 24 78 48 8d 05 00 00 00 00 48  l$xH.l$xH......H
+	0x0030 89 04 24 e8 00 00 00 00 48 8b 44 24 08 48 89 44  ..$.....H.D$.H.D
+	0x0040 24 50 48 c7 00 01 00 00 00 48 c7 40 08 02 00 00  $PH......H.@....
+	0x0050 00 48 c7 40 10 03 00 00 00 48 c7 40 18 04 00 00  .H.@.....H.@....
+	0x0060 00 48 c7 40 20 05 00 00 00 48 c7 40 28 06 00 00  .H.@ ....H.@(...
+	0x0070 00 48 8d 0d 00 00 00 00 48 89 0c 24 0f 1f 40 00  .H......H..$..@.
+	0x0080 e8 00 00 00 00 48 8b 44 24 08 48 8d 0d 00 00 00  .....H.D$.H.....
+	0x0090 00 48 89 08 48 c7 40 10 06 00 00 00 48 c7 40 18  .H..H.@.....H.@.
+	0x00a0 06 00 00 00 83 3d 00 00 00 00 00 0f 85 bf 00 00  .....=..........
+	0x00b0 00 48 8b 4c 24 50 48 89 48 08 48 89 04 24 48 8d  .H.L$PH.H.H..$H.
+	0x00c0 05 00 00 00 00 48 89 44 24 08 48 8d 05 00 00 00  .....H.D$.H.....
+	0x00d0 00 48 89 44 24 10 e8 00 00 00 00 48 8b 44 24 18  .H.D$......H.D$.
+	0x00e0 48 8b 4c 24 20 48 8b 54 24 28 48 8b 5c 24 30 48  H.L$ H.T$(H.\$0H
+	0x00f0 85 d2 74 04 48 8b 52 08 0f 57 c0 0f 11 44 24 58  ..t.H.R..W...D$X
+	0x0100 0f 11 44 24 68 48 89 44 24 58 48 89 4c 24 60 48  ..D$hH.D$XH.L$`H
+	0x0110 89 54 24 68 48 89 5c 24 70 48 8b 05 00 00 00 00  .T$hH.\$pH......
+	0x0120 48 8d 0d 00 00 00 00 48 89 0c 24 48 89 44 24 08  H......H..$H.D$.
+	0x0130 48 8d 05 00 00 00 00 48 89 44 24 10 48 c7 44 24  H......H.D$.H.D$
+	0x0140 18 13 00 00 00 48 8d 44 24 58 48 89 44 24 20 48  .....H.D$XH.D$ H
+	0x0150 c7 44 24 28 02 00 00 00 48 c7 44 24 30 02 00 00  .D$(....H.D$0...
+	0x0160 00 e8 00 00 00 00 48 8b 6c 24 78 48 83 ec 80 c3  ......H.l$xH....
+	0x0170 48 8d 78 08 48 8b 4c 24 50 e8 00 00 00 00 66 90  H.x.H.L$P.....f.
+	0x0180 e9 35 ff ff ff e8 00 00 00 00 e9 71 fe ff ff     .5.........q...
+	rel 3+0 t=25 type.*os.File+0
+	rel 12+4 t=17 TLS+0
+	rel 43+4 t=16 type.[6]int+0
+	rel 52+4 t=8 runtime.newobject+0
+	rel 116+4 t=16 type.noalg.struct { F uintptr; "".uid []int }+0
+	rel 129+4 t=8 runtime.newobject+0
+	rel 141+4 t=16 "".main.func1+0
+	rel 166+4 t=16 runtime.writeBarrier+-1
+	rel 193+4 t=16 "".main.func2·f+0
+	rel 205+4 t=16 "".main.func3·f+0
+	rel 215+4 t=8 "".MapReduce+0
+	rel 284+4 t=16 os.Stdout+0
+	rel 291+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 307+4 t=16 go.string."res:{%v}; err:{%v}\n"+0
+	rel 354+4 t=8 fmt.Fprintf+0
+	rel 378+4 t=8 runtime.gcWriteBarrierCX+0
+	rel 390+4 t=8 runtime.morestack_noctxt+0
+"".buildSource.func1.1 STEXT size=71 args=0x8 locals=0x10 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:68)	TEXT	"".buildSource.func1.1(SB), ABIInternal, $16-8
+	0x0000 00000 (mr/mapreduce.go:68)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:68)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:68)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:68)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:68)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:68)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:68)	JLS	64
+	0x0016 00022 (mr/mapreduce.go:68)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:68)	SUBQ	$16, SP
+	0x001a 00026 (mr/mapreduce.go:68)	MOVQ	BP, 8(SP)
+	0x001f 00031 (mr/mapreduce.go:68)	LEAQ	8(SP), BP
+	0x0024 00036 (mr/mapreduce.go:68)	FUNCDATA	$0, gclocals·1a65e721a2ccc325b382662e7ffee780(SB)
+	0x0024 00036 (mr/mapreduce.go:68)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0024 00036 (mr/mapreduce.go:69)	MOVQ	"".source+24(SP), AX
+	0x0029 00041 (mr/mapreduce.go:69)	MOVQ	AX, (SP)
+	0x002d 00045 (mr/mapreduce.go:69)	PCDATA	$1, $1
+	0x002d 00045 (mr/mapreduce.go:69)	CALL	runtime.closechan(SB)
+	0x0032 00050 (mr/mapreduce.go:70)	MOVQ	8(SP), BP
+	0x0037 00055 (mr/mapreduce.go:70)	ADDQ	$16, SP
+	0x003b 00059 (mr/mapreduce.go:70)	RET
+	0x003c 00060 (mr/mapreduce.go:70)	NOP
+	0x003c 00060 (mr/mapreduce.go:68)	PCDATA	$1, $-1
+	0x003c 00060 (mr/mapreduce.go:68)	PCDATA	$0, $-2
+	0x003c 00060 (mr/mapreduce.go:68)	NOP
+	0x0040 00064 (mr/mapreduce.go:68)	CALL	runtime.morestack_noctxt(SB)
+	0x0045 00069 (mr/mapreduce.go:68)	PCDATA	$0, $-1
+	0x0045 00069 (mr/mapreduce.go:68)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 2a 48 83 ec 10 48 89 6c 24 08 48  H;a.v*H...H.l$.H
+	0x0020 8d 6c 24 08 48 8b 44 24 18 48 89 04 24 e8 00 00  .l$.H.D$.H..$...
+	0x0030 00 00 48 8b 6c 24 08 48 83 c4 10 c3 0f 1f 40 00  ..H.l$.H......@.
+	0x0040 e8 00 00 00 00 eb b9                             .......
+	rel 12+4 t=17 TLS+0
+	rel 46+4 t=8 runtime.closechan+0
+	rel 65+4 t=8 runtime.morestack_noctxt+0
+"".buildSource.func1 STEXT size=144 args=0x10 locals=0x28 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:66)	TEXT	"".buildSource.func1(SB), ABIInternal, $40-16
+	0x0000 00000 (mr/mapreduce.go:66)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:66)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:66)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:66)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:66)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:66)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:66)	JLS	134
+	0x0016 00022 (mr/mapreduce.go:66)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:66)	SUBQ	$40, SP
+	0x001a 00026 (mr/mapreduce.go:66)	MOVQ	BP, 32(SP)
+	0x001f 00031 (mr/mapreduce.go:66)	LEAQ	32(SP), BP
+	0x0024 00036 (mr/mapreduce.go:66)	XORPS	X0, X0
+	0x0027 00039 (mr/mapreduce.go:66)	MOVUPS	X0, 16(SP)
+	0x002c 00044 (mr/mapreduce.go:66)	FUNCDATA	$0, gclocals·dc9b0298814590ca3ffc3a889546fc8b(SB)
+	0x002c 00044 (mr/mapreduce.go:66)	FUNCDATA	$1, gclocals·e226d4ae4a7cad8835311c6a4683c14f(SB)
+	0x002c 00044 (mr/mapreduce.go:66)	FUNCDATA	$4, "".buildSource.func1.opendefer(SB)
+	0x002c 00044 (mr/mapreduce.go:66)	MOVB	$0, ""..autotmp_2+15(SP)
+	0x0031 00049 (mr/mapreduce.go:68)	LEAQ	"".buildSource.func1.1·f(SB), AX
+	0x0038 00056 (mr/mapreduce.go:68)	MOVQ	AX, ""..autotmp_3+24(SP)
+	0x003d 00061 (mr/mapreduce.go:68)	MOVQ	"".source+48(SP), AX
+	0x0042 00066 (mr/mapreduce.go:68)	MOVQ	AX, ""..autotmp_4+16(SP)
+	0x0047 00071 (mr/mapreduce.go:68)	MOVB	$1, ""..autotmp_2+15(SP)
+	0x004c 00076 (mr/mapreduce.go:71)	MOVQ	"".generate+56(SP), DX
+	0x0051 00081 (mr/mapreduce.go:71)	MOVQ	(DX), CX
+	0x0054 00084 (mr/mapreduce.go:71)	MOVQ	AX, (SP)
+	0x0058 00088 (mr/mapreduce.go:71)	PCDATA	$1, $1
+	0x0058 00088 (mr/mapreduce.go:71)	CALL	CX
+	0x005a 00090 (mr/mapreduce.go:72)	MOVB	$0, ""..autotmp_2+15(SP)
+	0x005f 00095 (mr/mapreduce.go:72)	MOVQ	""..autotmp_4+16(SP), AX
+	0x0064 00100 (mr/mapreduce.go:72)	MOVQ	AX, (SP)
+	0x0068 00104 (mr/mapreduce.go:72)	CALL	"".buildSource.func1.1(SB)
+	0x006d 00109 (mr/mapreduce.go:72)	MOVQ	32(SP), BP
+	0x0072 00114 (mr/mapreduce.go:72)	ADDQ	$40, SP
+	0x0076 00118 (mr/mapreduce.go:72)	RET
+	0x0077 00119 (mr/mapreduce.go:72)	CALL	runtime.deferreturn(SB)
+	0x007c 00124 (mr/mapreduce.go:72)	MOVQ	32(SP), BP
+	0x0081 00129 (mr/mapreduce.go:72)	ADDQ	$40, SP
+	0x0085 00133 (mr/mapreduce.go:72)	RET
+	0x0086 00134 (mr/mapreduce.go:72)	NOP
+	0x0086 00134 (mr/mapreduce.go:66)	PCDATA	$1, $-1
+	0x0086 00134 (mr/mapreduce.go:66)	PCDATA	$0, $-2
+	0x0086 00134 (mr/mapreduce.go:66)	CALL	runtime.morestack_noctxt(SB)
+	0x008b 00139 (mr/mapreduce.go:66)	PCDATA	$0, $-1
+	0x008b 00139 (mr/mapreduce.go:66)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 70 48 83 ec 28 48 89 6c 24 20 48  H;a.vpH..(H.l$ H
+	0x0020 8d 6c 24 20 0f 57 c0 0f 11 44 24 10 c6 44 24 0f  .l$ .W...D$..D$.
+	0x0030 00 48 8d 05 00 00 00 00 48 89 44 24 18 48 8b 44  .H......H.D$.H.D
+	0x0040 24 30 48 89 44 24 10 c6 44 24 0f 01 48 8b 54 24  $0H.D$..D$..H.T$
+	0x0050 38 48 8b 0a 48 89 04 24 ff d1 c6 44 24 0f 00 48  8H..H..$...D$..H
+	0x0060 8b 44 24 10 48 89 04 24 e8 00 00 00 00 48 8b 6c  .D$.H..$.....H.l
+	0x0070 24 20 48 83 c4 28 c3 e8 00 00 00 00 48 8b 6c 24  $ H..(......H.l$
+	0x0080 20 48 83 c4 28 c3 e8 00 00 00 00 e9 70 ff ff ff   H..(.......p...
+	rel 12+4 t=17 TLS+0
+	rel 52+4 t=16 "".buildSource.func1.1·f+0
+	rel 88+0 t=11 +0
+	rel 105+4 t=8 "".buildSource.func1.1+0
+	rel 120+4 t=8 runtime.deferreturn+0
+	rel 135+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce.func1.1 STEXT size=71 args=0x0 locals=0x10 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:94)	TEXT	"".MapReduce.func1.1(SB), NEEDCTXT|ABIInternal, $16-0
+	0x0000 00000 (mr/mapreduce.go:94)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:94)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:94)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:94)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:94)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:94)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:94)	JLS	64
+	0x0016 00022 (mr/mapreduce.go:94)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:94)	SUBQ	$16, SP
+	0x001a 00026 (mr/mapreduce.go:94)	MOVQ	BP, 8(SP)
+	0x001f 00031 (mr/mapreduce.go:94)	LEAQ	8(SP), BP
+	0x0024 00036 (mr/mapreduce.go:94)	FUNCDATA	$0, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+	0x0024 00036 (mr/mapreduce.go:94)	FUNCDATA	$1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+	0x0024 00036 (mr/mapreduce.go:94)	MOVQ	8(DX), AX
+	0x0028 00040 (mr/mapreduce.go:95)	MOVQ	AX, (SP)
+	0x002c 00044 (mr/mapreduce.go:95)	PCDATA	$1, $0
+	0x002c 00044 (mr/mapreduce.go:95)	CALL	runtime.closechan(SB)
+	0x0031 00049 (mr/mapreduce.go:97)	MOVQ	8(SP), BP
+	0x0036 00054 (mr/mapreduce.go:97)	ADDQ	$16, SP
+	0x003a 00058 (mr/mapreduce.go:97)	RET
+	0x003b 00059 (mr/mapreduce.go:97)	NOP
+	0x003b 00059 (mr/mapreduce.go:94)	PCDATA	$1, $-1
+	0x003b 00059 (mr/mapreduce.go:94)	PCDATA	$0, $-2
+	0x003b 00059 (mr/mapreduce.go:94)	NOP
+	0x0040 00064 (mr/mapreduce.go:94)	CALL	runtime.morestack(SB)
+	0x0045 00069 (mr/mapreduce.go:94)	PCDATA	$0, $-1
+	0x0045 00069 (mr/mapreduce.go:94)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 2a 48 83 ec 10 48 89 6c 24 08 48  H;a.v*H...H.l$.H
+	0x0020 8d 6c 24 08 48 8b 42 08 48 89 04 24 e8 00 00 00  .l$.H.B.H..$....
+	0x0030 00 48 8b 6c 24 08 48 83 c4 10 c3 0f 1f 44 00 00  .H.l$.H......D..
+	0x0040 e8 00 00 00 00 eb b9                             .......
+	rel 12+4 t=17 TLS+0
+	rel 45+4 t=8 runtime.closechan+0
+	rel 65+4 t=8 runtime.morestack+0
+"".MapReduce.func1 STEXT size=241 args=0x10 locals=0x40 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:87)	TEXT	"".MapReduce.func1(SB), NEEDCTXT|ABIInternal, $64-16
+	0x0000 00000 (mr/mapreduce.go:87)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:87)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:87)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:87)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:87)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:87)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:87)	JLS	231
+	0x001a 00026 (mr/mapreduce.go:87)	PCDATA	$0, $-1
+	0x001a 00026 (mr/mapreduce.go:87)	SUBQ	$64, SP
+	0x001e 00030 (mr/mapreduce.go:87)	MOVQ	BP, 56(SP)
+	0x0023 00035 (mr/mapreduce.go:87)	LEAQ	56(SP), BP
+	0x0028 00040 (mr/mapreduce.go:87)	FUNCDATA	$0, gclocals·ba30782f8935b28ed1adaec603e72627(SB)
+	0x0028 00040 (mr/mapreduce.go:87)	FUNCDATA	$1, gclocals·74c0baf207315f723c777d5ea815c4e0(SB)
+	0x0028 00040 (mr/mapreduce.go:87)	FUNCDATA	$2, "".MapReduce.func1.stkobj(SB)
+	0x0028 00040 (mr/mapreduce.go:87)	MOVQ	16(DX), AX
+	0x002c 00044 (mr/mapreduce.go:87)	MOVQ	AX, sync.o+24(SP)
+	0x0031 00049 (mr/mapreduce.go:87)	MOVQ	24(DX), CX
+	0x0035 00053 (mr/mapreduce.go:87)	MOVQ	CX, "".errChan+32(SP)
+	0x003a 00058 (mr/mapreduce.go:87)	MOVQ	8(DX), DX
+	0x003e 00062 (mr/mapreduce.go:88)	MOVQ	"".err+72(SP), BX
+	0x0043 00067 (mr/mapreduce.go:88)	TESTQ	BX, BX
+	0x0046 00070 (mr/mapreduce.go:88)	JEQ	182
+	0x0048 00072 (mr/mapreduce.go:89)	MOVQ	"".err+72(SP), BX
+	0x004d 00077 (mr/mapreduce.go:89)	TESTQ	BX, BX
+	0x0050 00080 (mr/mapreduce.go:89)	JEQ	86
+	0x0052 00082 (mr/mapreduce.go:89)	MOVQ	8(BX), BX
+	0x0056 00086 (mr/mapreduce.go:89)	MOVQ	DX, (SP)
+	0x005a 00090 (mr/mapreduce.go:89)	MOVQ	BX, 8(SP)
+	0x005f 00095 (mr/mapreduce.go:89)	MOVQ	"".err+80(SP), AX
+	0x0064 00100 (mr/mapreduce.go:89)	MOVQ	AX, 16(SP)
+	0x0069 00105 (mr/mapreduce.go:89)	PCDATA	$1, $1
+	0x0069 00105 (mr/mapreduce.go:89)	CALL	sync/atomic.(*Value).Store(SB)
+	0x006e 00110 (mr/mapreduce.go:94)	XORPS	X0, X0
+	0x0071 00113 (mr/mapreduce.go:94)	MOVUPS	X0, ""..autotmp_16+40(SP)
+	0x0076 00118 (mr/mapreduce.go:94)	LEAQ	"".MapReduce.func1.1(SB), AX
+	0x007d 00125 (mr/mapreduce.go:94)	MOVQ	AX, ""..autotmp_16+40(SP)
+	0x0082 00130 (mr/mapreduce.go:94)	MOVQ	"".errChan+32(SP), AX
+	0x0087 00135 (mr/mapreduce.go:94)	MOVQ	AX, ""..autotmp_16+48(SP)
+	0x008c 00140 (<unknown line number>)	NOP
+	0x008c 00140 ($GOROOT\src\sync\once.go:57)	MOVQ	sync.o+24(SP), AX
+	0x0091 00145 ($GOROOT\src\sync\once.go:57)	MOVL	(AX), CX
+	0x0093 00147 ($GOROOT\src\sync\once.go:57)	TESTL	CX, CX
+	0x0095 00149 ($GOROOT\src\sync\once.go:57)	JEQ	161
+	0x0097 00151 (<unknown line number>)	PCDATA	$1, $-1
+	0x0097 00151 (<unknown line number>)	MOVQ	56(SP), BP
+	0x009c 00156 (<unknown line number>)	ADDQ	$64, SP
+	0x00a0 00160 (<unknown line number>)	RET
+	0x00a1 00161 ($GOROOT\src\sync\once.go:59)	MOVQ	AX, (SP)
+	0x00a5 00165 ($GOROOT\src\sync\once.go:59)	LEAQ	""..autotmp_16+40(SP), AX
+	0x00aa 00170 ($GOROOT\src\sync\once.go:59)	MOVQ	AX, 8(SP)
+	0x00af 00175 ($GOROOT\src\sync\once.go:59)	PCDATA	$1, $2
+	0x00af 00175 ($GOROOT\src\sync\once.go:59)	CALL	sync.(*Once).doSlow(SB)
+	0x00b4 00180 ($GOROOT\src\sync\once.go:59)	JMP	151
+	0x00b6 00182 (mr/mapreduce.go:91)	MOVQ	"".cancelWithNil(SB), BX
+	0x00bd 00189 (mr/mapreduce.go:91)	MOVQ	"".cancelWithNil+8(SB), SI
+	0x00c4 00196 (mr/mapreduce.go:91)	TESTQ	BX, BX
+	0x00c7 00199 (mr/mapreduce.go:91)	JEQ	205
+	0x00c9 00201 (mr/mapreduce.go:91)	MOVQ	8(BX), BX
+	0x00cd 00205 (mr/mapreduce.go:91)	MOVQ	DX, (SP)
+	0x00d1 00209 (mr/mapreduce.go:91)	MOVQ	BX, 8(SP)
+	0x00d6 00214 (mr/mapreduce.go:91)	MOVQ	SI, 16(SP)
+	0x00db 00219 (mr/mapreduce.go:91)	PCDATA	$1, $1
+	0x00db 00219 (mr/mapreduce.go:91)	NOP
+	0x00e0 00224 (mr/mapreduce.go:91)	CALL	sync/atomic.(*Value).Store(SB)
+	0x00e5 00229 (mr/mapreduce.go:91)	JMP	110
+	0x00e7 00231 (mr/mapreduce.go:91)	NOP
+	0x00e7 00231 (mr/mapreduce.go:87)	PCDATA	$1, $-1
+	0x00e7 00231 (mr/mapreduce.go:87)	PCDATA	$0, $-2
+	0x00e7 00231 (mr/mapreduce.go:87)	CALL	runtime.morestack(SB)
+	0x00ec 00236 (mr/mapreduce.go:87)	PCDATA	$0, $-1
+	0x00ec 00236 (mr/mapreduce.go:87)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 cd 00 00 00 48 83 ec 40 48 89  H;a.......H..@H.
+	0x0020 6c 24 38 48 8d 6c 24 38 48 8b 42 10 48 89 44 24  l$8H.l$8H.B.H.D$
+	0x0030 18 48 8b 4a 18 48 89 4c 24 20 48 8b 52 08 48 8b  .H.J.H.L$ H.R.H.
+	0x0040 5c 24 48 48 85 db 74 6e 48 8b 5c 24 48 48 85 db  \$HH..tnH.\$HH..
+	0x0050 74 04 48 8b 5b 08 48 89 14 24 48 89 5c 24 08 48  t.H.[.H..$H.\$.H
+	0x0060 8b 44 24 50 48 89 44 24 10 e8 00 00 00 00 0f 57  .D$PH.D$.......W
+	0x0070 c0 0f 11 44 24 28 48 8d 05 00 00 00 00 48 89 44  ...D$(H......H.D
+	0x0080 24 28 48 8b 44 24 20 48 89 44 24 30 48 8b 44 24  $(H.D$ H.D$0H.D$
+	0x0090 18 8b 08 85 c9 74 0a 48 8b 6c 24 38 48 83 c4 40  .....t.H.l$8H..@
+	0x00a0 c3 48 89 04 24 48 8d 44 24 28 48 89 44 24 08 e8  .H..$H.D$(H.D$..
+	0x00b0 00 00 00 00 eb e1 48 8b 1d 00 00 00 00 48 8b 35  ......H......H.5
+	0x00c0 00 00 00 00 48 85 db 74 04 48 8b 5b 08 48 89 14  ....H..t.H.[.H..
+	0x00d0 24 48 89 5c 24 08 48 89 74 24 10 0f 1f 44 00 00  $H.\$.H.t$...D..
+	0x00e0 e8 00 00 00 00 eb 87 e8 00 00 00 00 e9 0f ff ff  ................
+	0x00f0 ff                                               .
+	rel 12+4 t=17 TLS+0
+	rel 106+4 t=8 sync/atomic.(*Value).Store+0
+	rel 121+4 t=16 "".MapReduce.func1.1+0
+	rel 176+4 t=8 sync.(*Once).doSlow+0
+	rel 185+4 t=16 "".cancelWithNil+0
+	rel 192+4 t=16 "".cancelWithNil+8
+	rel 225+4 t=8 sync/atomic.(*Value).Store+0
+	rel 232+4 t=8 runtime.morestack+0
+"".MapReduce.func2 STEXT size=151 args=0x28 locals=0x38 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:106)	TEXT	"".MapReduce.func2(SB), ABIInternal, $56-40
+	0x0000 00000 (mr/mapreduce.go:106)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:106)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:106)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:106)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:106)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:106)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:106)	JLS	141
+	0x0016 00022 (mr/mapreduce.go:106)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:106)	SUBQ	$56, SP
+	0x001a 00026 (mr/mapreduce.go:106)	MOVQ	BP, 48(SP)
+	0x001f 00031 (mr/mapreduce.go:106)	LEAQ	48(SP), BP
+	0x0024 00036 (mr/mapreduce.go:106)	FUNCDATA	$0, gclocals·f767ecd900a789ee45dde586421a4a9c(SB)
+	0x0024 00036 (mr/mapreduce.go:106)	FUNCDATA	$1, gclocals·d8b28f51bb91e05d264803f0f600a200(SB)
+	0x0024 00036 (mr/mapreduce.go:106)	FUNCDATA	$2, "".MapReduce.func2.stkobj(SB)
+	0x0024 00036 (mr/mapreduce.go:107)	MOVQ	"".write+80(SP), AX
+	0x0029 00041 (mr/mapreduce.go:107)	MOVQ	AX, ""..autotmp_4+32(SP)
+	0x002e 00046 (mr/mapreduce.go:107)	MOVQ	"".write+88(SP), AX
+	0x0033 00051 (mr/mapreduce.go:107)	MOVQ	AX, ""..autotmp_4+40(SP)
+	0x0038 00056 (mr/mapreduce.go:107)	LEAQ	go.itab."".writeChan,"".Writer(SB), AX
+	0x003f 00063 (mr/mapreduce.go:107)	MOVQ	AX, (SP)
+	0x0043 00067 (mr/mapreduce.go:107)	LEAQ	""..autotmp_4+32(SP), AX
+	0x0048 00072 (mr/mapreduce.go:107)	MOVQ	AX, 8(SP)
+	0x004d 00077 (mr/mapreduce.go:107)	PCDATA	$1, $1
+	0x004d 00077 (mr/mapreduce.go:107)	CALL	runtime.convT2I(SB)
+	0x0052 00082 (mr/mapreduce.go:107)	MOVQ	"".reducer+64(SP), DX
+	0x0057 00087 (mr/mapreduce.go:107)	MOVQ	(DX), AX
+	0x005a 00090 (mr/mapreduce.go:107)	MOVQ	16(SP), CX
+	0x005f 00095 (mr/mapreduce.go:107)	MOVQ	24(SP), BX
+	0x0064 00100 (mr/mapreduce.go:107)	MOVQ	"".resChan+72(SP), SI
+	0x0069 00105 (mr/mapreduce.go:107)	MOVQ	SI, (SP)
+	0x006d 00109 (mr/mapreduce.go:107)	MOVQ	CX, 8(SP)
+	0x0072 00114 (mr/mapreduce.go:107)	MOVQ	BX, 16(SP)
+	0x0077 00119 (mr/mapreduce.go:107)	MOVQ	"".cancel+96(SP), CX
+	0x007c 00124 (mr/mapreduce.go:107)	MOVQ	CX, 24(SP)
+	0x0081 00129 (mr/mapreduce.go:107)	PCDATA	$1, $2
+	0x0081 00129 (mr/mapreduce.go:107)	CALL	AX
+	0x0083 00131 (mr/mapreduce.go:108)	MOVQ	48(SP), BP
+	0x0088 00136 (mr/mapreduce.go:108)	ADDQ	$56, SP
+	0x008c 00140 (mr/mapreduce.go:108)	RET
+	0x008d 00141 (mr/mapreduce.go:108)	NOP
+	0x008d 00141 (mr/mapreduce.go:106)	PCDATA	$1, $-1
+	0x008d 00141 (mr/mapreduce.go:106)	PCDATA	$0, $-2
+	0x008d 00141 (mr/mapreduce.go:106)	CALL	runtime.morestack_noctxt(SB)
+	0x0092 00146 (mr/mapreduce.go:106)	PCDATA	$0, $-1
+	0x0092 00146 (mr/mapreduce.go:106)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 77 48 83 ec 38 48 89 6c 24 30 48  H;a.vwH..8H.l$0H
+	0x0020 8d 6c 24 30 48 8b 44 24 50 48 89 44 24 20 48 8b  .l$0H.D$PH.D$ H.
+	0x0030 44 24 58 48 89 44 24 28 48 8d 05 00 00 00 00 48  D$XH.D$(H......H
+	0x0040 89 04 24 48 8d 44 24 20 48 89 44 24 08 e8 00 00  ..$H.D$ H.D$....
+	0x0050 00 00 48 8b 54 24 40 48 8b 02 48 8b 4c 24 10 48  ..H.T$@H..H.L$.H
+	0x0060 8b 5c 24 18 48 8b 74 24 48 48 89 34 24 48 89 4c  .\$.H.t$HH.4$H.L
+	0x0070 24 08 48 89 5c 24 10 48 8b 4c 24 60 48 89 4c 24  $.H.\$.H.L$`H.L$
+	0x0080 18 ff d0 48 8b 6c 24 30 48 83 c4 38 c3 e8 00 00  ...H.l$0H..8....
+	0x0090 00 00 e9 69 ff ff ff                             ...i...
+	rel 2+0 t=25 type."".writeChan+0
+	rel 12+4 t=17 TLS+0
+	rel 59+4 t=16 go.itab."".writeChan,"".Writer+0
+	rel 78+4 t=8 runtime.convT2I+0
+	rel 129+0 t=11 +0
+	rel 142+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce.func3.1 STEXT size=176 args=0x10 locals=0x58 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:118)	TEXT	"".MapReduce.func3.1(SB), ABIInternal, $88-16
+	0x0000 00000 (mr/mapreduce.go:118)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:118)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:118)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:118)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:118)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:118)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:118)	JLS	166
+	0x001a 00026 (mr/mapreduce.go:118)	PCDATA	$0, $-1
+	0x001a 00026 (mr/mapreduce.go:118)	SUBQ	$88, SP
+	0x001e 00030 (mr/mapreduce.go:118)	MOVQ	BP, 80(SP)
+	0x0023 00035 (mr/mapreduce.go:118)	LEAQ	80(SP), BP
+	0x0028 00040 (mr/mapreduce.go:118)	FUNCDATA	$0, gclocals·fdbf1f5761f6d17e8ae3f0aaecb6a3c5(SB)
+	0x0028 00040 (mr/mapreduce.go:118)	FUNCDATA	$1, gclocals·d8b28f51bb91e05d264803f0f600a200(SB)
+	0x0028 00040 (mr/mapreduce.go:118)	FUNCDATA	$2, "".MapReduce.func3.1.stkobj(SB)
+	0x0028 00040 (mr/mapreduce.go:119)	MOVQ	"".&wg+96(SP), AX
+	0x002d 00045 (mr/mapreduce.go:119)	MOVQ	AX, (SP)
+	0x0031 00049 (mr/mapreduce.go:119)	PCDATA	$1, $1
+	0x0031 00049 (mr/mapreduce.go:119)	CALL	sync.(*WaitGroup).Wait(SB)
+	0x0036 00054 (mr/mapreduce.go:120)	XORPS	X0, X0
+	0x0039 00057 (mr/mapreduce.go:120)	MOVUPS	X0, ""..autotmp_14+64(SP)
+	0x003e 00062 (mr/mapreduce.go:120)	LEAQ	type.string(SB), AX
+	0x0045 00069 (mr/mapreduce.go:120)	MOVQ	AX, ""..autotmp_14+64(SP)
+	0x004a 00074 (mr/mapreduce.go:120)	LEAQ	""..stmp_0(SB), AX
+	0x0051 00081 (mr/mapreduce.go:120)	MOVQ	AX, ""..autotmp_14+72(SP)
+	0x0056 00086 (<unknown line number>)	NOP
+	0x0056 00086 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), AX
+	0x005d 00093 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), CX
+	0x0064 00100 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, (SP)
+	0x0068 00104 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 8(SP)
+	0x006d 00109 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_14+64(SP), AX
+	0x0072 00114 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 16(SP)
+	0x0077 00119 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 24(SP)
+	0x0080 00128 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 32(SP)
+	0x0089 00137 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x008e 00142 (mr/mapreduce.go:121)	MOVQ	"".resChan+104(SP), AX
+	0x0093 00147 (mr/mapreduce.go:121)	MOVQ	AX, (SP)
+	0x0097 00151 (mr/mapreduce.go:121)	PCDATA	$1, $2
+	0x0097 00151 (mr/mapreduce.go:121)	CALL	runtime.closechan(SB)
+	0x009c 00156 (mr/mapreduce.go:122)	MOVQ	80(SP), BP
+	0x00a1 00161 (mr/mapreduce.go:122)	ADDQ	$88, SP
+	0x00a5 00165 (mr/mapreduce.go:122)	RET
+	0x00a6 00166 (mr/mapreduce.go:122)	NOP
+	0x00a6 00166 (mr/mapreduce.go:118)	PCDATA	$1, $-1
+	0x00a6 00166 (mr/mapreduce.go:118)	PCDATA	$0, $-2
+	0x00a6 00166 (mr/mapreduce.go:118)	CALL	runtime.morestack_noctxt(SB)
+	0x00ab 00171 (mr/mapreduce.go:118)	PCDATA	$0, $-1
+	0x00ab 00171 (mr/mapreduce.go:118)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 8c 00 00 00 48 83 ec 58 48 89  H;a.......H..XH.
+	0x0020 6c 24 50 48 8d 6c 24 50 48 8b 44 24 60 48 89 04  l$PH.l$PH.D$`H..
+	0x0030 24 e8 00 00 00 00 0f 57 c0 0f 11 44 24 40 48 8d  $......W...D$@H.
+	0x0040 05 00 00 00 00 48 89 44 24 40 48 8d 05 00 00 00  .....H.D$@H.....
+	0x0050 00 48 89 44 24 48 48 8b 05 00 00 00 00 48 8d 0d  .H.D$HH......H..
+	0x0060 00 00 00 00 48 89 0c 24 48 89 44 24 08 48 8d 44  ....H..$H.D$.H.D
+	0x0070 24 40 48 89 44 24 10 48 c7 44 24 18 01 00 00 00  $@H.D$.H.D$.....
+	0x0080 48 c7 44 24 20 01 00 00 00 e8 00 00 00 00 48 8b  H.D$ .........H.
+	0x0090 44 24 68 48 89 04 24 e8 00 00 00 00 48 8b 6c 24  D$hH..$.....H.l$
+	0x00a0 50 48 83 c4 58 c3 e8 00 00 00 00 e9 50 ff ff ff  PH..X.......P...
+	rel 3+0 t=25 type.string+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 12+4 t=17 TLS+0
+	rel 50+4 t=8 sync.(*WaitGroup).Wait+0
+	rel 65+4 t=16 type.string+0
+	rel 77+4 t=16 ""..stmp_0+0
+	rel 89+4 t=16 os.Stdout+0
+	rel 96+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 138+4 t=8 fmt.Fprintln+0
+	rel 152+4 t=8 runtime.closechan+0
+	rel 167+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce.func3.2.1 STEXT size=76 args=0x8 locals=0x18 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:139)	TEXT	"".MapReduce.func3.2.1(SB), ABIInternal, $24-8
+	0x0000 00000 (mr/mapreduce.go:139)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:139)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:139)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:139)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:139)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:139)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:139)	JLS	69
+	0x0016 00022 (mr/mapreduce.go:139)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:139)	SUBQ	$24, SP
+	0x001a 00026 (mr/mapreduce.go:139)	MOVQ	BP, 16(SP)
+	0x001f 00031 (mr/mapreduce.go:139)	LEAQ	16(SP), BP
+	0x0024 00036 (mr/mapreduce.go:139)	FUNCDATA	$0, gclocals·1a65e721a2ccc325b382662e7ffee780(SB)
+	0x0024 00036 (mr/mapreduce.go:139)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0024 00036 (<unknown line number>)	NOP
+	0x0024 00036 (mr/mapreduce.go:140)	MOVQ	"".&wg+32(SP), AX
+	0x0029 00041 ($GOROOT\src\sync\waitgroup.go:99)	MOVQ	AX, (SP)
+	0x002d 00045 ($GOROOT\src\sync\waitgroup.go:99)	MOVQ	$-1, 8(SP)
+	0x0036 00054 ($GOROOT\src\sync\waitgroup.go:99)	PCDATA	$1, $1
+	0x0036 00054 ($GOROOT\src\sync\waitgroup.go:99)	CALL	sync.(*WaitGroup).Add(SB)
+	0x003b 00059 (mr/mapreduce.go:140)	MOVQ	16(SP), BP
+	0x0040 00064 (mr/mapreduce.go:140)	ADDQ	$24, SP
+	0x0044 00068 (mr/mapreduce.go:140)	RET
+	0x0045 00069 (mr/mapreduce.go:140)	NOP
+	0x0045 00069 (mr/mapreduce.go:139)	PCDATA	$1, $-1
+	0x0045 00069 (mr/mapreduce.go:139)	PCDATA	$0, $-2
+	0x0045 00069 (mr/mapreduce.go:139)	CALL	runtime.morestack_noctxt(SB)
+	0x004a 00074 (mr/mapreduce.go:139)	PCDATA	$0, $-1
+	0x004a 00074 (mr/mapreduce.go:139)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 2f 48 83 ec 18 48 89 6c 24 10 48  H;a.v/H...H.l$.H
+	0x0020 8d 6c 24 10 48 8b 44 24 20 48 89 04 24 48 c7 44  .l$.H.D$ H..$H.D
+	0x0030 24 08 ff ff ff ff e8 00 00 00 00 48 8b 6c 24 10  $..........H.l$.
+	0x0040 48 83 c4 18 c3 e8 00 00 00 00 eb b4              H...........
+	rel 12+4 t=17 TLS+0
+	rel 55+4 t=8 sync.(*WaitGroup).Add+0
+	rel 70+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce.func3.2 STEXT size=234 args=0x38 locals=0x58 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:138)	TEXT	"".MapReduce.func3.2(SB), ABIInternal, $88-56
+	0x0000 00000 (mr/mapreduce.go:138)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:138)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:138)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:138)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:138)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:138)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:138)	JLS	224
+	0x001a 00026 (mr/mapreduce.go:138)	PCDATA	$0, $-1
+	0x001a 00026 (mr/mapreduce.go:138)	SUBQ	$88, SP
+	0x001e 00030 (mr/mapreduce.go:138)	MOVQ	BP, 80(SP)
+	0x0023 00035 (mr/mapreduce.go:138)	LEAQ	80(SP), BP
+	0x0028 00040 (mr/mapreduce.go:138)	XORPS	X0, X0
+	0x002b 00043 (mr/mapreduce.go:138)	MOVUPS	X0, 64(SP)
+	0x0030 00048 (mr/mapreduce.go:138)	FUNCDATA	$0, gclocals·48ccebd31b35596e9b1764e1af596b5c(SB)
+	0x0030 00048 (mr/mapreduce.go:138)	FUNCDATA	$1, gclocals·8a2feb6bc93afcf09840410b88f11446(SB)
+	0x0030 00048 (mr/mapreduce.go:138)	FUNCDATA	$2, "".MapReduce.func3.2.stkobj(SB)
+	0x0030 00048 (mr/mapreduce.go:138)	FUNCDATA	$4, "".MapReduce.func3.2.opendefer(SB)
+	0x0030 00048 (mr/mapreduce.go:138)	MOVB	$0, ""..autotmp_8+47(SP)
+	0x0035 00053 (mr/mapreduce.go:139)	LEAQ	"".MapReduce.func3.2.1·f(SB), AX
+	0x003c 00060 (mr/mapreduce.go:139)	MOVQ	AX, ""..autotmp_9+64(SP)
+	0x0041 00065 (mr/mapreduce.go:139)	MOVQ	"".&wg+96(SP), AX
+	0x0046 00070 (mr/mapreduce.go:139)	MOVQ	AX, ""..autotmp_10+72(SP)
+	0x004b 00075 (mr/mapreduce.go:139)	MOVB	$1, ""..autotmp_8+47(SP)
+	0x0050 00080 (mr/mapreduce.go:144)	MOVQ	"".execWrite+128(SP), AX
+	0x0058 00088 (mr/mapreduce.go:144)	MOVQ	AX, ""..autotmp_5+48(SP)
+	0x005d 00093 (mr/mapreduce.go:144)	MOVQ	"".execWrite+136(SP), AX
+	0x0065 00101 (mr/mapreduce.go:144)	MOVQ	AX, ""..autotmp_5+56(SP)
+	0x006a 00106 (mr/mapreduce.go:144)	LEAQ	go.itab."".writeChan,"".Writer(SB), AX
+	0x0071 00113 (mr/mapreduce.go:144)	MOVQ	AX, (SP)
+	0x0075 00117 (mr/mapreduce.go:144)	LEAQ	""..autotmp_5+48(SP), AX
+	0x007a 00122 (mr/mapreduce.go:144)	MOVQ	AX, 8(SP)
+	0x007f 00127 (mr/mapreduce.go:144)	PCDATA	$1, $1
+	0x007f 00127 (mr/mapreduce.go:144)	NOP
+	0x0080 00128 (mr/mapreduce.go:144)	CALL	runtime.convT2I(SB)
+	0x0085 00133 (mr/mapreduce.go:144)	MOVQ	"".mapper+104(SP), DX
+	0x008a 00138 (mr/mapreduce.go:144)	MOVQ	(DX), AX
+	0x008d 00141 (mr/mapreduce.go:144)	MOVQ	"".item+112(SP), CX
+	0x0092 00146 (mr/mapreduce.go:144)	MOVQ	CX, (SP)
+	0x0096 00150 (mr/mapreduce.go:144)	MOVQ	"".item+120(SP), CX
+	0x009b 00155 (mr/mapreduce.go:144)	MOVQ	CX, 8(SP)
+	0x00a0 00160 (mr/mapreduce.go:144)	MOVQ	"".cancel+144(SP), CX
+	0x00a8 00168 (mr/mapreduce.go:144)	MOVQ	CX, 32(SP)
+	0x00ad 00173 (mr/mapreduce.go:144)	PCDATA	$1, $2
+	0x00ad 00173 (mr/mapreduce.go:144)	CALL	AX
+	0x00af 00175 (mr/mapreduce.go:145)	MOVB	$0, ""..autotmp_8+47(SP)
+	0x00b4 00180 (mr/mapreduce.go:145)	MOVQ	""..autotmp_10+72(SP), AX
+	0x00b9 00185 (mr/mapreduce.go:145)	MOVQ	AX, (SP)
+	0x00bd 00189 (mr/mapreduce.go:145)	NOP
+	0x00c0 00192 (mr/mapreduce.go:145)	CALL	"".MapReduce.func3.2.1(SB)
+	0x00c5 00197 (mr/mapreduce.go:145)	MOVQ	80(SP), BP
+	0x00ca 00202 (mr/mapreduce.go:145)	ADDQ	$88, SP
+	0x00ce 00206 (mr/mapreduce.go:145)	RET
+	0x00cf 00207 (mr/mapreduce.go:145)	CALL	runtime.deferreturn(SB)
+	0x00d4 00212 (mr/mapreduce.go:145)	MOVQ	80(SP), BP
+	0x00d9 00217 (mr/mapreduce.go:145)	ADDQ	$88, SP
+	0x00dd 00221 (mr/mapreduce.go:145)	RET
+	0x00de 00222 (mr/mapreduce.go:145)	NOP
+	0x00de 00222 (mr/mapreduce.go:138)	PCDATA	$1, $-1
+	0x00de 00222 (mr/mapreduce.go:138)	PCDATA	$0, $-2
+	0x00de 00222 (mr/mapreduce.go:138)	NOP
+	0x00e0 00224 (mr/mapreduce.go:138)	CALL	runtime.morestack_noctxt(SB)
+	0x00e5 00229 (mr/mapreduce.go:138)	PCDATA	$0, $-1
+	0x00e5 00229 (mr/mapreduce.go:138)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 c6 00 00 00 48 83 ec 58 48 89  H;a.......H..XH.
+	0x0020 6c 24 50 48 8d 6c 24 50 0f 57 c0 0f 11 44 24 40  l$PH.l$P.W...D$@
+	0x0030 c6 44 24 2f 00 48 8d 05 00 00 00 00 48 89 44 24  .D$/.H......H.D$
+	0x0040 40 48 8b 44 24 60 48 89 44 24 48 c6 44 24 2f 01  @H.D$`H.D$H.D$/.
+	0x0050 48 8b 84 24 80 00 00 00 48 89 44 24 30 48 8b 84  H..$....H.D$0H..
+	0x0060 24 88 00 00 00 48 89 44 24 38 48 8d 05 00 00 00  $....H.D$8H.....
+	0x0070 00 48 89 04 24 48 8d 44 24 30 48 89 44 24 08 90  .H..$H.D$0H.D$..
+	0x0080 e8 00 00 00 00 48 8b 54 24 68 48 8b 02 48 8b 4c  .....H.T$hH..H.L
+	0x0090 24 70 48 89 0c 24 48 8b 4c 24 78 48 89 4c 24 08  $pH..$H.L$xH.L$.
+	0x00a0 48 8b 8c 24 90 00 00 00 48 89 4c 24 20 ff d0 c6  H..$....H.L$ ...
+	0x00b0 44 24 2f 00 48 8b 44 24 48 48 89 04 24 0f 1f 00  D$/.H.D$HH..$...
+	0x00c0 e8 00 00 00 00 48 8b 6c 24 50 48 83 c4 58 c3 e8  .....H.l$PH..X..
+	0x00d0 00 00 00 00 48 8b 6c 24 50 48 83 c4 58 c3 66 90  ....H.l$PH..X.f.
+	0x00e0 e8 00 00 00 00 e9 16 ff ff ff                    ..........
+	rel 3+0 t=25 type."".writeChan+0
+	rel 12+4 t=17 TLS+0
+	rel 56+4 t=16 "".MapReduce.func3.2.1·f+0
+	rel 109+4 t=16 go.itab."".writeChan,"".Writer+0
+	rel 129+4 t=8 runtime.convT2I+0
+	rel 173+0 t=11 +0
+	rel 193+4 t=8 "".MapReduce.func3.2.1+0
+	rel 208+4 t=8 runtime.deferreturn+0
+	rel 225+4 t=8 runtime.morestack_noctxt+0
+"".MapReduce.func3 STEXT size=761 args=0x38 locals=0xd8 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:116)	TEXT	"".MapReduce.func3(SB), ABIInternal, $216-56
+	0x0000 00000 (mr/mapreduce.go:116)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:116)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:116)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:116)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:116)	LEAQ	-88(SP), AX
+	0x0015 00021 (mr/mapreduce.go:116)	CMPQ	AX, 16(CX)
+	0x0019 00025 (mr/mapreduce.go:116)	PCDATA	$0, $-2
+	0x0019 00025 (mr/mapreduce.go:116)	JLS	751
+	0x001f 00031 (mr/mapreduce.go:116)	PCDATA	$0, $-1
+	0x001f 00031 (mr/mapreduce.go:116)	SUBQ	$216, SP
+	0x0026 00038 (mr/mapreduce.go:116)	MOVQ	BP, 208(SP)
+	0x002e 00046 (mr/mapreduce.go:116)	LEAQ	208(SP), BP
+	0x0036 00054 (mr/mapreduce.go:116)	XORPS	X0, X0
+	0x0039 00057 (mr/mapreduce.go:116)	MOVUPS	X0, 184(SP)
+	0x0041 00065 (mr/mapreduce.go:116)	MOVUPS	X0, 192(SP)
+	0x0049 00073 (mr/mapreduce.go:116)	FUNCDATA	$0, gclocals·2dbeed41c5f74a5014bb809a479e58d4(SB)
+	0x0049 00073 (mr/mapreduce.go:116)	FUNCDATA	$1, gclocals·e2d4d96c83b52d98a9bf4b96d15335e0(SB)
+	0x0049 00073 (mr/mapreduce.go:116)	FUNCDATA	$2, "".MapReduce.func3.stkobj(SB)
+	0x0049 00073 (mr/mapreduce.go:116)	FUNCDATA	$4, "".MapReduce.func3.opendefer(SB)
+	0x0049 00073 (mr/mapreduce.go:116)	MOVB	$0, ""..autotmp_37+79(SP)
+	0x004e 00078 (mr/mapreduce.go:117)	LEAQ	type.sync.WaitGroup(SB), AX
+	0x0055 00085 (mr/mapreduce.go:117)	MOVQ	AX, (SP)
+	0x0059 00089 (mr/mapreduce.go:117)	PCDATA	$1, $1
+	0x0059 00089 (mr/mapreduce.go:117)	CALL	runtime.newobject(SB)
+	0x005e 00094 (mr/mapreduce.go:117)	MOVQ	8(SP), AX
+	0x0063 00099 (mr/mapreduce.go:117)	MOVQ	AX, "".&wg+112(SP)
+	0x0068 00104 (mr/mapreduce.go:118)	LEAQ	"".MapReduce.func3.1·f(SB), CX
+	0x006f 00111 (mr/mapreduce.go:118)	MOVQ	CX, ""..autotmp_38+200(SP)
+	0x0077 00119 (mr/mapreduce.go:118)	MOVQ	AX, ""..autotmp_39+192(SP)
+	0x007f 00127 (mr/mapreduce.go:118)	MOVQ	"".resChan+224(SP), CX
+	0x0087 00135 (mr/mapreduce.go:118)	MOVQ	CX, ""..autotmp_40+184(SP)
+	0x008f 00143 (mr/mapreduce.go:118)	MOVB	$1, ""..autotmp_37+79(SP)
+	0x0094 00148 (mr/mapreduce.go:124)	LEAQ	type.chan struct {}(SB), CX
+	0x009b 00155 (mr/mapreduce.go:124)	MOVQ	CX, (SP)
+	0x009f 00159 (mr/mapreduce.go:124)	MOVQ	$16, 8(SP)
+	0x00a8 00168 (mr/mapreduce.go:124)	PCDATA	$1, $2
+	0x00a8 00168 (mr/mapreduce.go:124)	CALL	runtime.makechan(SB)
+	0x00ad 00173 (mr/mapreduce.go:124)	MOVQ	16(SP), AX
+	0x00b2 00178 (mr/mapreduce.go:124)	MOVQ	AX, "".pool+96(SP)
+	0x00b7 00183 (mr/mapreduce.go:125)	JMP	332
+	0x00bc 00188 (mr/mapreduce.go:132)	MOVQ	CX, "".item.data+104(SP)
+	0x00c1 00193 (mr/mapreduce.go:132)	MOVQ	AX, "".item.type+80(SP)
+	0x00c6 00198 (mr/mapreduce.go:137)	MOVQ	"".&wg+112(SP), AX
+	0x00cb 00203 (mr/mapreduce.go:137)	MOVQ	AX, (SP)
+	0x00cf 00207 (mr/mapreduce.go:137)	MOVQ	$1, 8(SP)
+	0x00d8 00216 (mr/mapreduce.go:137)	PCDATA	$1, $3
+	0x00d8 00216 (mr/mapreduce.go:137)	CALL	sync.(*WaitGroup).Add(SB)
+	0x00dd 00221 (mr/mapreduce.go:138)	MOVL	$56, (SP)
+	0x00e4 00228 (mr/mapreduce.go:138)	LEAQ	"".MapReduce.func3.2·f(SB), AX
+	0x00eb 00235 (mr/mapreduce.go:138)	MOVQ	AX, 8(SP)
+	0x00f0 00240 (mr/mapreduce.go:138)	MOVQ	"".&wg+112(SP), CX
+	0x00f5 00245 (mr/mapreduce.go:138)	MOVQ	CX, 16(SP)
+	0x00fa 00250 (mr/mapreduce.go:138)	MOVQ	"".mapper+248(SP), DX
+	0x0102 00258 (mr/mapreduce.go:138)	MOVQ	DX, 24(SP)
+	0x0107 00263 (mr/mapreduce.go:138)	MOVQ	"".item.type+80(SP), BX
+	0x010c 00268 (mr/mapreduce.go:138)	MOVQ	BX, 32(SP)
+	0x0111 00273 (mr/mapreduce.go:138)	MOVQ	"".item.data+104(SP), BX
+	0x0116 00278 (mr/mapreduce.go:138)	MOVQ	BX, 40(SP)
+	0x011b 00283 (mr/mapreduce.go:138)	MOVQ	"".execWrite+256(SP), BX
+	0x0123 00291 (mr/mapreduce.go:138)	MOVQ	BX, 48(SP)
+	0x0128 00296 (mr/mapreduce.go:138)	MOVQ	"".execWrite+264(SP), SI
+	0x0130 00304 (mr/mapreduce.go:138)	MOVQ	SI, 56(SP)
+	0x0135 00309 (mr/mapreduce.go:138)	MOVQ	"".cancel+272(SP), DI
+	0x013d 00317 (mr/mapreduce.go:138)	MOVQ	DI, 64(SP)
+	0x0142 00322 (mr/mapreduce.go:138)	PCDATA	$1, $4
+	0x0142 00322 (mr/mapreduce.go:138)	CALL	runtime.newproc(SB)
+	0x0147 00327 (mr/mapreduce.go:130)	MOVQ	"".pool+96(SP), AX
+	0x014c 00332 (mr/mapreduce.go:126)	XORPS	X0, X0
+	0x014f 00335 (mr/mapreduce.go:126)	MOVUPS	X0, ""..autotmp_25+152(SP)
+	0x0157 00343 (mr/mapreduce.go:126)	MOVUPS	X0, ""..autotmp_25+168(SP)
+	0x015f 00351 (mr/mapreduce.go:127)	MOVQ	"".done+232(SP), CX
+	0x0167 00359 (mr/mapreduce.go:127)	MOVQ	CX, ""..autotmp_25+168(SP)
+	0x016f 00367 (mr/mapreduce.go:130)	MOVQ	AX, ""..autotmp_25+152(SP)
+	0x0177 00375 (mr/mapreduce.go:130)	LEAQ	""..autotmp_19+79(SP), DX
+	0x017c 00380 (mr/mapreduce.go:130)	MOVQ	DX, ""..autotmp_25+160(SP)
+	0x0184 00388 (mr/mapreduce.go:126)	LEAQ	""..autotmp_25+152(SP), DX
+	0x018c 00396 (mr/mapreduce.go:126)	MOVQ	DX, (SP)
+	0x0190 00400 (mr/mapreduce.go:126)	LEAQ	""..autotmp_26+88(SP), DX
+	0x0195 00405 (mr/mapreduce.go:126)	MOVQ	DX, 8(SP)
+	0x019a 00410 (mr/mapreduce.go:126)	MOVQ	$0, 16(SP)
+	0x01a3 00419 (mr/mapreduce.go:126)	MOVQ	$1, 24(SP)
+	0x01ac 00428 (mr/mapreduce.go:126)	MOVQ	$1, 32(SP)
+	0x01b5 00437 (mr/mapreduce.go:126)	MOVB	$1, 40(SP)
+	0x01ba 00442 (mr/mapreduce.go:126)	CALL	runtime.selectgo(SB)
+	0x01bf 00447 (mr/mapreduce.go:126)	MOVQ	48(SP), AX
+	0x01c4 00452 (mr/mapreduce.go:130)	TESTQ	AX, AX
+	0x01c7 00455 (mr/mapreduce.go:130)	JNE	672
+	0x01cd 00461 (mr/mapreduce.go:132)	XORPS	X0, X0
+	0x01d0 00464 (mr/mapreduce.go:132)	MOVUPS	X0, ""..autotmp_20+136(SP)
+	0x01d8 00472 (mr/mapreduce.go:132)	MOVQ	"".source+240(SP), AX
+	0x01e0 00480 (mr/mapreduce.go:132)	MOVQ	AX, (SP)
+	0x01e4 00484 (mr/mapreduce.go:132)	LEAQ	""..autotmp_20+136(SP), CX
+	0x01ec 00492 (mr/mapreduce.go:132)	MOVQ	CX, 8(SP)
+	0x01f1 00497 (mr/mapreduce.go:132)	PCDATA	$1, $5
+	0x01f1 00497 (mr/mapreduce.go:132)	CALL	runtime.chanrecv2(SB)
+	0x01f6 00502 (mr/mapreduce.go:132)	MOVQ	""..autotmp_20+136(SP), AX
+	0x01fe 00510 (mr/mapreduce.go:132)	MOVQ	""..autotmp_20+144(SP), CX
+	0x0206 00518 (mr/mapreduce.go:132)	CMPB	16(SP), $0
+	0x020b 00523 (mr/mapreduce.go:133)	JNE	188
+	0x0211 00529 (mr/mapreduce.go:134)	XORPS	X0, X0
+	0x0214 00532 (mr/mapreduce.go:134)	MOVUPS	X0, ""..autotmp_34+120(SP)
+	0x0219 00537 (mr/mapreduce.go:134)	LEAQ	type.string(SB), AX
+	0x0220 00544 (mr/mapreduce.go:134)	MOVQ	AX, ""..autotmp_34+120(SP)
+	0x0225 00549 (mr/mapreduce.go:134)	LEAQ	""..stmp_1(SB), AX
+	0x022c 00556 (mr/mapreduce.go:134)	MOVQ	AX, ""..autotmp_34+128(SP)
+	0x0234 00564 (<unknown line number>)	NOP
+	0x0234 00564 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), AX
+	0x023b 00571 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), CX
+	0x0242 00578 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, (SP)
+	0x0246 00582 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 8(SP)
+	0x024b 00587 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_34+120(SP), AX
+	0x0250 00592 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 16(SP)
+	0x0255 00597 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 24(SP)
+	0x025e 00606 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 32(SP)
+	0x0267 00615 ($GOROOT\src\fmt\print.go:274)	PCDATA	$1, $6
+	0x0267 00615 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x026c 00620 (mr/mapreduce.go:135)	MOVB	$0, ""..autotmp_37+79(SP)
+	0x0271 00625 (mr/mapreduce.go:135)	MOVQ	""..autotmp_39+192(SP), AX
+	0x0279 00633 (mr/mapreduce.go:135)	MOVQ	""..autotmp_40+184(SP), CX
+	0x0281 00641 (mr/mapreduce.go:135)	MOVQ	AX, (SP)
+	0x0285 00645 (mr/mapreduce.go:135)	MOVQ	CX, 8(SP)
+	0x028a 00650 (mr/mapreduce.go:135)	CALL	"".MapReduce.func3.1(SB)
+	0x028f 00655 (mr/mapreduce.go:135)	MOVQ	208(SP), BP
+	0x0297 00663 (mr/mapreduce.go:135)	ADDQ	$216, SP
+	0x029e 00670 (mr/mapreduce.go:135)	RET
+	0x029f 00671 (mr/mapreduce.go:135)	NOP
+	0x02a0 00672 (mr/mapreduce.go:127)	CMPQ	AX, $1
+	0x02a4 00676 (mr/mapreduce.go:127)	JNE	729
+	0x02a6 00678 (mr/mapreduce.go:128)	MOVB	$0, ""..autotmp_37+79(SP)
+	0x02ab 00683 (mr/mapreduce.go:128)	MOVQ	""..autotmp_39+192(SP), AX
+	0x02b3 00691 (mr/mapreduce.go:128)	MOVQ	""..autotmp_40+184(SP), CX
+	0x02bb 00699 (mr/mapreduce.go:128)	MOVQ	AX, (SP)
+	0x02bf 00703 (mr/mapreduce.go:128)	MOVQ	CX, 8(SP)
+	0x02c4 00708 (mr/mapreduce.go:128)	CALL	"".MapReduce.func3.1(SB)
+	0x02c9 00713 (mr/mapreduce.go:128)	MOVQ	208(SP), BP
+	0x02d1 00721 (mr/mapreduce.go:128)	ADDQ	$216, SP
+	0x02d8 00728 (mr/mapreduce.go:128)	RET
+	0x02d9 00729 (mr/mapreduce.go:127)	PCDATA	$1, $-1
+	0x02d9 00729 (mr/mapreduce.go:127)	XCHGL	AX, AX
+	0x02da 00730 (mr/mapreduce.go:127)	PCDATA	$1, $6
+	0x02da 00730 (mr/mapreduce.go:127)	CALL	runtime.deferreturn(SB)
+	0x02df 00735 (mr/mapreduce.go:127)	MOVQ	208(SP), BP
+	0x02e7 00743 (mr/mapreduce.go:127)	ADDQ	$216, SP
+	0x02ee 00750 (mr/mapreduce.go:127)	RET
+	0x02ef 00751 (mr/mapreduce.go:127)	NOP
+	0x02ef 00751 (mr/mapreduce.go:116)	PCDATA	$1, $-1
+	0x02ef 00751 (mr/mapreduce.go:116)	PCDATA	$0, $-2
+	0x02ef 00751 (mr/mapreduce.go:116)	CALL	runtime.morestack_noctxt(SB)
+	0x02f4 00756 (mr/mapreduce.go:116)	PCDATA	$0, $-1
+	0x02f4 00756 (mr/mapreduce.go:116)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 8d 44 24 a8 48 3b 41 10 0f 86 d0 02 00 00 48  H.D$.H;A.......H
+	0x0020 81 ec d8 00 00 00 48 89 ac 24 d0 00 00 00 48 8d  ......H..$....H.
+	0x0030 ac 24 d0 00 00 00 0f 57 c0 0f 11 84 24 b8 00 00  .$.....W....$...
+	0x0040 00 0f 11 84 24 c0 00 00 00 c6 44 24 4f 00 48 8d  ....$.....D$O.H.
+	0x0050 05 00 00 00 00 48 89 04 24 e8 00 00 00 00 48 8b  .....H..$.....H.
+	0x0060 44 24 08 48 89 44 24 70 48 8d 0d 00 00 00 00 48  D$.H.D$pH......H
+	0x0070 89 8c 24 c8 00 00 00 48 89 84 24 c0 00 00 00 48  ..$....H..$....H
+	0x0080 8b 8c 24 e0 00 00 00 48 89 8c 24 b8 00 00 00 c6  ..$....H..$.....
+	0x0090 44 24 4f 01 48 8d 0d 00 00 00 00 48 89 0c 24 48  D$O.H......H..$H
+	0x00a0 c7 44 24 08 10 00 00 00 e8 00 00 00 00 48 8b 44  .D$..........H.D
+	0x00b0 24 10 48 89 44 24 60 e9 90 00 00 00 48 89 4c 24  $.H.D$`.....H.L$
+	0x00c0 68 48 89 44 24 50 48 8b 44 24 70 48 89 04 24 48  hH.D$PH.D$pH..$H
+	0x00d0 c7 44 24 08 01 00 00 00 e8 00 00 00 00 c7 04 24  .D$............$
+	0x00e0 38 00 00 00 48 8d 05 00 00 00 00 48 89 44 24 08  8...H......H.D$.
+	0x00f0 48 8b 4c 24 70 48 89 4c 24 10 48 8b 94 24 f8 00  H.L$pH.L$.H..$..
+	0x0100 00 00 48 89 54 24 18 48 8b 5c 24 50 48 89 5c 24  ..H.T$.H.\$PH.\$
+	0x0110 20 48 8b 5c 24 68 48 89 5c 24 28 48 8b 9c 24 00   H.\$hH.\$(H..$.
+	0x0120 01 00 00 48 89 5c 24 30 48 8b b4 24 08 01 00 00  ...H.\$0H..$....
+	0x0130 48 89 74 24 38 48 8b bc 24 10 01 00 00 48 89 7c  H.t$8H..$....H.|
+	0x0140 24 40 e8 00 00 00 00 48 8b 44 24 60 0f 57 c0 0f  $@.....H.D$`.W..
+	0x0150 11 84 24 98 00 00 00 0f 11 84 24 a8 00 00 00 48  ..$.......$....H
+	0x0160 8b 8c 24 e8 00 00 00 48 89 8c 24 a8 00 00 00 48  ..$....H..$....H
+	0x0170 89 84 24 98 00 00 00 48 8d 54 24 4f 48 89 94 24  ..$....H.T$OH..$
+	0x0180 a0 00 00 00 48 8d 94 24 98 00 00 00 48 89 14 24  ....H..$....H..$
+	0x0190 48 8d 54 24 58 48 89 54 24 08 48 c7 44 24 10 00  H.T$XH.T$.H.D$..
+	0x01a0 00 00 00 48 c7 44 24 18 01 00 00 00 48 c7 44 24  ...H.D$.....H.D$
+	0x01b0 20 01 00 00 00 c6 44 24 28 01 e8 00 00 00 00 48   .....D$(......H
+	0x01c0 8b 44 24 30 48 85 c0 0f 85 d3 00 00 00 0f 57 c0  .D$0H.........W.
+	0x01d0 0f 11 84 24 88 00 00 00 48 8b 84 24 f0 00 00 00  ...$....H..$....
+	0x01e0 48 89 04 24 48 8d 8c 24 88 00 00 00 48 89 4c 24  H..$H..$....H.L$
+	0x01f0 08 e8 00 00 00 00 48 8b 84 24 88 00 00 00 48 8b  ......H..$....H.
+	0x0200 8c 24 90 00 00 00 80 7c 24 10 00 0f 85 ab fe ff  .$.....|$.......
+	0x0210 ff 0f 57 c0 0f 11 44 24 78 48 8d 05 00 00 00 00  ..W...D$xH......
+	0x0220 48 89 44 24 78 48 8d 05 00 00 00 00 48 89 84 24  H.D$xH......H..$
+	0x0230 80 00 00 00 48 8b 05 00 00 00 00 48 8d 0d 00 00  ....H......H....
+	0x0240 00 00 48 89 0c 24 48 89 44 24 08 48 8d 44 24 78  ..H..$H.D$.H.D$x
+	0x0250 48 89 44 24 10 48 c7 44 24 18 01 00 00 00 48 c7  H.D$.H.D$.....H.
+	0x0260 44 24 20 01 00 00 00 e8 00 00 00 00 c6 44 24 4f  D$ ..........D$O
+	0x0270 00 48 8b 84 24 c0 00 00 00 48 8b 8c 24 b8 00 00  .H..$....H..$...
+	0x0280 00 48 89 04 24 48 89 4c 24 08 e8 00 00 00 00 48  .H..$H.L$......H
+	0x0290 8b ac 24 d0 00 00 00 48 81 c4 d8 00 00 00 c3 90  ..$....H........
+	0x02a0 48 83 f8 01 75 33 c6 44 24 4f 00 48 8b 84 24 c0  H...u3.D$O.H..$.
+	0x02b0 00 00 00 48 8b 8c 24 b8 00 00 00 48 89 04 24 48  ...H..$....H..$H
+	0x02c0 89 4c 24 08 e8 00 00 00 00 48 8b ac 24 d0 00 00  .L$......H..$...
+	0x02d0 00 48 81 c4 d8 00 00 00 c3 90 e8 00 00 00 00 48  .H.............H
+	0x02e0 8b ac 24 d0 00 00 00 48 81 c4 d8 00 00 00 c3 e8  ..$....H........
+	0x02f0 00 00 00 00 e9 07 fd ff ff                       .........
+	rel 3+0 t=25 type.string+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 12+4 t=17 TLS+0
+	rel 81+4 t=16 type.sync.WaitGroup+0
+	rel 90+4 t=8 runtime.newobject+0
+	rel 107+4 t=16 "".MapReduce.func3.1·f+0
+	rel 151+4 t=16 type.chan struct {}+0
+	rel 169+4 t=8 runtime.makechan+0
+	rel 217+4 t=8 sync.(*WaitGroup).Add+0
+	rel 231+4 t=16 "".MapReduce.func3.2·f+0
+	rel 323+4 t=8 runtime.newproc+0
+	rel 443+4 t=8 runtime.selectgo+0
+	rel 498+4 t=8 runtime.chanrecv2+0
+	rel 540+4 t=16 type.string+0
+	rel 552+4 t=16 ""..stmp_1+0
+	rel 567+4 t=16 os.Stdout+0
+	rel 574+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 616+4 t=8 fmt.Fprintln+0
+	rel 651+4 t=8 "".MapReduce.func3.1+0
+	rel 709+4 t=8 "".MapReduce.func3.1+0
+	rel 731+4 t=8 runtime.deferreturn+0
+	rel 752+4 t=8 runtime.morestack_noctxt+0
+"".main.func1 STEXT size=171 args=0x8 locals=0x40 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:174)	TEXT	"".main.func1(SB), NEEDCTXT|ABIInternal, $64-8
+	0x0000 00000 (mr/mapreduce.go:174)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:174)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:174)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:174)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:174)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:174)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:174)	JLS	161
+	0x001a 00026 (mr/mapreduce.go:174)	PCDATA	$0, $-1
+	0x001a 00026 (mr/mapreduce.go:174)	SUBQ	$64, SP
+	0x001e 00030 (mr/mapreduce.go:174)	MOVQ	BP, 56(SP)
+	0x0023 00035 (mr/mapreduce.go:174)	LEAQ	56(SP), BP
+	0x0028 00040 (mr/mapreduce.go:174)	FUNCDATA	$0, gclocals·c7c4fc7b12f6707ea74acf7400192967(SB)
+	0x0028 00040 (mr/mapreduce.go:174)	FUNCDATA	$1, gclocals·47a67f4fb109a79e4380e4f8459439e0(SB)
+	0x0028 00040 (mr/mapreduce.go:174)	FUNCDATA	$2, "".main.func1.stkobj(SB)
+	0x0028 00040 (mr/mapreduce.go:175)	MOVQ	8(DX), AX
+	0x002c 00044 (mr/mapreduce.go:175)	MOVQ	AX, ""..autotmp_8+32(SP)
+	0x0031 00049 (mr/mapreduce.go:175)	MOVQ	16(DX), CX
+	0x0035 00053 (mr/mapreduce.go:175)	MOVQ	CX, ""..autotmp_9+16(SP)
+	0x003a 00058 (mr/mapreduce.go:175)	XORL	DX, DX
+	0x003c 00060 (mr/mapreduce.go:175)	JMP	145
+	0x003e 00062 (mr/mapreduce.go:175)	MOVQ	DX, ""..autotmp_10+24(SP)
+	0x0043 00067 (mr/mapreduce.go:175)	MOVQ	(AX)(DX*8), CX
+	0x0047 00071 (mr/mapreduce.go:176)	MOVQ	CX, (SP)
+	0x004b 00075 (mr/mapreduce.go:176)	PCDATA	$1, $1
+	0x004b 00075 (mr/mapreduce.go:176)	CALL	runtime.convT64(SB)
+	0x0050 00080 (mr/mapreduce.go:176)	MOVQ	8(SP), AX
+	0x0055 00085 (mr/mapreduce.go:176)	LEAQ	type.int(SB), CX
+	0x005c 00092 (mr/mapreduce.go:176)	MOVQ	CX, ""..autotmp_4+40(SP)
+	0x0061 00097 (mr/mapreduce.go:176)	MOVQ	AX, ""..autotmp_4+48(SP)
+	0x0066 00102 (mr/mapreduce.go:176)	MOVQ	"".source+72(SP), AX
+	0x006b 00107 (mr/mapreduce.go:176)	MOVQ	AX, (SP)
+	0x006f 00111 (mr/mapreduce.go:176)	LEAQ	""..autotmp_4+40(SP), DX
+	0x0074 00116 (mr/mapreduce.go:176)	MOVQ	DX, 8(SP)
+	0x0079 00121 (mr/mapreduce.go:176)	CALL	runtime.chansend1(SB)
+	0x007e 00126 (mr/mapreduce.go:175)	MOVQ	""..autotmp_10+24(SP), AX
+	0x0083 00131 (mr/mapreduce.go:175)	LEAQ	1(AX), DX
+	0x0087 00135 (mr/mapreduce.go:175)	MOVQ	""..autotmp_8+32(SP), AX
+	0x008c 00140 (mr/mapreduce.go:175)	MOVQ	""..autotmp_9+16(SP), CX
+	0x0091 00145 (mr/mapreduce.go:175)	CMPQ	DX, CX
+	0x0094 00148 (mr/mapreduce.go:175)	JLT	62
+	0x0096 00150 (mr/mapreduce.go:175)	PCDATA	$1, $-1
+	0x0096 00150 (mr/mapreduce.go:175)	MOVQ	56(SP), BP
+	0x009b 00155 (mr/mapreduce.go:175)	ADDQ	$64, SP
+	0x009f 00159 (mr/mapreduce.go:175)	NOP
+	0x00a0 00160 (mr/mapreduce.go:175)	RET
+	0x00a1 00161 (mr/mapreduce.go:175)	NOP
+	0x00a1 00161 (mr/mapreduce.go:174)	PCDATA	$1, $-1
+	0x00a1 00161 (mr/mapreduce.go:174)	PCDATA	$0, $-2
+	0x00a1 00161 (mr/mapreduce.go:174)	CALL	runtime.morestack(SB)
+	0x00a6 00166 (mr/mapreduce.go:174)	PCDATA	$0, $-1
+	0x00a6 00166 (mr/mapreduce.go:174)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 87 00 00 00 48 83 ec 40 48 89  H;a.......H..@H.
+	0x0020 6c 24 38 48 8d 6c 24 38 48 8b 42 08 48 89 44 24  l$8H.l$8H.B.H.D$
+	0x0030 20 48 8b 4a 10 48 89 4c 24 10 31 d2 eb 53 48 89   H.J.H.L$.1..SH.
+	0x0040 54 24 18 48 8b 0c d0 48 89 0c 24 e8 00 00 00 00  T$.H...H..$.....
+	0x0050 48 8b 44 24 08 48 8d 0d 00 00 00 00 48 89 4c 24  H.D$.H......H.L$
+	0x0060 28 48 89 44 24 30 48 8b 44 24 48 48 89 04 24 48  (H.D$0H.D$HH..$H
+	0x0070 8d 54 24 28 48 89 54 24 08 e8 00 00 00 00 48 8b  .T$(H.T$......H.
+	0x0080 44 24 18 48 8d 50 01 48 8b 44 24 20 48 8b 4c 24  D$.H.P.H.D$ H.L$
+	0x0090 10 48 39 ca 7c a8 48 8b 6c 24 38 48 83 c4 40 90  .H9.|.H.l$8H..@.
+	0x00a0 c3 e8 00 00 00 00 e9 55 ff ff ff                 .......U...
+	rel 3+0 t=25 type.int+0
+	rel 12+4 t=17 TLS+0
+	rel 76+4 t=8 runtime.convT64+0
+	rel 88+4 t=16 type.int+0
+	rel 122+4 t=8 runtime.chansend1+0
+	rel 162+4 t=8 runtime.morestack+0
+"".main.func2 STEXT size=464 args=0x28 locals=0x90 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:180)	TEXT	"".main.func2(SB), ABIInternal, $144-40
+	0x0000 00000 (mr/mapreduce.go:180)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:180)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:180)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:180)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:180)	LEAQ	-16(SP), AX
+	0x0015 00021 (mr/mapreduce.go:180)	CMPQ	AX, 16(CX)
+	0x0019 00025 (mr/mapreduce.go:180)	PCDATA	$0, $-2
+	0x0019 00025 (mr/mapreduce.go:180)	JLS	454
+	0x001f 00031 (mr/mapreduce.go:180)	PCDATA	$0, $-1
+	0x001f 00031 (mr/mapreduce.go:180)	SUBQ	$144, SP
+	0x0026 00038 (mr/mapreduce.go:180)	MOVQ	BP, 136(SP)
+	0x002e 00046 (mr/mapreduce.go:180)	LEAQ	136(SP), BP
+	0x0036 00054 (mr/mapreduce.go:180)	FUNCDATA	$0, gclocals·1866054f687c0de72485b10542561f3b(SB)
+	0x0036 00054 (mr/mapreduce.go:180)	FUNCDATA	$1, gclocals·ac8cd607ed442299e85766e8b7240668(SB)
+	0x0036 00054 (mr/mapreduce.go:180)	FUNCDATA	$2, "".main.func2.stkobj(SB)
+	0x0036 00054 (mr/mapreduce.go:181)	XORPS	X0, X0
+	0x0039 00057 (mr/mapreduce.go:181)	MOVUPS	X0, ""..autotmp_23+104(SP)
+	0x003e 00062 (mr/mapreduce.go:181)	MOVUPS	X0, ""..autotmp_23+120(SP)
+	0x0043 00067 (mr/mapreduce.go:181)	LEAQ	type.string(SB), AX
+	0x004a 00074 (mr/mapreduce.go:181)	MOVQ	AX, ""..autotmp_23+104(SP)
+	0x004f 00079 (mr/mapreduce.go:181)	LEAQ	""..stmp_2(SB), CX
+	0x0056 00086 (mr/mapreduce.go:181)	MOVQ	CX, ""..autotmp_23+112(SP)
+	0x005b 00091 (mr/mapreduce.go:181)	MOVQ	"".item+152(SP), CX
+	0x0063 00099 (mr/mapreduce.go:181)	MOVQ	CX, ""..autotmp_23+120(SP)
+	0x0068 00104 (mr/mapreduce.go:181)	MOVQ	"".item+160(SP), CX
+	0x0070 00112 (mr/mapreduce.go:181)	MOVQ	CX, ""..autotmp_23+128(SP)
+	0x0078 00120 (<unknown line number>)	NOP
+	0x0078 00120 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), CX
+	0x007f 00127 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), DX
+	0x0086 00134 ($GOROOT\src\fmt\print.go:274)	MOVQ	DX, (SP)
+	0x008a 00138 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, 8(SP)
+	0x008f 00143 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_23+104(SP), CX
+	0x0094 00148 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, 16(SP)
+	0x0099 00153 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 24(SP)
+	0x00a2 00162 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 32(SP)
+	0x00ab 00171 ($GOROOT\src\fmt\print.go:274)	PCDATA	$1, $0
+	0x00ab 00171 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x00b0 00176 (mr/mapreduce.go:182)	LEAQ	type.int(SB), AX
+	0x00b7 00183 (mr/mapreduce.go:182)	MOVQ	"".item+152(SP), CX
+	0x00bf 00191 (mr/mapreduce.go:182)	NOP
+	0x00c0 00192 (mr/mapreduce.go:182)	CMPQ	AX, CX
+	0x00c3 00195 (mr/mapreduce.go:182)	JNE	422
+	0x00c9 00201 (mr/mapreduce.go:182)	MOVQ	"".item+160(SP), AX
+	0x00d1 00209 (mr/mapreduce.go:182)	MOVQ	(AX), AX
+	0x00d4 00212 (mr/mapreduce.go:182)	INCQ	AX
+	0x00d7 00215 (mr/mapreduce.go:182)	MOVQ	AX, "".tmp+64(SP)
+	0x00dc 00220 (mr/mapreduce.go:183)	MOVQ	AX, (SP)
+	0x00e0 00224 (mr/mapreduce.go:183)	PCDATA	$1, $1
+	0x00e0 00224 (mr/mapreduce.go:183)	CALL	runtime.convT64(SB)
+	0x00e5 00229 (mr/mapreduce.go:183)	MOVQ	8(SP), AX
+	0x00ea 00234 (mr/mapreduce.go:183)	XORPS	X0, X0
+	0x00ed 00237 (mr/mapreduce.go:183)	MOVUPS	X0, ""..autotmp_29+72(SP)
+	0x00f2 00242 (mr/mapreduce.go:183)	MOVUPS	X0, ""..autotmp_29+88(SP)
+	0x00f7 00247 (mr/mapreduce.go:183)	LEAQ	type.string(SB), CX
+	0x00fe 00254 (mr/mapreduce.go:183)	MOVQ	CX, ""..autotmp_29+72(SP)
+	0x0103 00259 (mr/mapreduce.go:183)	LEAQ	""..stmp_3(SB), CX
+	0x010a 00266 (mr/mapreduce.go:183)	MOVQ	CX, ""..autotmp_29+80(SP)
+	0x010f 00271 (mr/mapreduce.go:183)	LEAQ	type.int(SB), CX
+	0x0116 00278 (mr/mapreduce.go:183)	MOVQ	CX, ""..autotmp_29+88(SP)
+	0x011b 00283 (mr/mapreduce.go:183)	MOVQ	AX, ""..autotmp_29+96(SP)
+	0x0120 00288 (<unknown line number>)	NOP
+	0x0120 00288 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), AX
+	0x0127 00295 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), DX
+	0x012e 00302 ($GOROOT\src\fmt\print.go:274)	MOVQ	DX, (SP)
+	0x0132 00306 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 8(SP)
+	0x0137 00311 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_29+72(SP), AX
+	0x013c 00316 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 16(SP)
+	0x0141 00321 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 24(SP)
+	0x014a 00330 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 32(SP)
+	0x0153 00339 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x0158 00344 (mr/mapreduce.go:184)	MOVQ	"".tmp+64(SP), AX
+	0x015d 00349 (mr/mapreduce.go:184)	MOVQ	AX, (SP)
+	0x0161 00353 (mr/mapreduce.go:184)	CALL	runtime.convT64(SB)
+	0x0166 00358 (mr/mapreduce.go:184)	MOVQ	8(SP), AX
+	0x016b 00363 (mr/mapreduce.go:184)	MOVQ	"".writer+168(SP), CX
+	0x0173 00371 (mr/mapreduce.go:184)	MOVQ	24(CX), CX
+	0x0177 00375 (mr/mapreduce.go:184)	MOVQ	"".writer+176(SP), DX
+	0x017f 00383 (mr/mapreduce.go:184)	MOVQ	DX, (SP)
+	0x0183 00387 (mr/mapreduce.go:184)	LEAQ	type.int(SB), DX
+	0x018a 00394 (mr/mapreduce.go:184)	MOVQ	DX, 8(SP)
+	0x018f 00399 (mr/mapreduce.go:184)	MOVQ	AX, 16(SP)
+	0x0194 00404 (mr/mapreduce.go:184)	PCDATA	$1, $2
+	0x0194 00404 (mr/mapreduce.go:184)	CALL	CX
+	0x0196 00406 (mr/mapreduce.go:185)	MOVQ	136(SP), BP
+	0x019e 00414 (mr/mapreduce.go:185)	ADDQ	$144, SP
+	0x01a5 00421 (mr/mapreduce.go:185)	RET
+	0x01a6 00422 (mr/mapreduce.go:182)	MOVQ	CX, (SP)
+	0x01aa 00426 (mr/mapreduce.go:182)	MOVQ	AX, 8(SP)
+	0x01af 00431 (mr/mapreduce.go:182)	LEAQ	type.interface {}(SB), AX
+	0x01b6 00438 (mr/mapreduce.go:182)	MOVQ	AX, 16(SP)
+	0x01bb 00443 (mr/mapreduce.go:182)	NOP
+	0x01c0 00448 (mr/mapreduce.go:182)	CALL	runtime.panicdottypeE(SB)
+	0x01c5 00453 (mr/mapreduce.go:182)	XCHGL	AX, AX
+	0x01c6 00454 (mr/mapreduce.go:182)	NOP
+	0x01c6 00454 (mr/mapreduce.go:180)	PCDATA	$1, $-1
+	0x01c6 00454 (mr/mapreduce.go:180)	PCDATA	$0, $-2
+	0x01c6 00454 (mr/mapreduce.go:180)	CALL	runtime.morestack_noctxt(SB)
+	0x01cb 00459 (mr/mapreduce.go:180)	PCDATA	$0, $-1
+	0x01cb 00459 (mr/mapreduce.go:180)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 8d 44 24 f0 48 3b 41 10 0f 86 a7 01 00 00 48  H.D$.H;A.......H
+	0x0020 81 ec 90 00 00 00 48 89 ac 24 88 00 00 00 48 8d  ......H..$....H.
+	0x0030 ac 24 88 00 00 00 0f 57 c0 0f 11 44 24 68 0f 11  .$.....W...D$h..
+	0x0040 44 24 78 48 8d 05 00 00 00 00 48 89 44 24 68 48  D$xH......H.D$hH
+	0x0050 8d 0d 00 00 00 00 48 89 4c 24 70 48 8b 8c 24 98  ......H.L$pH..$.
+	0x0060 00 00 00 48 89 4c 24 78 48 8b 8c 24 a0 00 00 00  ...H.L$xH..$....
+	0x0070 48 89 8c 24 80 00 00 00 48 8b 0d 00 00 00 00 48  H..$....H......H
+	0x0080 8d 15 00 00 00 00 48 89 14 24 48 89 4c 24 08 48  ......H..$H.L$.H
+	0x0090 8d 4c 24 68 48 89 4c 24 10 48 c7 44 24 18 02 00  .L$hH.L$.H.D$...
+	0x00a0 00 00 48 c7 44 24 20 02 00 00 00 e8 00 00 00 00  ..H.D$ .........
+	0x00b0 48 8d 05 00 00 00 00 48 8b 8c 24 98 00 00 00 90  H......H..$.....
+	0x00c0 48 39 c8 0f 85 dd 00 00 00 48 8b 84 24 a0 00 00  H9.......H..$...
+	0x00d0 00 48 8b 00 48 ff c0 48 89 44 24 40 48 89 04 24  .H..H..H.D$@H..$
+	0x00e0 e8 00 00 00 00 48 8b 44 24 08 0f 57 c0 0f 11 44  .....H.D$..W...D
+	0x00f0 24 48 0f 11 44 24 58 48 8d 0d 00 00 00 00 48 89  $H..D$XH......H.
+	0x0100 4c 24 48 48 8d 0d 00 00 00 00 48 89 4c 24 50 48  L$HH......H.L$PH
+	0x0110 8d 0d 00 00 00 00 48 89 4c 24 58 48 89 44 24 60  ......H.L$XH.D$`
+	0x0120 48 8b 05 00 00 00 00 48 8d 15 00 00 00 00 48 89  H......H......H.
+	0x0130 14 24 48 89 44 24 08 48 8d 44 24 48 48 89 44 24  .$H.D$.H.D$HH.D$
+	0x0140 10 48 c7 44 24 18 02 00 00 00 48 c7 44 24 20 02  .H.D$.....H.D$ .
+	0x0150 00 00 00 e8 00 00 00 00 48 8b 44 24 40 48 89 04  ........H.D$@H..
+	0x0160 24 e8 00 00 00 00 48 8b 44 24 08 48 8b 8c 24 a8  $.....H.D$.H..$.
+	0x0170 00 00 00 48 8b 49 18 48 8b 94 24 b0 00 00 00 48  ...H.I.H..$....H
+	0x0180 89 14 24 48 8d 15 00 00 00 00 48 89 54 24 08 48  ..$H......H.T$.H
+	0x0190 89 44 24 10 ff d1 48 8b ac 24 88 00 00 00 48 81  .D$...H..$....H.
+	0x01a0 c4 90 00 00 00 c3 48 89 0c 24 48 89 44 24 08 48  ......H..$H.D$.H
+	0x01b0 8d 05 00 00 00 00 48 89 44 24 10 0f 1f 44 00 00  ......H.D$...D..
+	0x01c0 e8 00 00 00 00 90 e8 00 00 00 00 e9 30 fe ff ff  ............0...
+	rel 3+0 t=25 type.int+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 3+0 t=25 type.string+0
+	rel 3+0 t=25 type.int+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 3+0 t=26 type."".Writer+96
+	rel 3+0 t=25 type.string+0
+	rel 12+4 t=17 TLS+0
+	rel 70+4 t=16 type.string+0
+	rel 82+4 t=16 ""..stmp_2+0
+	rel 123+4 t=16 os.Stdout+0
+	rel 130+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 172+4 t=8 fmt.Fprintln+0
+	rel 179+4 t=16 type.int+0
+	rel 225+4 t=8 runtime.convT64+0
+	rel 250+4 t=16 type.string+0
+	rel 262+4 t=16 ""..stmp_3+0
+	rel 274+4 t=16 type.int+0
+	rel 291+4 t=16 os.Stdout+0
+	rel 298+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 340+4 t=8 fmt.Fprintln+0
+	rel 354+4 t=8 runtime.convT64+0
+	rel 390+4 t=16 type.int+0
+	rel 404+0 t=11 +0
+	rel 434+4 t=16 type.interface {}+0
+	rel 449+4 t=8 runtime.panicdottypeE+0
+	rel 455+4 t=8 runtime.morestack_noctxt+0
+"".main.func3 STEXT size=699 args=0x20 locals=0xa8 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:187)	TEXT	"".main.func3(SB), ABIInternal, $168-32
+	0x0000 00000 (mr/mapreduce.go:187)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:187)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:187)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:187)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:187)	LEAQ	-40(SP), AX
+	0x0015 00021 (mr/mapreduce.go:187)	CMPQ	AX, 16(CX)
+	0x0019 00025 (mr/mapreduce.go:187)	PCDATA	$0, $-2
+	0x0019 00025 (mr/mapreduce.go:187)	JLS	689
+	0x001f 00031 (mr/mapreduce.go:187)	PCDATA	$0, $-1
+	0x001f 00031 (mr/mapreduce.go:187)	SUBQ	$168, SP
+	0x0026 00038 (mr/mapreduce.go:187)	MOVQ	BP, 160(SP)
+	0x002e 00046 (mr/mapreduce.go:187)	LEAQ	160(SP), BP
+	0x0036 00054 (mr/mapreduce.go:187)	FUNCDATA	$0, gclocals·240a4d98471ab8529b764210f22e1f35(SB)
+	0x0036 00054 (mr/mapreduce.go:187)	FUNCDATA	$1, gclocals·d66b2e14a0a0d82ad7d594a26eea6867(SB)
+	0x0036 00054 (mr/mapreduce.go:187)	FUNCDATA	$2, "".main.func3.stkobj(SB)
+	0x0036 00054 (mr/mapreduce.go:188)	MOVQ	"".writer+184(SP), AX
+	0x003e 00062 (mr/mapreduce.go:188)	NOP
+	0x0040 00064 (mr/mapreduce.go:188)	TESTQ	AX, AX
+	0x0043 00067 (mr/mapreduce.go:188)	JEQ	73
+	0x0045 00069 (mr/mapreduce.go:188)	MOVQ	8(AX), AX
+	0x0049 00073 (mr/mapreduce.go:188)	XORPS	X0, X0
+	0x004c 00076 (mr/mapreduce.go:188)	MOVUPS	X0, ""..autotmp_27+128(SP)
+	0x0054 00084 (mr/mapreduce.go:188)	MOVUPS	X0, ""..autotmp_27+144(SP)
+	0x005c 00092 (mr/mapreduce.go:188)	LEAQ	type.string(SB), CX
+	0x0063 00099 (mr/mapreduce.go:188)	MOVQ	CX, ""..autotmp_27+128(SP)
+	0x006b 00107 (mr/mapreduce.go:188)	LEAQ	""..stmp_4(SB), CX
+	0x0072 00114 (mr/mapreduce.go:188)	MOVQ	CX, ""..autotmp_27+136(SP)
+	0x007a 00122 (mr/mapreduce.go:188)	MOVQ	AX, ""..autotmp_27+144(SP)
+	0x0082 00130 (mr/mapreduce.go:188)	MOVQ	"".writer+192(SP), AX
+	0x008a 00138 (mr/mapreduce.go:188)	MOVQ	AX, ""..autotmp_27+152(SP)
+	0x0092 00146 (<unknown line number>)	NOP
+	0x0092 00146 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), CX
+	0x0099 00153 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), DX
+	0x00a0 00160 ($GOROOT\src\fmt\print.go:274)	MOVQ	DX, (SP)
+	0x00a4 00164 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, 8(SP)
+	0x00a9 00169 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_27+128(SP), CX
+	0x00b1 00177 ($GOROOT\src\fmt\print.go:274)	MOVQ	CX, 16(SP)
+	0x00b6 00182 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 24(SP)
+	0x00bf 00191 ($GOROOT\src\fmt\print.go:274)	MOVQ	$2, 32(SP)
+	0x00c8 00200 ($GOROOT\src\fmt\print.go:274)	PCDATA	$1, $0
+	0x00c8 00200 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x00cd 00205 (mr/mapreduce.go:190)	XORPS	X0, X0
+	0x00d0 00208 (mr/mapreduce.go:190)	MOVUPS	X0, ""..autotmp_28+112(SP)
+	0x00d5 00213 (mr/mapreduce.go:190)	XORL	AX, AX
+	0x00d7 00215 (mr/mapreduce.go:190)	XORL	CX, CX
+	0x00d9 00217 (mr/mapreduce.go:190)	XORL	DX, DX
+	0x00db 00219 (mr/mapreduce.go:190)	JMP	234
+	0x00dd 00221 (mr/mapreduce.go:191)	MOVQ	CX, (DI)(AX*8)
+	0x00e1 00225 (mr/mapreduce.go:191)	MOVQ	SI, AX
+	0x00e4 00228 (mr/mapreduce.go:191)	MOVQ	BX, CX
+	0x00e7 00231 (mr/mapreduce.go:191)	MOVQ	DI, DX
+	0x00ea 00234 (mr/mapreduce.go:191)	MOVQ	AX, "".uid.cap+72(SP)
+	0x00ef 00239 (mr/mapreduce.go:191)	MOVQ	CX, "".uid.len+64(SP)
+	0x00f4 00244 (mr/mapreduce.go:191)	MOVQ	DX, "".uid.ptr+88(SP)
+	0x00f9 00249 (mr/mapreduce.go:190)	MOVQ	"".pipe+176(SP), BX
+	0x0101 00257 (mr/mapreduce.go:190)	MOVQ	BX, (SP)
+	0x0105 00261 (mr/mapreduce.go:190)	LEAQ	""..autotmp_28+112(SP), SI
+	0x010a 00266 (mr/mapreduce.go:190)	MOVQ	SI, 8(SP)
+	0x010f 00271 (mr/mapreduce.go:190)	PCDATA	$1, $1
+	0x010f 00271 (mr/mapreduce.go:190)	CALL	runtime.chanrecv2(SB)
+	0x0114 00276 (mr/mapreduce.go:190)	CMPB	16(SP), $0
+	0x0119 00281 (mr/mapreduce.go:190)	JEQ	444
+	0x011f 00287 (mr/mapreduce.go:190)	MOVQ	""..autotmp_28+112(SP), AX
+	0x0124 00292 (mr/mapreduce.go:190)	MOVQ	""..autotmp_28+120(SP), CX
+	0x0129 00297 (mr/mapreduce.go:190)	XORPS	X0, X0
+	0x012c 00300 (mr/mapreduce.go:190)	MOVUPS	X0, ""..autotmp_28+112(SP)
+	0x0131 00305 (mr/mapreduce.go:191)	LEAQ	type.int(SB), DX
+	0x0138 00312 (mr/mapreduce.go:191)	NOP
+	0x0140 00320 (mr/mapreduce.go:191)	CMPQ	DX, AX
+	0x0143 00323 (mr/mapreduce.go:191)	JNE	662
+	0x0149 00329 (mr/mapreduce.go:191)	MOVQ	"".uid.len+64(SP), AX
+	0x014e 00334 (mr/mapreduce.go:191)	LEAQ	1(AX), BX
+	0x0152 00338 (mr/mapreduce.go:191)	MOVQ	(CX), CX
+	0x0155 00341 (mr/mapreduce.go:191)	MOVQ	"".uid.cap+72(SP), SI
+	0x015a 00346 (mr/mapreduce.go:191)	CMPQ	SI, BX
+	0x015d 00349 (mr/mapreduce.go:191)	JCS	361
+	0x015f 00351 (mr/mapreduce.go:191)	MOVQ	"".uid.ptr+88(SP), DI
+	0x0164 00356 (mr/mapreduce.go:191)	JMP	221
+	0x0169 00361 (mr/mapreduce.go:191)	MOVQ	CX, ""..autotmp_53+80(SP)
+	0x016e 00366 (mr/mapreduce.go:191)	MOVQ	DX, (SP)
+	0x0172 00370 (mr/mapreduce.go:191)	MOVQ	"".uid.ptr+88(SP), CX
+	0x0177 00375 (mr/mapreduce.go:191)	MOVQ	CX, 8(SP)
+	0x017c 00380 (mr/mapreduce.go:191)	MOVQ	AX, 16(SP)
+	0x0181 00385 (mr/mapreduce.go:191)	MOVQ	SI, 24(SP)
+	0x0186 00390 (mr/mapreduce.go:191)	MOVQ	BX, 32(SP)
+	0x018b 00395 (mr/mapreduce.go:191)	PCDATA	$1, $2
+	0x018b 00395 (mr/mapreduce.go:191)	CALL	runtime.growslice(SB)
+	0x0190 00400 (mr/mapreduce.go:191)	MOVQ	40(SP), DI
+	0x0195 00405 (mr/mapreduce.go:191)	MOVQ	48(SP), AX
+	0x019a 00410 (mr/mapreduce.go:191)	MOVQ	56(SP), SI
+	0x019f 00415 (mr/mapreduce.go:191)	LEAQ	1(AX), BX
+	0x01a3 00419 (mr/mapreduce.go:191)	MOVQ	"".uid.len+64(SP), AX
+	0x01a8 00424 (mr/mapreduce.go:191)	MOVQ	""..autotmp_53+80(SP), CX
+	0x01ad 00429 (mr/mapreduce.go:191)	LEAQ	type.int(SB), DX
+	0x01b4 00436 (mr/mapreduce.go:190)	XORPS	X0, X0
+	0x01b7 00439 (mr/mapreduce.go:191)	JMP	221
+	0x01bc 00444 (mr/mapreduce.go:193)	MOVQ	"".uid.ptr+88(SP), AX
+	0x01c1 00449 (mr/mapreduce.go:193)	MOVQ	AX, (SP)
+	0x01c5 00453 (mr/mapreduce.go:193)	MOVQ	"".uid.len+64(SP), CX
+	0x01ca 00458 (mr/mapreduce.go:193)	MOVQ	CX, 8(SP)
+	0x01cf 00463 (mr/mapreduce.go:193)	MOVQ	"".uid.cap+72(SP), DX
+	0x01d4 00468 (mr/mapreduce.go:193)	MOVQ	DX, 16(SP)
+	0x01d9 00473 (mr/mapreduce.go:193)	PCDATA	$1, $3
+	0x01d9 00473 (mr/mapreduce.go:193)	CALL	runtime.convTslice(SB)
+	0x01de 00478 (mr/mapreduce.go:193)	MOVQ	24(SP), AX
+	0x01e3 00483 (mr/mapreduce.go:193)	XORPS	X0, X0
+	0x01e6 00486 (mr/mapreduce.go:193)	MOVUPS	X0, ""..autotmp_34+96(SP)
+	0x01eb 00491 (mr/mapreduce.go:193)	LEAQ	type.[]int(SB), CX
+	0x01f2 00498 (mr/mapreduce.go:193)	MOVQ	CX, ""..autotmp_34+96(SP)
+	0x01f7 00503 (mr/mapreduce.go:193)	MOVQ	AX, ""..autotmp_34+104(SP)
+	0x01fc 00508 (<unknown line number>)	NOP
+	0x01fc 00508 ($GOROOT\src\fmt\print.go:274)	MOVQ	os.Stdout(SB), AX
+	0x0203 00515 ($GOROOT\src\fmt\print.go:274)	LEAQ	go.itab.*os.File,io.Writer(SB), DX
+	0x020a 00522 ($GOROOT\src\fmt\print.go:274)	MOVQ	DX, (SP)
+	0x020e 00526 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 8(SP)
+	0x0213 00531 ($GOROOT\src\fmt\print.go:274)	LEAQ	""..autotmp_34+96(SP), AX
+	0x0218 00536 ($GOROOT\src\fmt\print.go:274)	MOVQ	AX, 16(SP)
+	0x021d 00541 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 24(SP)
+	0x0226 00550 ($GOROOT\src\fmt\print.go:274)	MOVQ	$1, 32(SP)
+	0x022f 00559 ($GOROOT\src\fmt\print.go:274)	CALL	fmt.Fprintln(SB)
+	0x0234 00564 (mr/mapreduce.go:194)	MOVQ	"".uid.ptr+88(SP), AX
+	0x0239 00569 (mr/mapreduce.go:194)	MOVQ	AX, (SP)
+	0x023d 00573 (mr/mapreduce.go:194)	MOVQ	"".uid.len+64(SP), AX
+	0x0242 00578 (mr/mapreduce.go:194)	MOVQ	AX, 8(SP)
+	0x0247 00583 (mr/mapreduce.go:194)	MOVQ	"".uid.cap+72(SP), AX
+	0x024c 00588 (mr/mapreduce.go:194)	MOVQ	AX, 16(SP)
+	0x0251 00593 (mr/mapreduce.go:194)	PCDATA	$1, $4
+	0x0251 00593 (mr/mapreduce.go:194)	CALL	runtime.convTslice(SB)
+	0x0256 00598 (mr/mapreduce.go:194)	MOVQ	"".writer+184(SP), AX
+	0x025e 00606 (mr/mapreduce.go:194)	MOVQ	24(AX), AX
+	0x0262 00610 (mr/mapreduce.go:194)	MOVQ	24(SP), CX
+	0x0267 00615 (mr/mapreduce.go:194)	MOVQ	"".writer+192(SP), DX
+	0x026f 00623 (mr/mapreduce.go:194)	MOVQ	DX, (SP)
+	0x0273 00627 (mr/mapreduce.go:194)	LEAQ	type.[]int(SB), DX
+	0x027a 00634 (mr/mapreduce.go:194)	MOVQ	DX, 8(SP)
+	0x027f 00639 (mr/mapreduce.go:194)	MOVQ	CX, 16(SP)
+	0x0284 00644 (mr/mapreduce.go:194)	PCDATA	$1, $5
+	0x0284 00644 (mr/mapreduce.go:194)	CALL	AX
+	0x0286 00646 (mr/mapreduce.go:195)	MOVQ	160(SP), BP
+	0x028e 00654 (mr/mapreduce.go:195)	ADDQ	$168, SP
+	0x0295 00661 (mr/mapreduce.go:195)	RET
+	0x0296 00662 (mr/mapreduce.go:191)	MOVQ	AX, (SP)
+	0x029a 00666 (mr/mapreduce.go:191)	MOVQ	DX, 8(SP)
+	0x029f 00671 (mr/mapreduce.go:191)	LEAQ	type.interface {}(SB), AX
+	0x02a6 00678 (mr/mapreduce.go:191)	MOVQ	AX, 16(SP)
+	0x02ab 00683 (mr/mapreduce.go:191)	CALL	runtime.panicdottypeE(SB)
+	0x02b0 00688 (mr/mapreduce.go:191)	XCHGL	AX, AX
+	0x02b1 00689 (mr/mapreduce.go:191)	NOP
+	0x02b1 00689 (mr/mapreduce.go:187)	PCDATA	$1, $-1
+	0x02b1 00689 (mr/mapreduce.go:187)	PCDATA	$0, $-2
+	0x02b1 00689 (mr/mapreduce.go:187)	CALL	runtime.morestack_noctxt(SB)
+	0x02b6 00694 (mr/mapreduce.go:187)	PCDATA	$0, $-1
+	0x02b6 00694 (mr/mapreduce.go:187)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 8d 44 24 d8 48 3b 41 10 0f 86 92 02 00 00 48  H.D$.H;A.......H
+	0x0020 81 ec a8 00 00 00 48 89 ac 24 a0 00 00 00 48 8d  ......H..$....H.
+	0x0030 ac 24 a0 00 00 00 48 8b 84 24 b8 00 00 00 66 90  .$....H..$....f.
+	0x0040 48 85 c0 74 04 48 8b 40 08 0f 57 c0 0f 11 84 24  H..t.H.@..W....$
+	0x0050 80 00 00 00 0f 11 84 24 90 00 00 00 48 8d 0d 00  .......$....H...
+	0x0060 00 00 00 48 89 8c 24 80 00 00 00 48 8d 0d 00 00  ...H..$....H....
+	0x0070 00 00 48 89 8c 24 88 00 00 00 48 89 84 24 90 00  ..H..$....H..$..
+	0x0080 00 00 48 8b 84 24 c0 00 00 00 48 89 84 24 98 00  ..H..$....H..$..
+	0x0090 00 00 48 8b 0d 00 00 00 00 48 8d 15 00 00 00 00  ..H......H......
+	0x00a0 48 89 14 24 48 89 4c 24 08 48 8d 8c 24 80 00 00  H..$H.L$.H..$...
+	0x00b0 00 48 89 4c 24 10 48 c7 44 24 18 02 00 00 00 48  .H.L$.H.D$.....H
+	0x00c0 c7 44 24 20 02 00 00 00 e8 00 00 00 00 0f 57 c0  .D$ ..........W.
+	0x00d0 0f 11 44 24 70 31 c0 31 c9 31 d2 eb 0d 48 89 0c  ..D$p1.1.1...H..
+	0x00e0 c7 48 89 f0 48 89 d9 48 89 fa 48 89 44 24 48 48  .H..H..H..H.D$HH
+	0x00f0 89 4c 24 40 48 89 54 24 58 48 8b 9c 24 b0 00 00  .L$@H.T$XH..$...
+	0x0100 00 48 89 1c 24 48 8d 74 24 70 48 89 74 24 08 e8  .H..$H.t$pH.t$..
+	0x0110 00 00 00 00 80 7c 24 10 00 0f 84 9d 00 00 00 48  .....|$........H
+	0x0120 8b 44 24 70 48 8b 4c 24 78 0f 57 c0 0f 11 44 24  .D$pH.L$x.W...D$
+	0x0130 70 48 8d 15 00 00 00 00 0f 1f 84 00 00 00 00 00  pH..............
+	0x0140 48 39 c2 0f 85 4d 01 00 00 48 8b 44 24 40 48 8d  H9...M...H.D$@H.
+	0x0150 58 01 48 8b 09 48 8b 74 24 48 48 39 de 72 0a 48  X.H..H.t$HH9.r.H
+	0x0160 8b 7c 24 58 e9 74 ff ff ff 48 89 4c 24 50 48 89  .|$X.t...H.L$PH.
+	0x0170 14 24 48 8b 4c 24 58 48 89 4c 24 08 48 89 44 24  .$H.L$XH.L$.H.D$
+	0x0180 10 48 89 74 24 18 48 89 5c 24 20 e8 00 00 00 00  .H.t$.H.\$ .....
+	0x0190 48 8b 7c 24 28 48 8b 44 24 30 48 8b 74 24 38 48  H.|$(H.D$0H.t$8H
+	0x01a0 8d 58 01 48 8b 44 24 40 48 8b 4c 24 50 48 8d 15  .X.H.D$@H.L$PH..
+	0x01b0 00 00 00 00 0f 57 c0 e9 21 ff ff ff 48 8b 44 24  .....W..!...H.D$
+	0x01c0 58 48 89 04 24 48 8b 4c 24 40 48 89 4c 24 08 48  XH..$H.L$@H.L$.H
+	0x01d0 8b 54 24 48 48 89 54 24 10 e8 00 00 00 00 48 8b  .T$HH.T$......H.
+	0x01e0 44 24 18 0f 57 c0 0f 11 44 24 60 48 8d 0d 00 00  D$..W...D$`H....
+	0x01f0 00 00 48 89 4c 24 60 48 89 44 24 68 48 8b 05 00  ..H.L$`H.D$hH...
+	0x0200 00 00 00 48 8d 15 00 00 00 00 48 89 14 24 48 89  ...H......H..$H.
+	0x0210 44 24 08 48 8d 44 24 60 48 89 44 24 10 48 c7 44  D$.H.D$`H.D$.H.D
+	0x0220 24 18 01 00 00 00 48 c7 44 24 20 01 00 00 00 e8  $.....H.D$ .....
+	0x0230 00 00 00 00 48 8b 44 24 58 48 89 04 24 48 8b 44  ....H.D$XH..$H.D
+	0x0240 24 40 48 89 44 24 08 48 8b 44 24 48 48 89 44 24  $@H.D$.H.D$HH.D$
+	0x0250 10 e8 00 00 00 00 48 8b 84 24 b8 00 00 00 48 8b  ......H..$....H.
+	0x0260 40 18 48 8b 4c 24 18 48 8b 94 24 c0 00 00 00 48  @.H.L$.H..$....H
+	0x0270 89 14 24 48 8d 15 00 00 00 00 48 89 54 24 08 48  ..$H......H.T$.H
+	0x0280 89 4c 24 10 ff d0 48 8b ac 24 a0 00 00 00 48 81  .L$...H..$....H.
+	0x0290 c4 a8 00 00 00 c3 48 89 04 24 48 89 54 24 08 48  ......H..$H.T$.H
+	0x02a0 8d 05 00 00 00 00 48 89 44 24 10 e8 00 00 00 00  ......H.D$......
+	0x02b0 90 e8 00 00 00 00 e9 45 fd ff ff                 .......E...
+	rel 3+0 t=25 type.string+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 3+0 t=25 type.[]int+0
+	rel 3+0 t=25 type.*os.File+0
+	rel 3+0 t=26 type."".Writer+96
+	rel 3+0 t=25 type.[]int+0
+	rel 12+4 t=17 TLS+0
+	rel 95+4 t=16 type.string+0
+	rel 110+4 t=16 ""..stmp_4+0
+	rel 149+4 t=16 os.Stdout+0
+	rel 156+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 201+4 t=8 fmt.Fprintln+0
+	rel 272+4 t=8 runtime.chanrecv2+0
+	rel 308+4 t=16 type.int+0
+	rel 396+4 t=8 runtime.growslice+0
+	rel 432+4 t=16 type.int+0
+	rel 474+4 t=8 runtime.convTslice+0
+	rel 494+4 t=16 type.[]int+0
+	rel 511+4 t=16 os.Stdout+0
+	rel 518+4 t=16 go.itab.*os.File,io.Writer+0
+	rel 560+4 t=8 fmt.Fprintln+0
+	rel 594+4 t=8 runtime.convTslice+0
+	rel 630+4 t=16 type.[]int+0
+	rel 644+0 t=11 +0
+	rel 674+4 t=16 type.interface {}+0
+	rel 684+4 t=8 runtime.panicdottypeE+0
+	rel 690+4 t=8 runtime.morestack_noctxt+0
+"".init STEXT size=140 args=0x0 locals=0x18 funcid=0x0
+	0x0000 00000 (mr/mapreduce.go:20)	TEXT	"".init(SB), ABIInternal, $24-0
+	0x0000 00000 (mr/mapreduce.go:20)	MOVQ	TLS, CX
+	0x0009 00009 (mr/mapreduce.go:20)	PCDATA	$0, $-2
+	0x0009 00009 (mr/mapreduce.go:20)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (mr/mapreduce.go:20)	PCDATA	$0, $-1
+	0x0010 00016 (mr/mapreduce.go:20)	CMPQ	SP, 16(CX)
+	0x0014 00020 (mr/mapreduce.go:20)	PCDATA	$0, $-2
+	0x0014 00020 (mr/mapreduce.go:20)	JLS	130
+	0x0016 00022 (mr/mapreduce.go:20)	PCDATA	$0, $-1
+	0x0016 00022 (mr/mapreduce.go:20)	SUBQ	$24, SP
+	0x001a 00026 (mr/mapreduce.go:20)	MOVQ	BP, 16(SP)
+	0x001f 00031 (mr/mapreduce.go:20)	LEAQ	16(SP), BP
+	0x0024 00036 (mr/mapreduce.go:20)	FUNCDATA	$0, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+	0x0024 00036 (mr/mapreduce.go:20)	FUNCDATA	$1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+	0x0024 00036 (<unknown line number>)	NOP
+	0x0024 00036 (mr/mapreduce.go:20)	LEAQ	type.errors.errorString(SB), AX
+	0x002b 00043 ($GOROOT\src\errors\errors.go:59)	MOVQ	AX, (SP)
+	0x002f 00047 ($GOROOT\src\errors\errors.go:59)	PCDATA	$1, $0
+	0x002f 00047 ($GOROOT\src\errors\errors.go:59)	CALL	runtime.newobject(SB)
+	0x0034 00052 ($GOROOT\src\errors\errors.go:59)	MOVQ	8(SP), AX
+	0x0039 00057 ($GOROOT\src\errors\errors.go:59)	MOVQ	$25, 8(AX)
+	0x0041 00065 ($GOROOT\src\errors\errors.go:59)	LEAQ	go.string."reduce end with nil error"(SB), CX
+	0x0048 00072 ($GOROOT\src\errors\errors.go:59)	MOVQ	CX, (AX)
+	0x004b 00075 (mr/mapreduce.go:20)	LEAQ	go.itab.*errors.errorString,error(SB), CX
+	0x0052 00082 (mr/mapreduce.go:20)	MOVQ	CX, "".cancelWithNil(SB)
+	0x0059 00089 (mr/mapreduce.go:20)	PCDATA	$0, $-2
+	0x0059 00089 (mr/mapreduce.go:20)	CMPL	runtime.writeBarrier(SB), $0
+	0x0060 00096 (mr/mapreduce.go:20)	JNE	115
+	0x0062 00098 (mr/mapreduce.go:20)	MOVQ	AX, "".cancelWithNil+8(SB)
+	0x0069 00105 (mr/mapreduce.go:20)	PCDATA	$0, $-1
+	0x0069 00105 (mr/mapreduce.go:20)	PCDATA	$1, $-1
+	0x0069 00105 (mr/mapreduce.go:20)	MOVQ	16(SP), BP
+	0x006e 00110 (mr/mapreduce.go:20)	ADDQ	$24, SP
+	0x0072 00114 (mr/mapreduce.go:20)	RET
+	0x0073 00115 (mr/mapreduce.go:20)	PCDATA	$0, $-2
+	0x0073 00115 (mr/mapreduce.go:20)	LEAQ	"".cancelWithNil+8(SB), DI
+	0x007a 00122 (mr/mapreduce.go:20)	CALL	runtime.gcWriteBarrier(SB)
+	0x007f 00127 (mr/mapreduce.go:20)	NOP
+	0x0080 00128 (mr/mapreduce.go:20)	JMP	105
+	0x0082 00130 (mr/mapreduce.go:20)	NOP
+	0x0082 00130 (mr/mapreduce.go:20)	PCDATA	$1, $-1
+	0x0082 00130 (mr/mapreduce.go:20)	PCDATA	$0, $-2
+	0x0082 00130 (mr/mapreduce.go:20)	CALL	runtime.morestack_noctxt(SB)
+	0x0087 00135 (mr/mapreduce.go:20)	PCDATA	$0, $-1
+	0x0087 00135 (mr/mapreduce.go:20)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 6c 48 83 ec 18 48 89 6c 24 10 48  H;a.vlH...H.l$.H
+	0x0020 8d 6c 24 10 48 8d 05 00 00 00 00 48 89 04 24 e8  .l$.H......H..$.
+	0x0030 00 00 00 00 48 8b 44 24 08 48 c7 40 08 19 00 00  ....H.D$.H.@....
+	0x0040 00 48 8d 0d 00 00 00 00 48 89 08 48 8d 0d 00 00  .H......H..H....
+	0x0050 00 00 48 89 0d 00 00 00 00 83 3d 00 00 00 00 00  ..H.......=.....
+	0x0060 75 11 48 89 05 00 00 00 00 48 8b 6c 24 10 48 83  u.H......H.l$.H.
+	0x0070 c4 18 c3 48 8d 3d 00 00 00 00 e8 00 00 00 00 90  ...H.=..........
+	0x0080 eb e7 e8 00 00 00 00 e9 74 ff ff ff              ........t...
+	rel 2+0 t=25 type.*errors.errorString+0
+	rel 12+4 t=17 TLS+0
+	rel 39+4 t=16 type.errors.errorString+0
+	rel 48+4 t=8 runtime.newobject+0
+	rel 68+4 t=16 go.string."reduce end with nil error"+0
+	rel 78+4 t=16 go.itab.*errors.errorString,error+0
+	rel 85+4 t=16 "".cancelWithNil+0
+	rel 91+4 t=16 runtime.writeBarrier+-1
+	rel 101+4 t=16 "".cancelWithNil+8
+	rel 118+4 t=16 "".cancelWithNil+8
+	rel 123+4 t=8 runtime.gcWriteBarrier+0
+	rel 131+4 t=8 runtime.morestack_noctxt+0
+os.(*File).close STEXT dupok nosplit size=26 args=0x18 locals=0x0 funcid=0x0
+	0x0000 00000 (<autogenerated>:1)	TEXT	os.(*File).close(SB), DUPOK|NOSPLIT|ABIInternal, $0-24
+	0x0000 00000 (<autogenerated>:1)	FUNCDATA	$0, gclocals·e6397a44f8e1b6e77d0f200b4fba5269(SB)
+	0x0000 00000 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0000 00000 (<autogenerated>:1)	MOVQ	""..this+8(SP), AX
+	0x0005 00005 (<autogenerated>:1)	MOVQ	(AX), AX
+	0x0008 00008 (<autogenerated>:1)	MOVQ	AX, ""..this+8(SP)
+	0x000d 00013 (<autogenerated>:1)	XORPS	X0, X0
+	0x0010 00016 (<autogenerated>:1)	MOVUPS	X0, "".~r0+16(SP)
+	0x0015 00021 (<autogenerated>:1)	JMP	os.(*file).close(SB)
+	0x0000 48 8b 44 24 08 48 8b 00 48 89 44 24 08 0f 57 c0  H.D$.H..H.D$..W.
+	0x0010 0f 11 44 24 10 e9 00 00 00 00                    ..D$......
+	rel 22+4 t=8 os.(*file).close+0
+os.(*File).isdir STEXT dupok nosplit size=23 args=0x10 locals=0x0 funcid=0x0
+	0x0000 00000 (<autogenerated>:1)	TEXT	os.(*File).isdir(SB), DUPOK|NOSPLIT|ABIInternal, $0-16
+	0x0000 00000 (<autogenerated>:1)	FUNCDATA	$0, gclocals·1a65e721a2ccc325b382662e7ffee780(SB)
+	0x0000 00000 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0000 00000 (<autogenerated>:1)	MOVQ	""..this+8(SP), AX
+	0x0005 00005 (<autogenerated>:1)	MOVQ	(AX), AX
+	0x0008 00008 (<autogenerated>:1)	MOVQ	AX, ""..this+8(SP)
+	0x000d 00013 (<autogenerated>:1)	MOVB	$0, "".~r0+16(SP)
+	0x0012 00018 (<autogenerated>:1)	JMP	os.(*file).isdir(SB)
+	0x0000 48 8b 44 24 08 48 8b 00 48 89 44 24 08 c6 44 24  H.D$.H..H.D$..D$
+	0x0010 10 00 e9 00 00 00 00                             .......
+	rel 19+4 t=8 os.(*file).isdir+0
+go.builtin.error.Error STEXT dupok size=119 args=0x20 locals=0x20 funcid=0x16
+	0x0000 00000 (<autogenerated>:1)	TEXT	go.builtin.error.Error(SB), DUPOK|WRAPPER|ABIInternal, $32-32
+	0x0000 00000 (<autogenerated>:1)	MOVQ	TLS, CX
+	0x0009 00009 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0009 00009 (<autogenerated>:1)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0010 00016 (<autogenerated>:1)	CMPQ	SP, 16(CX)
+	0x0014 00020 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0014 00020 (<autogenerated>:1)	JLS	97
+	0x0016 00022 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0016 00022 (<autogenerated>:1)	SUBQ	$32, SP
+	0x001a 00026 (<autogenerated>:1)	MOVQ	BP, 24(SP)
+	0x001f 00031 (<autogenerated>:1)	LEAQ	24(SP), BP
+	0x0024 00036 (<autogenerated>:1)	MOVQ	32(CX), BX
+	0x0028 00040 (<autogenerated>:1)	TESTQ	BX, BX
+	0x002b 00043 (<autogenerated>:1)	JNE	104
+	0x002d 00045 (<autogenerated>:1)	NOP
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$0, gclocals·abb2c5050fe821353449583ee1559325(SB)
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x002d 00045 (<autogenerated>:1)	MOVQ	""..this+40(SP), AX
+	0x0032 00050 (<autogenerated>:1)	MOVQ	""..this+48(SP), CX
+	0x0037 00055 (<autogenerated>:1)	MOVQ	24(AX), AX
+	0x003b 00059 (<autogenerated>:1)	MOVQ	CX, (SP)
+	0x003f 00063 (<autogenerated>:1)	PCDATA	$1, $1
+	0x003f 00063 (<autogenerated>:1)	NOP
+	0x0040 00064 (<autogenerated>:1)	CALL	AX
+	0x0042 00066 (<autogenerated>:1)	MOVQ	8(SP), AX
+	0x0047 00071 (<autogenerated>:1)	MOVQ	16(SP), CX
+	0x004c 00076 (<autogenerated>:1)	MOVQ	AX, "".~r0+56(SP)
+	0x0051 00081 (<autogenerated>:1)	MOVQ	CX, "".~r0+64(SP)
+	0x0056 00086 (<autogenerated>:1)	MOVQ	24(SP), BP
+	0x005b 00091 (<autogenerated>:1)	ADDQ	$32, SP
+	0x005f 00095 (<autogenerated>:1)	NOP
+	0x0060 00096 (<autogenerated>:1)	RET
+	0x0061 00097 (<autogenerated>:1)	NOP
+	0x0061 00097 (<autogenerated>:1)	PCDATA	$1, $-1
+	0x0061 00097 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0061 00097 (<autogenerated>:1)	CALL	runtime.morestack_noctxt(SB)
+	0x0066 00102 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0066 00102 (<autogenerated>:1)	JMP	0
+	0x0068 00104 (<autogenerated>:1)	LEAQ	40(SP), DI
+	0x006d 00109 (<autogenerated>:1)	CMPQ	(BX), DI
+	0x0070 00112 (<autogenerated>:1)	JNE	45
+	0x0072 00114 (<autogenerated>:1)	MOVQ	SP, (BX)
+	0x0075 00117 (<autogenerated>:1)	JMP	45
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 4b 48 83 ec 20 48 89 6c 24 18 48  H;a.vKH.. H.l$.H
+	0x0020 8d 6c 24 18 48 8b 59 20 48 85 db 75 3b 48 8b 44  .l$.H.Y H..u;H.D
+	0x0030 24 28 48 8b 4c 24 30 48 8b 40 18 48 89 0c 24 90  $(H.L$0H.@.H..$.
+	0x0040 ff d0 48 8b 44 24 08 48 8b 4c 24 10 48 89 44 24  ..H.D$.H.L$.H.D$
+	0x0050 38 48 89 4c 24 40 48 8b 6c 24 18 48 83 c4 20 90  8H.L$@H.l$.H.. .
+	0x0060 c3 e8 00 00 00 00 eb 98 48 8d 7c 24 28 48 39 3b  ........H.|$(H9;
+	0x0070 75 bb 48 89 23 eb b6                             u.H.#..
+	rel 2+0 t=26 type.error+96
+	rel 12+4 t=17 TLS+0
+	rel 64+0 t=11 +0
+	rel 98+4 t=8 runtime.morestack_noctxt+0
+type..eq.[2]interface {} STEXT dupok size=173 args=0x18 locals=0x30 funcid=0x0
+	0x0000 00000 (<autogenerated>:1)	TEXT	type..eq.[2]interface {}(SB), DUPOK|ABIInternal, $48-24
+	0x0000 00000 (<autogenerated>:1)	MOVQ	TLS, CX
+	0x0009 00009 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0009 00009 (<autogenerated>:1)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0010 00016 (<autogenerated>:1)	CMPQ	SP, 16(CX)
+	0x0014 00020 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0014 00020 (<autogenerated>:1)	JLS	163
+	0x001a 00026 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x001a 00026 (<autogenerated>:1)	SUBQ	$48, SP
+	0x001e 00030 (<autogenerated>:1)	MOVQ	BP, 40(SP)
+	0x0023 00035 (<autogenerated>:1)	LEAQ	40(SP), BP
+	0x0028 00040 (<autogenerated>:1)	FUNCDATA	$0, gclocals·dc9b0298814590ca3ffc3a889546fc8b(SB)
+	0x0028 00040 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x0028 00040 (<autogenerated>:1)	MOVQ	"".q+64(SP), AX
+	0x002d 00045 (<autogenerated>:1)	MOVQ	"".p+56(SP), CX
+	0x0032 00050 (<autogenerated>:1)	XORL	DX, DX
+	0x0034 00052 (<autogenerated>:1)	JMP	73
+	0x0036 00054 (<autogenerated>:1)	MOVQ	""..autotmp_6+32(SP), BX
+	0x003b 00059 (<autogenerated>:1)	LEAQ	1(BX), DX
+	0x003f 00063 (<autogenerated>:1)	MOVQ	"".q+64(SP), AX
+	0x0044 00068 (<autogenerated>:1)	MOVQ	"".p+56(SP), CX
+	0x0049 00073 (<autogenerated>:1)	CMPQ	DX, $2
+	0x004d 00077 (<autogenerated>:1)	JGE	156
+	0x004f 00079 (<autogenerated>:1)	MOVQ	DX, BX
+	0x0052 00082 (<autogenerated>:1)	SHLQ	$4, DX
+	0x0056 00086 (<autogenerated>:1)	MOVQ	(CX)(DX*1), SI
+	0x005a 00090 (<autogenerated>:1)	MOVQ	(AX)(DX*1), DI
+	0x005e 00094 (<autogenerated>:1)	MOVQ	8(DX)(CX*1), R8
+	0x0063 00099 (<autogenerated>:1)	MOVQ	8(DX)(AX*1), DX
+	0x0068 00104 (<autogenerated>:1)	CMPQ	DI, SI
+	0x006b 00107 (<autogenerated>:1)	JNE	140
+	0x006d 00109 (<autogenerated>:1)	MOVQ	BX, ""..autotmp_6+32(SP)
+	0x0072 00114 (<autogenerated>:1)	MOVQ	SI, (SP)
+	0x0076 00118 (<autogenerated>:1)	MOVQ	R8, 8(SP)
+	0x007b 00123 (<autogenerated>:1)	MOVQ	DX, 16(SP)
+	0x0080 00128 (<autogenerated>:1)	PCDATA	$1, $0
+	0x0080 00128 (<autogenerated>:1)	CALL	runtime.efaceeq(SB)
+	0x0085 00133 (<autogenerated>:1)	CMPB	24(SP), $0
+	0x008a 00138 (<autogenerated>:1)	JNE	54
+	0x008c 00140 (<autogenerated>:1)	XORL	AX, AX
+	0x008e 00142 (<autogenerated>:1)	MOVB	AL, "".r+72(SP)
+	0x0092 00146 (<autogenerated>:1)	MOVQ	40(SP), BP
+	0x0097 00151 (<autogenerated>:1)	ADDQ	$48, SP
+	0x009b 00155 (<autogenerated>:1)	RET
+	0x009c 00156 (<autogenerated>:1)	MOVL	$1, AX
+	0x00a1 00161 (<autogenerated>:1)	JMP	142
+	0x00a3 00163 (<autogenerated>:1)	NOP
+	0x00a3 00163 (<autogenerated>:1)	PCDATA	$1, $-1
+	0x00a3 00163 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x00a3 00163 (<autogenerated>:1)	CALL	runtime.morestack_noctxt(SB)
+	0x00a8 00168 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x00a8 00168 (<autogenerated>:1)	JMP	0
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 0f 86 89 00 00 00 48 83 ec 30 48 89  H;a.......H..0H.
+	0x0020 6c 24 28 48 8d 6c 24 28 48 8b 44 24 40 48 8b 4c  l$(H.l$(H.D$@H.L
+	0x0030 24 38 31 d2 eb 13 48 8b 5c 24 20 48 8d 53 01 48  $81...H.\$ H.S.H
+	0x0040 8b 44 24 40 48 8b 4c 24 38 48 83 fa 02 7d 4d 48  .D$@H.L$8H...}MH
+	0x0050 89 d3 48 c1 e2 04 48 8b 34 11 48 8b 3c 10 4c 8b  ..H...H.4.H.<.L.
+	0x0060 44 0a 08 48 8b 54 02 08 48 39 f7 75 1f 48 89 5c  D..H.T..H9.u.H.\
+	0x0070 24 20 48 89 34 24 4c 89 44 24 08 48 89 54 24 10  $ H.4$L.D$.H.T$.
+	0x0080 e8 00 00 00 00 80 7c 24 18 00 75 aa 31 c0 88 44  ......|$..u.1..D
+	0x0090 24 48 48 8b 6c 24 28 48 83 c4 30 c3 b8 01 00 00  $HH.l$(H..0.....
+	0x00a0 00 eb eb e8 00 00 00 00 e9 53 ff ff ff           .........S...
+	rel 12+4 t=17 TLS+0
+	rel 129+4 t=8 runtime.efaceeq+0
+	rel 164+4 t=8 runtime.morestack_noctxt+0
+"".(*writeChan).Load STEXT dupok size=148 args=0x18 locals=0x28 funcid=0x16
+	0x0000 00000 (<autogenerated>:1)	TEXT	"".(*writeChan).Load(SB), DUPOK|WRAPPER|ABIInternal, $40-24
+	0x0000 00000 (<autogenerated>:1)	MOVQ	TLS, CX
+	0x0009 00009 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0009 00009 (<autogenerated>:1)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0010 00016 (<autogenerated>:1)	CMPQ	SP, 16(CX)
+	0x0014 00020 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0014 00020 (<autogenerated>:1)	JLS	121
+	0x0016 00022 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0016 00022 (<autogenerated>:1)	SUBQ	$40, SP
+	0x001a 00026 (<autogenerated>:1)	MOVQ	BP, 32(SP)
+	0x001f 00031 (<autogenerated>:1)	LEAQ	32(SP), BP
+	0x0024 00036 (<autogenerated>:1)	MOVQ	32(CX), BX
+	0x0028 00040 (<autogenerated>:1)	TESTQ	BX, BX
+	0x002b 00043 (<autogenerated>:1)	JNE	133
+	0x002d 00045 (<autogenerated>:1)	NOP
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$0, gclocals·b9af6bbc417a82ce0ce1d467edbbc832(SB)
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$1, gclocals·2dd975a5d416a941d0db91113f946ec3(SB)
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$2, "".(*writeChan).Load.stkobj(SB)
+	0x002d 00045 (<autogenerated>:1)	MOVQ	""..this+48(SP), AX
+	0x0032 00050 (<autogenerated>:1)	TESTQ	AX, AX
+	0x0035 00053 (<autogenerated>:1)	JEQ	115
+	0x0037 00055 (<autogenerated>:1)	MOVQ	(AX), AX
+	0x003a 00058 (<unknown line number>)	NOP
+	0x003a 00058 (mr/mapreduce.go:59)	XORPS	X0, X0
+	0x003d 00061 (mr/mapreduce.go:59)	MOVUPS	X0, ""..autotmp_4+16(SP)
+	0x0042 00066 (mr/mapreduce.go:59)	MOVQ	AX, (SP)
+	0x0046 00070 (mr/mapreduce.go:59)	LEAQ	""..autotmp_4+16(SP), AX
+	0x004b 00075 (mr/mapreduce.go:59)	MOVQ	AX, 8(SP)
+	0x0050 00080 (mr/mapreduce.go:59)	PCDATA	$1, $1
+	0x0050 00080 (mr/mapreduce.go:59)	CALL	runtime.chanrecv1(SB)
+	0x0055 00085 (<autogenerated>:1)	MOVQ	""..autotmp_4+16(SP), AX
+	0x005a 00090 (<autogenerated>:1)	MOVQ	""..autotmp_4+24(SP), CX
+	0x005f 00095 (<autogenerated>:1)	MOVQ	AX, "".~r0+56(SP)
+	0x0064 00100 (<autogenerated>:1)	MOVQ	CX, "".~r0+64(SP)
+	0x0069 00105 (<autogenerated>:1)	MOVQ	32(SP), BP
+	0x006e 00110 (<autogenerated>:1)	ADDQ	$40, SP
+	0x0072 00114 (<autogenerated>:1)	RET
+	0x0073 00115 (<autogenerated>:1)	PCDATA	$1, $2
+	0x0073 00115 (<autogenerated>:1)	CALL	runtime.panicwrap(SB)
+	0x0078 00120 (<autogenerated>:1)	XCHGL	AX, AX
+	0x0079 00121 (<autogenerated>:1)	NOP
+	0x0079 00121 (<autogenerated>:1)	PCDATA	$1, $-1
+	0x0079 00121 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0079 00121 (<autogenerated>:1)	CALL	runtime.morestack_noctxt(SB)
+	0x007e 00126 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x007e 00126 (<autogenerated>:1)	NOP
+	0x0080 00128 (<autogenerated>:1)	JMP	0
+	0x0085 00133 (<autogenerated>:1)	LEAQ	48(SP), DI
+	0x008a 00138 (<autogenerated>:1)	CMPQ	(BX), DI
+	0x008d 00141 (<autogenerated>:1)	JNE	45
+	0x008f 00143 (<autogenerated>:1)	MOVQ	SP, (BX)
+	0x0092 00146 (<autogenerated>:1)	JMP	45
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 63 48 83 ec 28 48 89 6c 24 20 48  H;a.vcH..(H.l$ H
+	0x0020 8d 6c 24 20 48 8b 59 20 48 85 db 75 58 48 8b 44  .l$ H.Y H..uXH.D
+	0x0030 24 30 48 85 c0 74 3c 48 8b 00 0f 57 c0 0f 11 44  $0H..t<H...W...D
+	0x0040 24 10 48 89 04 24 48 8d 44 24 10 48 89 44 24 08  $.H..$H.D$.H.D$.
+	0x0050 e8 00 00 00 00 48 8b 44 24 10 48 8b 4c 24 18 48  .....H.D$.H.L$.H
+	0x0060 89 44 24 38 48 89 4c 24 40 48 8b 6c 24 20 48 83  .D$8H.L$@H.l$ H.
+	0x0070 c4 28 c3 e8 00 00 00 00 90 e8 00 00 00 00 66 90  .(............f.
+	0x0080 e9 7b ff ff ff 48 8d 7c 24 30 48 39 3b 75 9e 48  .{...H.|$0H9;u.H
+	0x0090 89 23 eb 99                                      .#..
+	rel 12+4 t=17 TLS+0
+	rel 81+4 t=8 runtime.chanrecv1+0
+	rel 116+4 t=8 runtime.panicwrap+0
+	rel 122+4 t=8 runtime.morestack_noctxt+0
+"".(*writeChan).Writer STEXT dupok size=139 args=0x18 locals=0x28 funcid=0x16
+	0x0000 00000 (<autogenerated>:1)	TEXT	"".(*writeChan).Writer(SB), DUPOK|WRAPPER|ABIInternal, $40-24
+	0x0000 00000 (<autogenerated>:1)	MOVQ	TLS, CX
+	0x0009 00009 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0009 00009 (<autogenerated>:1)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0010 00016 (<autogenerated>:1)	CMPQ	SP, 16(CX)
+	0x0014 00020 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0014 00020 (<autogenerated>:1)	JLS	117
+	0x0016 00022 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0016 00022 (<autogenerated>:1)	SUBQ	$40, SP
+	0x001a 00026 (<autogenerated>:1)	MOVQ	BP, 32(SP)
+	0x001f 00031 (<autogenerated>:1)	LEAQ	32(SP), BP
+	0x0024 00036 (<autogenerated>:1)	MOVQ	32(CX), BX
+	0x0028 00040 (<autogenerated>:1)	TESTQ	BX, BX
+	0x002b 00043 (<autogenerated>:1)	JNE	124
+	0x002d 00045 (<autogenerated>:1)	NOP
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$0, gclocals·267260df189670137001aef19b5fd4fc(SB)
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x002d 00045 (<autogenerated>:1)	MOVQ	""..this+48(SP), AX
+	0x0032 00050 (<autogenerated>:1)	TESTQ	AX, AX
+	0x0035 00053 (<autogenerated>:1)	JEQ	111
+	0x0037 00055 (<autogenerated>:1)	MOVQ	(AX), CX
+	0x003a 00058 (<autogenerated>:1)	MOVQ	8(AX), AX
+	0x003e 00062 (<autogenerated>:1)	MOVQ	CX, (SP)
+	0x0042 00066 (<autogenerated>:1)	MOVQ	AX, 8(SP)
+	0x0047 00071 (<autogenerated>:1)	MOVQ	"".val+56(SP), AX
+	0x004c 00076 (<autogenerated>:1)	MOVQ	AX, 16(SP)
+	0x0051 00081 (<autogenerated>:1)	MOVQ	"".val+64(SP), AX
+	0x0056 00086 (<autogenerated>:1)	MOVQ	AX, 24(SP)
+	0x005b 00091 (<autogenerated>:1)	PCDATA	$1, $1
+	0x005b 00091 (<autogenerated>:1)	NOP
+	0x0060 00096 (<autogenerated>:1)	CALL	"".writeChan.Writer(SB)
+	0x0065 00101 (<autogenerated>:1)	MOVQ	32(SP), BP
+	0x006a 00106 (<autogenerated>:1)	ADDQ	$40, SP
+	0x006e 00110 (<autogenerated>:1)	RET
+	0x006f 00111 (<autogenerated>:1)	CALL	runtime.panicwrap(SB)
+	0x0074 00116 (<autogenerated>:1)	XCHGL	AX, AX
+	0x0075 00117 (<autogenerated>:1)	NOP
+	0x0075 00117 (<autogenerated>:1)	PCDATA	$1, $-1
+	0x0075 00117 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0075 00117 (<autogenerated>:1)	CALL	runtime.morestack_noctxt(SB)
+	0x007a 00122 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x007a 00122 (<autogenerated>:1)	JMP	0
+	0x007c 00124 (<autogenerated>:1)	LEAQ	48(SP), DI
+	0x0081 00129 (<autogenerated>:1)	CMPQ	(BX), DI
+	0x0084 00132 (<autogenerated>:1)	JNE	45
+	0x0086 00134 (<autogenerated>:1)	MOVQ	SP, (BX)
+	0x0089 00137 (<autogenerated>:1)	JMP	45
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 5f 48 83 ec 28 48 89 6c 24 20 48  H;a.v_H..(H.l$ H
+	0x0020 8d 6c 24 20 48 8b 59 20 48 85 db 75 4f 48 8b 44  .l$ H.Y H..uOH.D
+	0x0030 24 30 48 85 c0 74 38 48 8b 08 48 8b 40 08 48 89  $0H..t8H..H.@.H.
+	0x0040 0c 24 48 89 44 24 08 48 8b 44 24 38 48 89 44 24  .$H.D$.H.D$8H.D$
+	0x0050 10 48 8b 44 24 40 48 89 44 24 18 0f 1f 44 00 00  .H.D$@H.D$...D..
+	0x0060 e8 00 00 00 00 48 8b 6c 24 20 48 83 c4 28 c3 e8  .....H.l$ H..(..
+	0x0070 00 00 00 00 90 e8 00 00 00 00 eb 84 48 8d 7c 24  ............H.|$
+	0x0080 30 48 39 3b 75 a7 48 89 23 eb a2                 0H9;u.H.#..
+	rel 12+4 t=17 TLS+0
+	rel 97+4 t=8 "".writeChan.Writer+0
+	rel 112+4 t=8 runtime.panicwrap+0
+	rel 118+4 t=8 runtime.morestack_noctxt+0
+"".Writer.Writer STEXT dupok size=118 args=0x20 locals=0x20 funcid=0x16
+	0x0000 00000 (<autogenerated>:1)	TEXT	"".Writer.Writer(SB), DUPOK|WRAPPER|ABIInternal, $32-32
+	0x0000 00000 (<autogenerated>:1)	MOVQ	TLS, CX
+	0x0009 00009 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0009 00009 (<autogenerated>:1)	MOVQ	(CX)(TLS*2), CX
+	0x0010 00016 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0010 00016 (<autogenerated>:1)	CMPQ	SP, 16(CX)
+	0x0014 00020 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x0014 00020 (<autogenerated>:1)	JLS	96
+	0x0016 00022 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0016 00022 (<autogenerated>:1)	SUBQ	$32, SP
+	0x001a 00026 (<autogenerated>:1)	MOVQ	BP, 24(SP)
+	0x001f 00031 (<autogenerated>:1)	LEAQ	24(SP), BP
+	0x0024 00036 (<autogenerated>:1)	MOVQ	32(CX), BX
+	0x0028 00040 (<autogenerated>:1)	TESTQ	BX, BX
+	0x002b 00043 (<autogenerated>:1)	JNE	103
+	0x002d 00045 (<autogenerated>:1)	NOP
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$0, gclocals·7a680c56c7799a8f60d071b2f2541840(SB)
+	0x002d 00045 (<autogenerated>:1)	FUNCDATA	$1, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+	0x002d 00045 (<autogenerated>:1)	MOVQ	""..this+40(SP), AX
+	0x0032 00050 (<autogenerated>:1)	MOVQ	""..this+48(SP), CX
+	0x0037 00055 (<autogenerated>:1)	MOVQ	24(AX), AX
+	0x003b 00059 (<autogenerated>:1)	MOVQ	CX, (SP)
+	0x003f 00063 (<autogenerated>:1)	MOVQ	"".val+56(SP), CX
+	0x0044 00068 (<autogenerated>:1)	MOVQ	CX, 8(SP)
+	0x0049 00073 (<autogenerated>:1)	MOVQ	"".val+64(SP), CX
+	0x004e 00078 (<autogenerated>:1)	MOVQ	CX, 16(SP)
+	0x0053 00083 (<autogenerated>:1)	PCDATA	$1, $1
+	0x0053 00083 (<autogenerated>:1)	CALL	AX
+	0x0055 00085 (<autogenerated>:1)	MOVQ	24(SP), BP
+	0x005a 00090 (<autogenerated>:1)	ADDQ	$32, SP
+	0x005e 00094 (<autogenerated>:1)	RET
+	0x005f 00095 (<autogenerated>:1)	NOP
+	0x005f 00095 (<autogenerated>:1)	PCDATA	$1, $-1
+	0x005f 00095 (<autogenerated>:1)	PCDATA	$0, $-2
+	0x005f 00095 (<autogenerated>:1)	NOP
+	0x0060 00096 (<autogenerated>:1)	CALL	runtime.morestack_noctxt(SB)
+	0x0065 00101 (<autogenerated>:1)	PCDATA	$0, $-1
+	0x0065 00101 (<autogenerated>:1)	JMP	0
+	0x0067 00103 (<autogenerated>:1)	LEAQ	40(SP), DI
+	0x006c 00108 (<autogenerated>:1)	CMPQ	(BX), DI
+	0x006f 00111 (<autogenerated>:1)	JNE	45
+	0x0071 00113 (<autogenerated>:1)	MOVQ	SP, (BX)
+	0x0074 00116 (<autogenerated>:1)	JMP	45
+	0x0000 65 48 8b 0c 25 28 00 00 00 48 8b 89 00 00 00 00  eH..%(...H......
+	0x0010 48 3b 61 10 76 4a 48 83 ec 20 48 89 6c 24 18 48  H;a.vJH.. H.l$.H
+	0x0020 8d 6c 24 18 48 8b 59 20 48 85 db 75 3a 48 8b 44  .l$.H.Y H..u:H.D
+	0x0030 24 28 48 8b 4c 24 30 48 8b 40 18 48 89 0c 24 48  $(H.L$0H.@.H..$H
+	0x0040 8b 4c 24 38 48 89 4c 24 08 48 8b 4c 24 40 48 89  .L$8H.L$.H.L$@H.
+	0x0050 4c 24 10 ff d0 48 8b 6c 24 18 48 83 c4 20 c3 90  L$...H.l$.H.. ..
+	0x0060 e8 00 00 00 00 eb 99 48 8d 7c 24 28 48 39 3b 75  .......H.|$(H9;u
+	0x0070 bc 48 89 23 eb b7                                .H.#..
+	rel 2+0 t=26 type."".Writer+96
+	rel 12+4 t=17 TLS+0
+	rel 83+0 t=11 +0
+	rel 97+4 t=8 runtime.morestack_noctxt+0
+go.cuinfo.packagename. SDWARFCUINFO dupok size=0
+	0x0000 6d 61 69 6e                                      main
+""..inittask SNOPTRDATA size=56
+	0x0000 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00  ................
+	0x0010 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 errors..inittask+0
+	rel 32+8 t=1 fmt..inittask+0
+	rel 40+8 t=1 sync..inittask+0
+	rel 48+8 t=1 "".init+0
+go.info."".newWriteChan$abstract SDWARFABSFCN dupok size=41
+	0x0000 04 2e 6e 65 77 57 72 69 74 65 43 68 61 6e 00 01  ..newWriteChan..
+	0x0010 01 11 77 72 69 74 65 00 00 00 00 00 00 11 64 6f  ..write.......do
+	0x0020 6e 65 00 00 00 00 00 00 00                       ne.......
+	rel 0+0 t=24 type."".writeChan+0
+	rel 0+0 t=24 type.chan interface {}+0
+	rel 0+0 t=24 type.chan struct {}+0
+	rel 25+4 t=31 go.info.chan interface {}+0
+	rel 36+4 t=31 go.info.chan struct {}+0
+go.info.sync/atomic.(*Value).Load$abstract SDWARFABSFCN dupok size=85
+	0x0000 04 73 79 6e 63 2f 61 74 6f 6d 69 63 2e 28 2a 56  .sync/atomic.(*V
+	0x0010 61 6c 75 65 29 2e 4c 6f 61 64 00 01 01 11 76 00  alue).Load....v.
+	0x0020 00 00 00 00 00 11 78 00 01 00 00 00 00 0c 76 70  ......x.......vp
+	0x0030 00 1d 00 00 00 00 0c 74 79 70 00 1e 00 00 00 00  .......typ......
+	0x0040 0c 64 61 74 61 00 23 00 00 00 00 0c 78 70 00 24  .data.#.....xp.$
+	0x0050 00 00 00 00 00                                   .....
+	rel 0+0 t=24 type.*sync/atomic.Value+0
+	rel 0+0 t=24 type.*sync/atomic.ifaceWords+0
+	rel 0+0 t=24 type.interface {}+0
+	rel 0+0 t=24 type.unsafe.Pointer+0
+	rel 33+4 t=31 go.info.*sync/atomic.Value+0
+	rel 41+4 t=31 go.info.interface {}+0
+	rel 50+4 t=31 go.info.*sync/atomic.ifaceWords+0
+	rel 60+4 t=31 go.info.unsafe.Pointer+0
+	rel 71+4 t=31 go.info.unsafe.Pointer+0
+	rel 80+4 t=31 go.info.*sync/atomic.ifaceWords+0
+go.info.sync.(*Once).Do$abstract SDWARFABSFCN dupok size=36
+	0x0000 04 73 79 6e 63 2e 28 2a 4f 6e 63 65 29 2e 44 6f  .sync.(*Once).Do
+	0x0010 00 01 01 11 6f 00 00 00 00 00 00 11 66 00 00 00  ....o.......f...
+	0x0020 00 00 00 00                                      ....
+	rel 0+0 t=24 type.*sync.Once+0
+	rel 0+0 t=24 type.func()+0
+	rel 23+4 t=31 go.info.*sync.Once+0
+	rel 31+4 t=31 go.info.func()+0
+go.info.fmt.Println$abstract SDWARFABSFCN dupok size=42
+	0x0000 04 66 6d 74 2e 50 72 69 6e 74 6c 6e 00 01 01 11  .fmt.Println....
+	0x0010 61 00 00 00 00 00 00 11 6e 00 01 00 00 00 00 11  a.......n.......
+	0x0020 65 72 72 00 01 00 00 00 00 00                    err.......
+	rel 0+0 t=24 type.[]interface {}+0
+	rel 0+0 t=24 type.error+0
+	rel 0+0 t=24 type.int+0
+	rel 19+4 t=31 go.info.[]interface {}+0
+	rel 27+4 t=31 go.info.int+0
+	rel 37+4 t=31 go.info.error+0
+go.info.sync.(*WaitGroup).Done$abstract SDWARFABSFCN dupok size=36
+	0x0000 04 73 79 6e 63 2e 28 2a 57 61 69 74 47 72 6f 75  .sync.(*WaitGrou
+	0x0010 70 29 2e 44 6f 6e 65 00 01 01 11 77 67 00 00 00  p).Done....wg...
+	0x0020 00 00 00 00                                      ....
+	rel 0+0 t=24 type.*sync.WaitGroup+0
+	rel 31+4 t=31 go.info.*sync.WaitGroup+0
+go.info.fmt.Printf$abstract SDWARFABSFCN dupok size=54
+	0x0000 04 66 6d 74 2e 50 72 69 6e 74 66 00 01 01 11 66  .fmt.Printf....f
+	0x0010 6f 72 6d 61 74 00 00 00 00 00 00 11 61 00 00 00  ormat.......a...
+	0x0020 00 00 00 11 6e 00 01 00 00 00 00 11 65 72 72 00  ....n.......err.
+	0x0030 01 00 00 00 00 00                                ......
+	rel 0+0 t=24 type.[]interface {}+0
+	rel 0+0 t=24 type.error+0
+	rel 0+0 t=24 type.int+0
+	rel 0+0 t=24 type.string+0
+	rel 23+4 t=31 go.info.string+0
+	rel 31+4 t=31 go.info.[]interface {}+0
+	rel 39+4 t=31 go.info.int+0
+	rel 49+4 t=31 go.info.error+0
+go.info.errors.New$abstract SDWARFABSFCN dupok size=26
+	0x0000 04 65 72 72 6f 72 73 2e 4e 65 77 00 01 01 11 74  .errors.New....t
+	0x0010 65 78 74 00 00 00 00 00 00 00                    ext.......
+	rel 0+0 t=24 type.string+0
+	rel 21+4 t=31 go.info.string+0
+runtime.nilinterequal·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 runtime.nilinterequal+0
+runtime.memequal64·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 runtime.memequal64+0
+runtime.gcbits.01 SRODATA dupok size=1
+	0x0000 01                                               .
+type..namedata.*interface {}- SRODATA dupok size=16
+	0x0000 00 00 0d 2a 69 6e 74 65 72 66 61 63 65 20 7b 7d  ...*interface {}
+type.*interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 4f 0f 96 9d 08 08 08 36 00 00 00 00 00 00 00 00  O......6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*interface {}-+0
+	rel 48+8 t=1 type.interface {}+0
+runtime.gcbits.02 SRODATA dupok size=1
+	0x0000 02                                               .
+type.interface {} SRODATA dupok size=80
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 e7 57 a0 18 02 08 08 14 00 00 00 00 00 00 00 00  .W..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.nilinterequal·f+0
+	rel 32+8 t=1 runtime.gcbits.02+0
+	rel 40+4 t=5 type..namedata.*interface {}-+0
+	rel 44+4 t=6 type.*interface {}+0
+	rel 56+8 t=1 type.interface {}+80
+go.string."res:{%v}; err:{%v}\n" SRODATA dupok size=19
+	0x0000 72 65 73 3a 7b 25 76 7d 3b 20 65 72 72 3a 7b 25  res:{%v}; err:{%
+	0x0010 76 7d 0a                                         v}.
+type..namedata.*[]interface {}- SRODATA dupok size=18
+	0x0000 00 00 0f 2a 5b 5d 69 6e 74 65 72 66 61 63 65 20  ...*[]interface 
+	0x0010 7b 7d                                            {}
+type.*[]interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 f3 04 9a e7 08 08 08 36 00 00 00 00 00 00 00 00  .......6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]interface {}-+0
+	rel 48+8 t=1 type.[]interface {}+0
+type.[]interface {} SRODATA dupok size=56
+	0x0000 18 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 70 93 ea 2f 02 08 08 17 00 00 00 00 00 00 00 00  p../............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]interface {}-+0
+	rel 44+4 t=6 type.*[]interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+type..eqfunc.[2]interface {} SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 type..eq.[2]interface {}+0
+type..namedata.*[2]interface {}- SRODATA dupok size=19
+	0x0000 00 00 10 2a 5b 32 5d 69 6e 74 65 72 66 61 63 65  ...*[2]interface
+	0x0010 20 7b 7d                                          {}
+type.*[2]interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 be 73 2d 71 08 08 08 36 00 00 00 00 00 00 00 00  .s-q...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[2]interface {}-+0
+	rel 48+8 t=1 type.[2]interface {}+0
+runtime.gcbits.0a SRODATA dupok size=1
+	0x0000 0a                                               .
+type.[2]interface {} SRODATA dupok size=72
+	0x0000 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00   ....... .......
+	0x0010 2c 59 a4 f1 02 08 08 11 00 00 00 00 00 00 00 00  ,Y..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 type..eqfunc.[2]interface {}+0
+	rel 32+8 t=1 runtime.gcbits.0a+0
+	rel 40+4 t=5 type..namedata.*[2]interface {}-+0
+	rel 44+4 t=6 type.*[2]interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+	rel 56+8 t=1 type.[]interface {}+0
+type..namedata.*chan interface {}- SRODATA dupok size=21
+	0x0000 00 00 12 2a 63 68 61 6e 20 69 6e 74 65 72 66 61  ...*chan interfa
+	0x0010 63 65 20 7b 7d                                   ce {}
+type.*chan interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 73 4c 49 3e 08 08 08 36 00 00 00 00 00 00 00 00  sLI>...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan interface {}-+0
+	rel 48+8 t=1 type.chan interface {}+0
+type.chan interface {} SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 5f d1 e8 d3 0a 08 08 32 00 00 00 00 00 00 00 00  _......2........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan interface {}-+0
+	rel 44+4 t=6 type.*chan interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+type..namedata.*struct { F uintptr; errChan chan interface {} }- SRODATA dupok size=51
+	0x0000 00 00 30 2a 73 74 72 75 63 74 20 7b 20 46 20 75  ..0*struct { F u
+	0x0010 69 6e 74 70 74 72 3b 20 65 72 72 43 68 61 6e 20  intptr; errChan 
+	0x0020 63 68 61 6e 20 69 6e 74 65 72 66 61 63 65 20 7b  chan interface {
+	0x0030 7d 20 7d                                         } }
+type.*struct { F uintptr; "".errChan chan interface {} } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 f4 45 5d 09 08 08 08 36 00 00 00 00 00 00 00 00  .E]....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; errChan chan interface {} }-+0
+	rel 48+8 t=1 type.noalg.struct { F uintptr; "".errChan chan interface {} }+0
+type..namedata..F- SRODATA dupok size=5
+	0x0000 00 00 02 2e 46                                   ....F
+type..namedata.errChan- SRODATA dupok size=10
+	0x0000 00 00 07 65 72 72 43 68 61 6e                    ...errChan
+type.noalg.struct { F uintptr; "".errChan chan interface {} } SRODATA dupok size=128
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 23 5c ee 28 02 08 08 19 00 00 00 00 00 00 00 00  #\.(............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0070 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.02+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; errChan chan interface {} }-+0
+	rel 44+4 t=6 type.*struct { F uintptr; "".errChan chan interface {} }+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type.noalg.struct { F uintptr; "".errChan chan interface {} }+80
+	rel 80+8 t=1 type..namedata..F-+0
+	rel 88+8 t=1 type.uintptr+0
+	rel 104+8 t=1 type..namedata.errChan-+0
+	rel 112+8 t=1 type.chan interface {}+0
+runtime.memequal0·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 runtime.memequal0+0
+type..namedata.*struct {}- SRODATA dupok size=13
+	0x0000 00 00 0a 2a 73 74 72 75 63 74 20 7b 7d           ...*struct {}
+type.*struct {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 4a 24 a9 e5 08 08 08 36 00 00 00 00 00 00 00 00  J$.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*struct {}-+0
+	rel 48+8 t=1 type.struct {}+0
+runtime.gcbits. SRODATA dupok size=0
+type.struct {} SRODATA dupok size=80
+	0x0000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0010 1b ac f6 27 0a 01 01 19 00 00 00 00 00 00 00 00  ...'............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal0·f+0
+	rel 32+8 t=1 runtime.gcbits.+0
+	rel 40+4 t=5 type..namedata.*struct {}-+0
+	rel 44+4 t=6 type.*struct {}+0
+	rel 56+8 t=1 type.struct {}+80
+type..namedata.*chan struct {}- SRODATA dupok size=18
+	0x0000 00 00 0f 2a 63 68 61 6e 20 73 74 72 75 63 74 20  ...*chan struct 
+	0x0010 7b 7d                                            {}
+type.*chan struct {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 3c 5e 3e e7 08 08 08 36 00 00 00 00 00 00 00 00  <^>....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan struct {}-+0
+	rel 48+8 t=1 type.chan struct {}+0
+type.chan struct {} SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 53 e5 5e 5c 0a 08 08 32 00 00 00 00 00 00 00 00  S.^\...2........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan struct {}-+0
+	rel 44+4 t=6 type.*chan struct {}+0
+	rel 48+8 t=1 type.struct {}+0
+runtime.memequal128·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 runtime.memequal128+0
+go.info."".writeChan.Load$abstract SDWARFABSFCN dupok size=28
+	0x0000 04 2e 77 72 69 74 65 43 68 61 6e 2e 4c 6f 61 64  ..writeChan.Load
+	0x0010 00 01 01 11 77 00 00 00 00 00 00 00              ....w.......
+	rel 0+0 t=24 type."".writeChan+0
+	rel 0+0 t=24 type.interface {}+0
+	rel 23+4 t=31 go.info."".writeChan+0
+type..namedata.*main.writeChan- SRODATA dupok size=18
+	0x0000 00 00 0f 2a 6d 61 69 6e 2e 77 72 69 74 65 43 68  ...*main.writeCh
+	0x0010 61 6e                                            an
+type..namedata.*func(*main.writeChan) interface {}- SRODATA dupok size=38
+	0x0000 00 00 23 2a 66 75 6e 63 28 2a 6d 61 69 6e 2e 77  ..#*func(*main.w
+	0x0010 72 69 74 65 43 68 61 6e 29 20 69 6e 74 65 72 66  riteChan) interf
+	0x0020 61 63 65 20 7b 7d                                ace {}
+type.*func(*"".writeChan) interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 d8 0e 83 36 08 08 08 36 00 00 00 00 00 00 00 00  ...6...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(*main.writeChan) interface {}-+0
+	rel 48+8 t=1 type.func(*"".writeChan) interface {}+0
+type.func(*"".writeChan) interface {} SRODATA dupok size=72
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 ba 60 4a 39 02 08 08 33 00 00 00 00 00 00 00 00  .`J9...3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(*main.writeChan) interface {}-+0
+	rel 44+4 t=6 type.*func(*"".writeChan) interface {}+0
+	rel 56+8 t=1 type.*"".writeChan+0
+	rel 64+8 t=1 type.interface {}+0
+type..namedata.*func(*main.writeChan, interface {})- SRODATA dupok size=39
+	0x0000 00 00 24 2a 66 75 6e 63 28 2a 6d 61 69 6e 2e 77  ..$*func(*main.w
+	0x0010 72 69 74 65 43 68 61 6e 2c 20 69 6e 74 65 72 66  riteChan, interf
+	0x0020 61 63 65 20 7b 7d 29                             ace {})
+type.*func(*"".writeChan, interface {}) SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 e1 d7 9b 0a 08 08 08 36 00 00 00 00 00 00 00 00  .......6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(*main.writeChan, interface {})-+0
+	rel 48+8 t=1 type.func(*"".writeChan, interface {})+0
+type.func(*"".writeChan, interface {}) SRODATA dupok size=72
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 d3 f3 dc 7d 02 08 08 33 00 00 00 00 00 00 00 00  ...}...3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(*main.writeChan, interface {})-+0
+	rel 44+4 t=6 type.*func(*"".writeChan, interface {})+0
+	rel 56+8 t=1 type.*"".writeChan+0
+	rel 64+8 t=1 type.interface {}+0
+type..namedata.Load. SRODATA dupok size=7
+	0x0000 01 00 04 4c 6f 61 64                             ...Load
+type..namedata.*func() interface {}- SRODATA dupok size=23
+	0x0000 00 00 14 2a 66 75 6e 63 28 29 20 69 6e 74 65 72  ...*func() inter
+	0x0010 66 61 63 65 20 7b 7d                             face {}
+type.*func() interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 42 88 01 49 08 08 08 36 00 00 00 00 00 00 00 00  B..I...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func() interface {}-+0
+	rel 48+8 t=1 type.func() interface {}+0
+type.func() interface {} SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 23 b4 1c f1 02 08 08 33 00 00 00 00 00 00 00 00  #......3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func() interface {}-+0
+	rel 44+4 t=6 type.*func() interface {}+0
+	rel 56+8 t=1 type.interface {}+0
+type..namedata.Writer. SRODATA dupok size=9
+	0x0000 01 00 06 57 72 69 74 65 72                       ...Writer
+type..namedata.*func(interface {})- SRODATA dupok size=22
+	0x0000 00 00 13 2a 66 75 6e 63 28 69 6e 74 65 72 66 61  ...*func(interfa
+	0x0010 63 65 20 7b 7d 29                                ce {})
+type.*func(interface {}) SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 7a 37 9d 67 08 08 08 36 00 00 00 00 00 00 00 00  z7.g...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(interface {})-+0
+	rel 48+8 t=1 type.func(interface {})+0
+type.func(interface {}) SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 86 75 8e 1a 02 08 08 33 00 00 00 00 00 00 00 00  .u.....3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(interface {})-+0
+	rel 44+4 t=6 type.*func(interface {})+0
+	rel 56+8 t=1 type.interface {}+0
+type.*"".writeChan SRODATA size=104
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 3b f9 26 9b 09 08 08 36 00 00 00 00 00 00 00 00  ;.&....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 02 00 02 00  ................
+	0x0040 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.writeChan-+0
+	rel 48+8 t=1 type."".writeChan+0
+	rel 56+4 t=5 type..importpath."".+0
+	rel 72+4 t=5 type..namedata.Load.+0
+	rel 76+4 t=27 type.func() interface {}+0
+	rel 80+4 t=27 "".(*writeChan).Load+0
+	rel 84+4 t=27 "".(*writeChan).Load+0
+	rel 88+4 t=5 type..namedata.Writer.+0
+	rel 92+4 t=27 type.func(interface {})+0
+	rel 96+4 t=27 "".(*writeChan).Writer+0
+	rel 100+4 t=27 "".(*writeChan).Writer+0
+runtime.gcbits.03 SRODATA dupok size=1
+	0x0000 03                                               .
+type..namedata.*func(main.writeChan) interface {}- SRODATA dupok size=37
+	0x0000 00 00 22 2a 66 75 6e 63 28 6d 61 69 6e 2e 77 72  .."*func(main.wr
+	0x0010 69 74 65 43 68 61 6e 29 20 69 6e 74 65 72 66 61  iteChan) interfa
+	0x0020 63 65 20 7b 7d                                   ce {}
+type.*func("".writeChan) interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 18 75 68 6a 08 08 08 36 00 00 00 00 00 00 00 00  .uhj...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(main.writeChan) interface {}-+0
+	rel 48+8 t=1 type.func("".writeChan) interface {}+0
+type.func("".writeChan) interface {} SRODATA dupok size=72
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 40 59 d2 a0 02 08 08 33 00 00 00 00 00 00 00 00  @Y.....3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(main.writeChan) interface {}-+0
+	rel 44+4 t=6 type.*func("".writeChan) interface {}+0
+	rel 56+8 t=1 type."".writeChan+0
+	rel 64+8 t=1 type.interface {}+0
+type..namedata.*func(main.writeChan, interface {})- SRODATA dupok size=38
+	0x0000 00 00 23 2a 66 75 6e 63 28 6d 61 69 6e 2e 77 72  ..#*func(main.wr
+	0x0010 69 74 65 43 68 61 6e 2c 20 69 6e 74 65 72 66 61  iteChan, interfa
+	0x0020 63 65 20 7b 7d 29                                ce {})
+type.*func("".writeChan, interface {}) SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 87 62 92 c3 08 08 08 36 00 00 00 00 00 00 00 00  .b.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(main.writeChan, interface {})-+0
+	rel 48+8 t=1 type.func("".writeChan, interface {})+0
+type.func("".writeChan, interface {}) SRODATA dupok size=72
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 c6 11 f7 fe 02 08 08 33 00 00 00 00 00 00 00 00  .......3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(main.writeChan, interface {})-+0
+	rel 44+4 t=6 type.*func("".writeChan, interface {})+0
+	rel 56+8 t=1 type."".writeChan+0
+	rel 64+8 t=1 type.interface {}+0
+type..namedata.write- SRODATA dupok size=8
+	0x0000 00 00 05 77 72 69 74 65                          ...write
+type..namedata.done- SRODATA dupok size=7
+	0x0000 00 00 04 64 6f 6e 65                             ...done
+type."".writeChan SRODATA size=176
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 eb 63 0a d6 0f 08 08 19 00 00 00 00 00 00 00 00  .c..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 02 00 02 00 40 00 00 00 00 00 00 00  ........@.......
+	0x0060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0070 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0080 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0090 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x00a0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal128·f+0
+	rel 32+8 t=1 runtime.gcbits.03+0
+	rel 40+4 t=5 type..namedata.*main.writeChan-+0
+	rel 44+4 t=5 type.*"".writeChan+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type."".writeChan+96
+	rel 80+4 t=5 type..importpath."".+0
+	rel 96+8 t=1 type..namedata.write-+0
+	rel 104+8 t=1 type.chan interface {}+0
+	rel 120+8 t=1 type..namedata.done-+0
+	rel 128+8 t=1 type.chan struct {}+0
+	rel 144+4 t=5 type..namedata.Load.+0
+	rel 148+4 t=27 type.func() interface {}+0
+	rel 152+4 t=27 "".(*writeChan).Load+0
+	rel 156+4 t=27 "".writeChan.Load+0
+	rel 160+4 t=5 type..namedata.Writer.+0
+	rel 164+4 t=27 type.func(interface {})+0
+	rel 168+4 t=27 "".(*writeChan).Writer+0
+	rel 172+4 t=27 "".writeChan.Writer+0
+go.string."start close reschan" SRODATA dupok size=19
+	0x0000 73 74 61 72 74 20 63 6c 6f 73 65 20 72 65 73 63  start close resc
+	0x0010 68 61 6e                                         han
+type..namedata.*[1]interface {}- SRODATA dupok size=19
+	0x0000 00 00 10 2a 5b 31 5d 69 6e 74 65 72 66 61 63 65  ...*[1]interface
+	0x0010 20 7b 7d                                          {}
+type.*[1]interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 bf 03 a8 35 08 08 08 36 00 00 00 00 00 00 00 00  ...5...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[1]interface {}-+0
+	rel 48+8 t=1 type.[1]interface {}+0
+type.[1]interface {} SRODATA dupok size=72
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 50 91 5b fa 02 08 08 11 00 00 00 00 00 00 00 00  P.[.............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 01 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.nilinterequal·f+0
+	rel 32+8 t=1 runtime.gcbits.02+0
+	rel 40+4 t=5 type..namedata.*[1]interface {}-+0
+	rel 44+4 t=6 type.*[1]interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+	rel 56+8 t=1 type.[]interface {}+0
+go.string."管道已经关闭" SRODATA dupok size=18
+	0x0000 e7 ae a1 e9 81 93 e5 b7 b2 e7 bb 8f e5 85 b3 e9  ................
+	0x0010 97 ad                                            ..
+type..namedata.*struct { c unsafe.Pointer; elem unsafe.Pointer }- SRODATA dupok size=52
+	0x0000 00 00 31 2a 73 74 72 75 63 74 20 7b 20 63 20 75  ..1*struct { c u
+	0x0010 6e 73 61 66 65 2e 50 6f 69 6e 74 65 72 3b 20 65  nsafe.Pointer; e
+	0x0020 6c 65 6d 20 75 6e 73 61 66 65 2e 50 6f 69 6e 74  lem unsafe.Point
+	0x0030 65 72 20 7d                                      er }
+type.*struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 23 76 ac c8 08 08 08 36 00 00 00 00 00 00 00 00  #v.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 48+8 t=1 type.noalg.struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+type..namedata.c- SRODATA dupok size=4
+	0x0000 00 00 01 63                                      ...c
+type..namedata.elem- SRODATA dupok size=7
+	0x0000 00 00 04 65 6c 65 6d                             ...elem
+type.noalg.struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=128
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 3a b7 89 d8 02 08 08 19 00 00 00 00 00 00 00 00  :...............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0070 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.03+0
+	rel 40+4 t=5 type..namedata.*struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 44+4 t=6 type.*struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type.noalg.struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+80
+	rel 80+8 t=1 type..namedata.c-+0
+	rel 88+8 t=1 type.unsafe.Pointer+0
+	rel 104+8 t=1 type..namedata.elem-+0
+	rel 112+8 t=1 type.unsafe.Pointer+0
+type..namedata.*[]struct { c unsafe.Pointer; elem unsafe.Pointer }- SRODATA dupok size=54
+	0x0000 00 00 33 2a 5b 5d 73 74 72 75 63 74 20 7b 20 63  ..3*[]struct { c
+	0x0010 20 75 6e 73 61 66 65 2e 50 6f 69 6e 74 65 72 3b   unsafe.Pointer;
+	0x0020 20 65 6c 65 6d 20 75 6e 73 61 66 65 2e 50 6f 69   elem unsafe.Poi
+	0x0030 6e 74 65 72 20 7d                                nter }
+type.*[]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 03 aa 4f e4 08 08 08 36 00 00 00 00 00 00 00 00  ..O....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 48+8 t=1 type.[]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+type.[]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=56
+	0x0000 18 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 8b 72 af 9e 02 08 08 17 00 00 00 00 00 00 00 00  .r..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 44+4 t=6 type.*[]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+	rel 48+8 t=1 type.noalg.struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+type..namedata.*[2]struct { c unsafe.Pointer; elem unsafe.Pointer }- SRODATA dupok size=55
+	0x0000 00 00 34 2a 5b 32 5d 73 74 72 75 63 74 20 7b 20  ..4*[2]struct { 
+	0x0010 63 20 75 6e 73 61 66 65 2e 50 6f 69 6e 74 65 72  c unsafe.Pointer
+	0x0020 3b 20 65 6c 65 6d 20 75 6e 73 61 66 65 2e 50 6f  ; elem unsafe.Po
+	0x0030 69 6e 74 65 72 20 7d                             inter }
+type.*[2]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 29 49 9c e1 08 08 08 36 00 00 00 00 00 00 00 00  )I.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[2]struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 48+8 t=1 type.noalg.[2]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+runtime.gcbits.0f SRODATA dupok size=1
+	0x0000 0f                                               .
+type.noalg.[2]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer } SRODATA dupok size=72
+	0x0000 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00   ....... .......
+	0x0010 1f 2b 28 2c 02 08 08 11 00 00 00 00 00 00 00 00  .+(,............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.0f+0
+	rel 40+4 t=5 type..namedata.*[2]struct { c unsafe.Pointer; elem unsafe.Pointer }-+0
+	rel 44+4 t=6 type.*[2]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+	rel 48+8 t=1 type.noalg.struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+	rel 56+8 t=1 type.[]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+go.string."b: item:" SRODATA dupok size=8
+	0x0000 62 3a 20 69 74 65 6d 3a                          b: item:
+go.string."b:" SRODATA dupok size=2
+	0x0000 62 3a                                            b:
+go.string."c:" SRODATA dupok size=2
+	0x0000 63 3a                                            c:
+go.string."reduce end with nil error" SRODATA dupok size=25
+	0x0000 72 65 64 75 63 65 20 65 6e 64 20 77 69 74 68 20  reduce end with 
+	0x0010 6e 69 6c 20 65 72 72 6f 72                       nil error
+"".cancelWithNil SBSS size=16
+""..stmp_0 SRODATA static size=16
+	0x0000 00 00 00 00 00 00 00 00 13 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."start close reschan"+0
+""..stmp_1 SRODATA static size=16
+	0x0000 00 00 00 00 00 00 00 00 12 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."管道已经关闭"+0
+""..stmp_2 SRODATA static size=16
+	0x0000 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."b: item:"+0
+""..stmp_3 SRODATA static size=16
+	0x0000 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."b:"+0
+""..stmp_4 SRODATA static size=16
+	0x0000 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."c:"+0
+"".MapReduce.func2·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".MapReduce.func2+0
+"".MapReduce.func3·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".MapReduce.func3+0
+"".MapReduce.func3.1·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".MapReduce.func3.1+0
+"".MapReduce.func3.2·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".MapReduce.func3.2+0
+"".MapReduce.func3.2.1·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".MapReduce.func3.2.1+0
+"".buildSource.func1·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".buildSource.func1+0
+"".buildSource.func1.1·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".buildSource.func1.1+0
+"".main.func2·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".main.func2+0
+"".main.func3·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 "".main.func3+0
+type..namedata.*chan<- interface {}- SRODATA dupok size=23
+	0x0000 00 00 14 2a 63 68 61 6e 3c 2d 20 69 6e 74 65 72  ...*chan<- inter
+	0x0010 66 61 63 65 20 7b 7d                             face {}
+type.*chan<- interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 f5 92 cf 79 08 08 08 36 00 00 00 00 00 00 00 00  ...y...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan<- interface {}-+0
+	rel 48+8 t=1 type.chan<- interface {}+0
+type.chan<- interface {} SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 bd be 60 10 0a 08 08 32 00 00 00 00 00 00 00 00  ..`....2........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*chan<- interface {}-+0
+	rel 44+4 t=6 type.*chan<- interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+type..namedata.*main.GenerateFunc. SRODATA dupok size=21
+	0x0000 01 00 12 2a 6d 61 69 6e 2e 47 65 6e 65 72 61 74  ...*main.Generat
+	0x0010 65 46 75 6e 63                                   eFunc
+type.*"".GenerateFunc SRODATA size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 0d 16 45 35 08 08 08 36 00 00 00 00 00 00 00 00  ..E5...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.GenerateFunc.+0
+	rel 48+8 t=1 type."".GenerateFunc+0
+type."".GenerateFunc SRODATA size=80
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 7b 78 32 b0 07 08 08 33 00 00 00 00 00 00 00 00  {x2....3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 18 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.GenerateFunc.+0
+	rel 44+4 t=5 type.*"".GenerateFunc+0
+	rel 56+4 t=5 type..importpath."".+0
+	rel 72+8 t=1 type.chan<- interface {}+0
+runtime.interequal·f SRODATA dupok size=8
+	0x0000 00 00 00 00 00 00 00 00                          ........
+	rel 0+8 t=1 runtime.interequal+0
+type..namedata.*main.Writer. SRODATA dupok size=15
+	0x0000 01 00 0c 2a 6d 61 69 6e 2e 57 72 69 74 65 72     ...*main.Writer
+type.*"".Writer SRODATA size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 cc 74 87 62 08 08 08 36 00 00 00 00 00 00 00 00  .t.b...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.Writer.+0
+	rel 48+8 t=1 type."".Writer+0
+type."".Writer SRODATA size=104
+	0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0010 ac 55 3b c1 07 08 08 14 00 00 00 00 00 00 00 00  .U;.............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 18 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.interequal·f+0
+	rel 32+8 t=1 runtime.gcbits.02+0
+	rel 40+4 t=5 type..namedata.*main.Writer.+0
+	rel 44+4 t=5 type.*"".Writer+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type."".Writer+96
+	rel 80+4 t=5 type..importpath."".+0
+	rel 96+4 t=5 type..namedata.Writer.+0
+	rel 100+4 t=5 type.func(interface {})+0
+type..namedata.*func(error)- SRODATA dupok size=15
+	0x0000 00 00 0c 2a 66 75 6e 63 28 65 72 72 6f 72 29     ...*func(error)
+type.*func(error) SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 8d d0 d2 6f 08 08 08 36 00 00 00 00 00 00 00 00  ...o...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(error)-+0
+	rel 48+8 t=1 type.func(error)+0
+type.func(error) SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 5b 17 27 67 02 08 08 33 00 00 00 00 00 00 00 00  [.'g...3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func(error)-+0
+	rel 44+4 t=6 type.*func(error)+0
+	rel 56+8 t=1 type.error+0
+type..namedata.*main.MapperFunc. SRODATA dupok size=19
+	0x0000 01 00 10 2a 6d 61 69 6e 2e 4d 61 70 70 65 72 46  ...*main.MapperF
+	0x0010 75 6e 63                                         unc
+type.*"".MapperFunc SRODATA size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 65 50 2a d5 08 08 08 36 00 00 00 00 00 00 00 00  eP*....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.MapperFunc.+0
+	rel 48+8 t=1 type."".MapperFunc+0
+type."".MapperFunc SRODATA size=96
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 c2 d8 da 35 07 08 08 33 00 00 00 00 00 00 00 00  ...5...3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 28 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  (...............
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.MapperFunc.+0
+	rel 44+4 t=5 type.*"".MapperFunc+0
+	rel 56+4 t=5 type..importpath."".+0
+	rel 72+8 t=1 type.interface {}+0
+	rel 80+8 t=1 type."".Writer+0
+	rel 88+8 t=1 type.func(error)+0
+type..namedata.*<-chan interface {}- SRODATA dupok size=23
+	0x0000 00 00 14 2a 3c 2d 63 68 61 6e 20 69 6e 74 65 72  ...*<-chan inter
+	0x0010 66 61 63 65 20 7b 7d                             face {}
+type.*<-chan interface {} SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 60 e9 8e 64 08 08 08 36 00 00 00 00 00 00 00 00  `..d...6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*<-chan interface {}-+0
+	rel 48+8 t=1 type.<-chan interface {}+0
+type.<-chan interface {} SRODATA dupok size=64
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 46 d0 95 31 0a 08 08 32 00 00 00 00 00 00 00 00  F..1...2........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00  ................
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*<-chan interface {}-+0
+	rel 44+4 t=6 type.*<-chan interface {}+0
+	rel 48+8 t=1 type.interface {}+0
+type..namedata.*main.ReducerFunc. SRODATA dupok size=20
+	0x0000 01 00 11 2a 6d 61 69 6e 2e 52 65 64 75 63 65 72  ...*main.Reducer
+	0x0010 46 75 6e 63                                      Func
+type.*"".ReducerFunc SRODATA size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 06 4d 8c cd 08 08 08 36 00 00 00 00 00 00 00 00  .M.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.ReducerFunc.+0
+	rel 48+8 t=1 type."".ReducerFunc+0
+type."".ReducerFunc SRODATA size=96
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 0a a0 0b d3 07 08 08 33 00 00 00 00 00 00 00 00  .......3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 28 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  (...............
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*main.ReducerFunc.+0
+	rel 44+4 t=5 type.*"".ReducerFunc+0
+	rel 56+4 t=5 type..importpath."".+0
+	rel 72+8 t=1 type.<-chan interface {}+0
+	rel 80+8 t=1 type."".Writer+0
+	rel 88+8 t=1 type.func(error)+0
+type..namedata.*[]int- SRODATA dupok size=9
+	0x0000 00 00 06 2a 5b 5d 69 6e 74                       ...*[]int
+type.*[]int SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 1b 31 52 88 08 08 08 36 00 00 00 00 00 00 00 00  .1R....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]int-+0
+	rel 48+8 t=1 type.[]int+0
+type.[]int SRODATA dupok size=56
+	0x0000 18 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 8e 66 f9 1b 02 08 08 17 00 00 00 00 00 00 00 00  .f..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[]int-+0
+	rel 44+4 t=6 type.*[]int+0
+	rel 48+8 t=1 type.int+0
+type..eqfunc48 SRODATA dupok size=16
+	0x0000 00 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00  ........0.......
+	rel 0+8 t=1 runtime.memequal_varlen+0
+type..namedata.*[6]int- SRODATA dupok size=10
+	0x0000 00 00 07 2a 5b 36 5d 69 6e 74                    ...*[6]int
+type.*[6]int SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 4f 6f bf f5 08 08 08 36 00 00 00 00 00 00 00 00  Oo.....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*[6]int-+0
+	rel 48+8 t=1 type.[6]int+0
+type.[6]int SRODATA dupok size=72
+	0x0000 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  0...............
+	0x0010 26 6a 03 b7 0a 08 08 11 00 00 00 00 00 00 00 00  &j..............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 06 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 type..eqfunc48+0
+	rel 32+8 t=1 runtime.gcbits.+0
+	rel 40+4 t=5 type..namedata.*[6]int-+0
+	rel 44+4 t=6 type.*[6]int+0
+	rel 48+8 t=1 type.int+0
+	rel 56+8 t=1 type.[]int+0
+type..namedata.*func()- SRODATA dupok size=10
+	0x0000 00 00 07 2a 66 75 6e 63 28 29                    ...*func()
+type.*func() SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 9b 90 75 1b 08 08 08 36 00 00 00 00 00 00 00 00  ..u....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func()-+0
+	rel 48+8 t=1 type.func()+0
+type.func() SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 f6 bc 82 f6 02 08 08 33 00 00 00 00 00 00 00 00  .......3........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00                                      ....
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*func()-+0
+	rel 44+4 t=6 type.*func()+0
+type..namedata.*struct { F uintptr; errVal *atomic.Value; cancelOnce *sync.Once; errChan chan interface {} }- SRODATA dupok size=96
+	0x0000 00 00 5d 2a 73 74 72 75 63 74 20 7b 20 46 20 75  ..]*struct { F u
+	0x0010 69 6e 74 70 74 72 3b 20 65 72 72 56 61 6c 20 2a  intptr; errVal *
+	0x0020 61 74 6f 6d 69 63 2e 56 61 6c 75 65 3b 20 63 61  atomic.Value; ca
+	0x0030 6e 63 65 6c 4f 6e 63 65 20 2a 73 79 6e 63 2e 4f  ncelOnce *sync.O
+	0x0040 6e 63 65 3b 20 65 72 72 43 68 61 6e 20 63 68 61  nce; errChan cha
+	0x0050 6e 20 69 6e 74 65 72 66 61 63 65 20 7b 7d 20 7d  n interface {} }
+type.*struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 1d fe 5c cb 08 08 08 36 00 00 00 00 00 00 00 00  ..\....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; errVal *atomic.Value; cancelOnce *sync.Once; errChan chan interface {} }-+0
+	rel 48+8 t=1 type.noalg.struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} }+0
+runtime.gcbits.0e SRODATA dupok size=1
+	0x0000 0e                                               .
+type..namedata.errVal- SRODATA dupok size=9
+	0x0000 00 00 06 65 72 72 56 61 6c                       ...errVal
+type..namedata.cancelOnce- SRODATA dupok size=13
+	0x0000 00 00 0a 63 61 6e 63 65 6c 4f 6e 63 65           ...cancelOnce
+type.noalg.struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} } SRODATA dupok size=176
+	0x0000 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00   ....... .......
+	0x0010 7a d3 5e 83 02 08 08 19 00 00 00 00 00 00 00 00  z.^.............
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 04 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0070 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	0x0080 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0090 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ...............
+	0x00a0 00 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00  ........0.......
+	rel 32+8 t=1 runtime.gcbits.0e+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; errVal *atomic.Value; cancelOnce *sync.Once; errChan chan interface {} }-+0
+	rel 44+4 t=6 type.*struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} }+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type.noalg.struct { F uintptr; "".errVal *sync/atomic.Value; "".cancelOnce *sync.Once; "".errChan chan interface {} }+80
+	rel 80+8 t=1 type..namedata..F-+0
+	rel 88+8 t=1 type.uintptr+0
+	rel 104+8 t=1 type..namedata.errVal-+0
+	rel 112+8 t=1 type.*sync/atomic.Value+0
+	rel 128+8 t=1 type..namedata.cancelOnce-+0
+	rel 136+8 t=1 type.*sync.Once+0
+	rel 152+8 t=1 type..namedata.errChan-+0
+	rel 160+8 t=1 type.chan interface {}+0
+type..namedata.*struct { F uintptr; uid []int }- SRODATA dupok size=35
+	0x0000 00 00 20 2a 73 74 72 75 63 74 20 7b 20 46 20 75  .. *struct { F u
+	0x0010 69 6e 74 70 74 72 3b 20 75 69 64 20 5b 5d 69 6e  intptr; uid []in
+	0x0020 74 20 7d                                         t }
+type.*struct { F uintptr; "".uid []int } SRODATA dupok size=56
+	0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	0x0010 43 70 7e 99 08 08 08 36 00 00 00 00 00 00 00 00  Cp~....6........
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 24+8 t=1 runtime.memequal64·f+0
+	rel 32+8 t=1 runtime.gcbits.01+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; uid []int }-+0
+	rel 48+8 t=1 type.noalg.struct { F uintptr; "".uid []int }+0
+type..namedata.uid- SRODATA dupok size=6
+	0x0000 00 00 03 75 69 64                                ...uid
+type.noalg.struct { F uintptr; "".uid []int } SRODATA dupok size=128
+	0x0000 20 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00   ...............
+	0x0010 b7 08 da 17 02 08 08 19 00 00 00 00 00 00 00 00  ................
+	0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0040 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00  ................
+	0x0050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0070 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+	rel 32+8 t=1 runtime.gcbits.02+0
+	rel 40+4 t=5 type..namedata.*struct { F uintptr; uid []int }-+0
+	rel 44+4 t=6 type.*struct { F uintptr; "".uid []int }+0
+	rel 48+8 t=1 type..importpath."".+0
+	rel 56+8 t=1 type.noalg.struct { F uintptr; "".uid []int }+80
+	rel 80+8 t=1 type..namedata..F-+0
+	rel 88+8 t=1 type.uintptr+0
+	rel 104+8 t=1 type..namedata.uid-+0
+	rel 112+8 t=1 type.[]int+0
+go.itab.*os.File,io.Writer SRODATA dupok size=32
+	0x0000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0010 44 b5 f3 33 00 00 00 00 00 00 00 00 00 00 00 00  D..3............
+	rel 0+8 t=1 type.io.Writer+0
+	rel 8+8 t=1 type.*os.File+0
+	rel 24+8 t=1 os.(*File).Write+0
+go.itab.*errors.errorString,error SRODATA dupok size=32
+	0x0000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0010 14 f4 d0 87 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 type.error+0
+	rel 8+8 t=1 type.*errors.errorString+0
+	rel 24+8 t=1 errors.(*errorString).Error+0
+go.itab."".writeChan,"".Writer SRODATA dupok size=32
+	0x0000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	0x0010 eb 63 0a d6 00 00 00 00 00 00 00 00 00 00 00 00  .c..............
+	rel 0+8 t=1 type."".Writer+0
+	rel 8+8 t=1 type."".writeChan+0
+	rel 24+8 t=1 "".(*writeChan).Writer+0
+type..importpath.errors. SRODATA dupok size=9
+	0x0000 00 00 06 65 72 72 6f 72 73                       ...errors
+type..importpath.fmt. SRODATA dupok size=6
+	0x0000 00 00 03 66 6d 74                                ...fmt
+type..importpath.sync. SRODATA dupok size=7
+	0x0000 00 00 04 73 79 6e 63                             ...sync
+type..importpath.sync/atomic. SRODATA dupok size=14
+	0x0000 00 00 0b 73 79 6e 63 2f 61 74 6f 6d 69 63        ...sync/atomic
+gclocals·c55e845a0a62e9baae6c740db5a20866 SRODATA dupok size=10
+	0x0000 02 00 00 00 04 00 00 00 03 00                    ..........
+gclocals·69c1753bd5f81501d95132d08af04464 SRODATA dupok size=8
+	0x0000 02 00 00 00 00 00 00 00                          ........
+gclocals·eb531acb5904ccae6b8487875667de48 SRODATA dupok size=10
+	0x0000 02 00 00 00 04 00 00 00 0b 00                    ..........
+gclocals·2589ca35330fc0fce83503f4569854a0 SRODATA dupok size=10
+	0x0000 02 00 00 00 02 00 00 00 00 00                    ..........
+"".writeChan.Writer.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.interface {}+0
+gclocals·48fa3758e632e1b97d3b7251e66d0b97 SRODATA dupok size=11
+	0x0000 03 00 00 00 04 00 00 00 03 00 00                 ...........
+gclocals·2dd975a5d416a941d0db91113f946ec3 SRODATA dupok size=11
+	0x0000 03 00 00 00 02 00 00 00 00 02 00                 ...........
+"".writeChan.Load.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.interface {}+0
+gclocals·69c8abe0d2280b641caedd7f008b2cfa SRODATA dupok size=11
+	0x0000 03 00 00 00 02 00 00 00 01 00 00                 ...........
+gclocals·663f8c6bfa83aa777198789ce63d9ab4 SRODATA dupok size=11
+	0x0000 03 00 00 00 01 00 00 00 00 01 00                 ...........
+gclocals·751e8636352eea60da75083ed51943bf SRODATA dupok size=22
+	0x0000 0e 00 00 00 07 00 00 00 07 06 06 06 06 06 06 06  ................
+	0x0010 06 02 00 00 00 00                                ......
+gclocals·537bdca1857557ed1be82d5cb0955f48 SRODATA dupok size=36
+	0x0000 0e 00 00 00 0d 00 00 00 00 00 00 00 08 00 28 00  ..............(.
+	0x0010 a8 00 a8 01 c8 00 cc 00 cd 00 cf 00 84 00 80 10  ................
+	0x0020 10 00 00 00                                      ....
+"".MapReduce.stkobj SRODATA static size=40
+	0x0000 02 00 00 00 00 00 00 00 e0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0020 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.interface {}+0
+	rel 32+8 t=1 type.interface {}+0
+gclocals·d527b79a98f329c2ba624a68e7df03d6 SRODATA dupok size=10
+	0x0000 02 00 00 00 05 00 00 00 00 01                    ..........
+"".main.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 e0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.[2]interface {}+0
+gclocals·1a65e721a2ccc325b382662e7ffee780 SRODATA dupok size=10
+	0x0000 02 00 00 00 01 00 00 00 01 00                    ..........
+gclocals·dc9b0298814590ca3ffc3a889546fc8b SRODATA dupok size=10
+	0x0000 02 00 00 00 02 00 00 00 03 00                    ..........
+gclocals·e226d4ae4a7cad8835311c6a4683c14f SRODATA dupok size=10
+	0x0000 02 00 00 00 02 00 00 00 00 03                    ..........
+"".buildSource.func1.opendefer SRODATA dupok size=9
+	0x0000 08 11 01 08 08 01 10 08 00                       .........
+gclocals·33cdeccccebe80329f1fdbee7f5874cb SRODATA dupok size=8
+	0x0000 01 00 00 00 00 00 00 00                          ........
+gclocals·ba30782f8935b28ed1adaec603e72627 SRODATA dupok size=11
+	0x0000 03 00 00 00 02 00 00 00 02 00 00                 ...........
+gclocals·74c0baf207315f723c777d5ea815c4e0 SRODATA dupok size=11
+	0x0000 03 00 00 00 04 00 00 00 00 03 00                 ...........
+"".MapReduce.func1.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.noalg.struct { F uintptr; "".errChan chan interface {} }+0
+gclocals·f767ecd900a789ee45dde586421a4a9c SRODATA dupok size=11
+	0x0000 03 00 00 00 05 00 00 00 1f 13 00                 ...........
+gclocals·d8b28f51bb91e05d264803f0f600a200 SRODATA dupok size=11
+	0x0000 03 00 00 00 02 00 00 00 00 00 00                 ...........
+"".MapReduce.func2.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type."".writeChan+0
+gclocals·fdbf1f5761f6d17e8ae3f0aaecb6a3c5 SRODATA dupok size=11
+	0x0000 03 00 00 00 02 00 00 00 03 02 00                 ...........
+"".MapReduce.func3.1.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.[1]interface {}+0
+gclocals·48ccebd31b35596e9b1764e1af596b5c SRODATA dupok size=11
+	0x0000 03 00 00 00 07 00 00 00 7b 4a 00                 ........{J.
+gclocals·8a2feb6bc93afcf09840410b88f11446 SRODATA dupok size=11
+	0x0000 03 00 00 00 04 00 00 00 00 0c 0c                 ...........
+"".MapReduce.func3.2.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 e0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type."".writeChan+0
+"".MapReduce.func3.2.opendefer SRODATA dupok size=9
+	0x0000 08 21 01 08 10 01 08 08 00                       .!.......
+gclocals·2dbeed41c5f74a5014bb809a479e58d4 SRODATA dupok size=15
+	0x0000 07 00 00 00 07 00 00 00 7f 7f 7e 7e 7e 7e 00     ..........~~~~.
+gclocals·e2d4d96c83b52d98a9bf4b96d15335e0 SRODATA dupok size=22
+	0x0000 07 00 00 00 0e 00 00 00 00 00 00 38 04 38 07 38  ...........8.8.8
+	0x0010 05 38 45 38 00 38                                .8E8.8
+"".MapReduce.func3.stkobj SRODATA static size=56
+	0x0000 03 00 00 00 00 00 00 00 a8 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00 b8 ff ff ff ff ff ff ff  ................
+	0x0020 00 00 00 00 00 00 00 00 c8 ff ff ff ff ff ff ff  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.[1]interface {}+0
+	rel 32+8 t=1 type.interface {}+0
+	rel 48+8 t=1 type.noalg.[2]struct { "".c unsafe.Pointer; "".elem unsafe.Pointer }+0
+"".MapReduce.func3.opendefer SRODATA dupok size=13
+	0x0000 10 81 01 01 10 08 02 10 08 00 18 08 08           .............
+gclocals·c7c4fc7b12f6707ea74acf7400192967 SRODATA dupok size=11
+	0x0000 03 00 00 00 01 00 00 00 01 01 00                 ...........
+gclocals·47a67f4fb109a79e4380e4f8459439e0 SRODATA dupok size=11
+	0x0000 03 00 00 00 03 00 00 00 00 01 00                 ...........
+"".main.func1.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.interface {}+0
+gclocals·1866054f687c0de72485b10542561f3b SRODATA dupok size=11
+	0x0000 03 00 00 00 05 00 00 00 0a 08 00                 ...........
+gclocals·ac8cd607ed442299e85766e8b7240668 SRODATA dupok size=11
+	0x0000 03 00 00 00 08 00 00 00 00 00 00                 ...........
+"".main.func2.stkobj SRODATA static size=40
+	0x0000 02 00 00 00 00 00 00 00 c0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00 e0 ff ff ff ff ff ff ff  ................
+	0x0020 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.[2]interface {}+0
+	rel 32+8 t=1 type.[2]interface {}+0
+gclocals·240a4d98471ab8529b764210f22e1f35 SRODATA dupok size=14
+	0x0000 06 00 00 00 04 00 00 00 05 05 05 04 04 00        ..............
+gclocals·d66b2e14a0a0d82ad7d594a26eea6867 SRODATA dupok size=20
+	0x0000 06 00 00 00 09 00 00 00 00 00 11 00 10 00 01 00  ................
+	0x0010 00 00 00 00                                      ....
+"".main.func3.stkobj SRODATA static size=56
+	0x0000 03 00 00 00 00 00 00 00 c0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00 d0 ff ff ff ff ff ff ff  ................
+	0x0020 00 00 00 00 00 00 00 00 e0 ff ff ff ff ff ff ff  ................
+	0x0030 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.[1]interface {}+0
+	rel 32+8 t=1 type.interface {}+0
+	rel 48+8 t=1 type.[2]interface {}+0
+gclocals·e6397a44f8e1b6e77d0f200b4fba5269 SRODATA dupok size=10
+	0x0000 02 00 00 00 03 00 00 00 01 00                    ..........
+gclocals·abb2c5050fe821353449583ee1559325 SRODATA dupok size=10
+	0x0000 02 00 00 00 03 00 00 00 02 00                    ..........
+gclocals·b9af6bbc417a82ce0ce1d467edbbc832 SRODATA dupok size=11
+	0x0000 03 00 00 00 03 00 00 00 01 00 00                 ...........
+"".(*writeChan).Load.stkobj SRODATA static size=24
+	0x0000 01 00 00 00 00 00 00 00 f0 ff ff ff ff ff ff ff  ................
+	0x0010 00 00 00 00 00 00 00 00                          ........
+	rel 16+8 t=1 type.interface {}+0
+gclocals·267260df189670137001aef19b5fd4fc SRODATA dupok size=10
+	0x0000 02 00 00 00 03 00 00 00 05 00                    ..........
+gclocals·7a680c56c7799a8f60d071b2f2541840 SRODATA dupok size=10
+	0x0000 02 00 00 00 04 00 00 00 0a 00                    ..........
