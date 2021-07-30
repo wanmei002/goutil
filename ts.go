@@ -1,15 +1,35 @@
 package main
 
 import (
+    "errors"
     "fmt"
     "github.com/wanmei002/goutil/mr"
-    "os"
-    "runtime/trace"
+    "log"
+    "time"
 )
 
 func main(){
-    trace.Start(os.Stderr)
-    defer trace.Stop()
+    
+    a1 := func() error {
+        log.Println("aaaa")
+        return nil
+    }
+    
+    b1 := func() error {
+        log.Println("bbbb")
+        return errors.New("err about bbbb")
+    }
+    
+    c1 := func() error {
+        log.Println("cccc")
+        return nil
+    }
+    
+    err := mr.Finish(a1, b1, c1)
+    
+    log.Println("finish err:", err)
+    time.Sleep(time.Second * 3)
+    return
     
     // 传入一个管道; 主要用于把要执行的数据放入管道里
     //GenerateFunc func(source <-chan interface{})

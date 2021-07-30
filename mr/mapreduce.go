@@ -2,6 +2,7 @@ package mr
 
 import (
     "errors"
+    "fmt"
     "github.com/wanmei002/goutil/threading"
     "sync"
     "sync/atomic"
@@ -78,6 +79,26 @@ func drain(channel <-chan interface{}) {
     for  range channel {
     
     }
+}
+
+
+func Finish(fns  ...func()error) error {
+    
+    _, err := MapReduce(func(source chan<- interface{}){
+        for _, fn := range fns {
+            source <- fn
+        }
+    }, func(item interface{}, writer Writer, cancel func(err error)){
+        fmt.Println(item)
+        fn := item.(func()error)
+        if err := fn(); err != nil {
+            cancel(err)
+        }
+    }, func(pipe <-chan interface{}, write Writer, cancel func(err error)){
+        drain(pipe)
+    })
+    
+    return err
 }
 
 
@@ -185,7 +206,6 @@ func executeMappers(mapper MapFunc,resChan chan interface{}, done chan struct{},
                 return
             }
             wg.Add(1)
-            
             threading.SafeGoroutine(func(){
                 defer func(){
                     wg.Done()
