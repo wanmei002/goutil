@@ -29,7 +29,6 @@ func main(){
     
     log.Println("finish err:", err)
     time.Sleep(time.Second * 3)
-    return
     
     // 传入一个管道; 主要用于把要执行的数据放入管道里
     //GenerateFunc func(source <-chan interface{})
@@ -45,14 +44,11 @@ func main(){
     }
     
     b := func(item interface{}, writer mr.Writer, cancel func(err error)){
-        fmt.Println("b: item:", item)
         tmp := item.(int) + 1
-        fmt.Println("b:", tmp)
         writer.Writer(tmp)
     }
     
     c := func(pipe <-chan interface{}, writer mr.Writer, cancel func(err error)){
-        fmt.Println("c:", writer)
         var uid []int
         for v := range pipe {
             uid = append(uid, v.(int))
