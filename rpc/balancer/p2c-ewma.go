@@ -13,7 +13,7 @@ import (
 )
 
 
-// 本包要做一个客户端负载均衡器，采用的算法是 p2c+ewma
+// 本包是客户端负载均衡器，采用的算法是 p2c+ewma
 // p2c 是 二选一
 // ewma 指数移动加权平均值(体现一段时间内的平均值)
 
@@ -42,13 +42,14 @@ type svrConn struct {
     pick     int64 // 保存上一次被选中的时间点
 }
 
+// 计算负载率
 func (s *svrConn) load() int64 {
     // 获取这个服务的 ewma, 加 1 的目的是为了防止lag等于0
     lag := int64(math.Sqrt(float64(atomic.LoadUint64(&s.lag)+1)))
     // 获取是不是正在运行
     load := lag * (atomic.LoadInt64(&s.inflight) + 1)
     
-    if load == 0 {// 说明是第一次，默认差不多 2s
+    if load == 0 {
         return 1<<31 - 1
     }
     return load
