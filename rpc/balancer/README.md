@@ -35,7 +35,7 @@ go-zero 采用的是牛顿冷却定律中的衰减函数模型计算EWMA算法�
 
 其中Δt为网络耗时，e，k为常数
 ### 简单介绍gRPC中实现自定义负载均衡器
- 1. 首先我们需要实现 google.golang.org/grpc/balancer/base/base.go/PickerBuilder 接口, 这个接口主要是有服务节点更新的时候会调用接口里的方法
+ 1. 首先我们需要实现 google.golang.org/grpc/balancer/base/base.go/PickerBuilder 接口, 这个接口是有服务节点更新的时候会调用接口里的`Build`方法
 ```go
 type PickerBuilder interface {
     // Build returns a picker that will be used by gRPC to pick a SubConn.
@@ -126,7 +126,7 @@ switch len(p.conns) {
 		chosen = p.choose(node1, node2)
 	}
 ```
-计算节点的负载情况
+`load`计算节点的负载情况, 上面的 `choose`方法里面会调用这个方法
 ```go
 func (c *subConn) load() int64 {
 	// 通过 EWMA 计算节点的负载情况
