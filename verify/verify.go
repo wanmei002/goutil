@@ -75,7 +75,9 @@ func Verify(st interface{}, ruleMap Rules) error {
 					}
 					// 剩下的就是大于等于比较了
 				case strings.Index(v, "=") >= 0:
-					CompareVerify(fV, v)
+					if CompareVerify(fV, v) == false {
+						return errors.New(fieldN.Name + " " + v)
+					}
 				}
 			}
 		}
