@@ -2,8 +2,11 @@ package verify
 
 import (
 	"errors"
+	"log"
 	"reflect"
 	"regexp"
+	"runtime"
+	"strconv"
 	"strings"
 )
 
@@ -70,11 +73,61 @@ func Verify(st interface{}, ruleMap Rules) error {
 					if Exp(strings.Split(v, "=")[1], fV.String()) == false {
 						return errors.New(fieldN.Name + "regexp match falied")
 					}
+					// 剩下的就是大于等于比较了
+				case strings.Index(v, "=") >= 0:
+					CompareVerify(fV, v)
 				}
 			}
 		}
 
 	}
+
+	return nil
+}
+
+// 比较下
+func CompareVerify(val reflect.Value, exp string) bool {
+	tp := val.Kind()
+	// 根据不同的类型进行不同的比较
+	tmp := strings.Split(exp, "=")
+	if len(tmp) < 2 {
+		pc, file, line, _ := runtime.Caller(0)
+		fnN := runtime.FuncForPC(pc)
+		log.Printf("file[%v] line[%v]; func name[%v]\n", file, line, fnN.Name())
+		return false
+	}
+
+	cp := tmp[0]
+	cV := tmp[1]
+	intV, _ := strconv.Atoi(cV)
+	switch tp {
+	case reflect.Slice, reflect.Map, reflect.Array, reflect.String:
+		return compare(val.Len(), cp, intV)
+	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+		return compare(int(val.Int()), cp, intV)
+	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+		return compare(int(val.Uint()), cp, intV)
+	}
+
+	return true
+}
+
+// 对数据进行长度比较
+func compare(len int, tp string, val int) bool {
+	switch tp {
+	case "lt":
+		return len < val
+	case "le":
+		return len <= val
+	case "eq":
+		return len == val
+	case "gt":
+		return len > val
+	case "ge":
+		return len >= val
+	}
+
+	return false
 }
 
 // 正则匹配
@@ -98,5 +151,6 @@ func IsBlank(val reflect.Value) bool {
 		return val.IsNil()
 	}
 
-	return false
+	// 零值比较
+	return reflect.DeepEqual(val.Interface(), reflect.Zero(val.Type()).Interface())
 }
