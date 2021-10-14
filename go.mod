@@ -1,4 +1,4 @@
-module github.com/wanmei002/goutil
+module gitee.com/zzhzyn/goutil
 
 go 1.16
 
