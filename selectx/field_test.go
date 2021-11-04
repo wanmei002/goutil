@@ -42,3 +42,13 @@ func TestGetString(t *testing.T) {
     r, err := GetString(allU, "Name")
     t.Error(fmt.Sprintf("%v", r), "; err:", err)
 }
+
+func TestGetUint(t *testing.T) {
+    var c []map[string]interface{}
+    c = append(c, map[string]interface{}{"a":"a1", "b":2})
+    c = append(c, map[string]interface{}{"a":"a2", "b":4})
+
+    r, err := GetString(c, "a")
+
+    t.Error(fmt.Sprintf("%v", r), "; err:", err)
+}

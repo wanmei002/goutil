@@ -29,8 +29,13 @@ func GetInt(value interface{}, fieldName string) ([]int64, error) {
 	}
 	var ret []int64
 	for _, v := range res {
-		tmp, _ := v.(int64)
-		ret = append(ret, tmp)
+		tmp, ok := v.(int64)
+		if !ok {
+			tmp1, _ := v.(int)
+			ret = append(ret, int64(tmp1))
+		} else {
+			ret = append(ret, tmp)
+		}
 	}
 	return ret, err
 }
@@ -49,6 +54,26 @@ func GetString(value interface{}, fieldName string) ([]string, error) {
 	}
 
 	return ret, err
+}
+
+// GetUint 返回 uint 集合
+func GetUint(value interface{}, fieldName string) ([]uint64, error) {
+	res, err := SelectField(value, fieldName)
+	if err != nil {
+		return nil, err
+	}
+	var ret []uint64
+	for _, v := range res {
+		tmp, _ := v.(uint64)
+		ret = append(ret, tmp)
+	}
+
+	return ret, nil
+}
+
+// GetInterface 返回 interface 集合
+func GetInterface(value interface{}, fieldName string) ([]interface{}, error) {
+	return SelectField(value, fieldName)
 }
 
 
@@ -77,6 +102,8 @@ func SelectField(value interface{}, fieldName string) ([]interface{}, error) {
 			} else {
 				return nil, newKindErr("目前只支持 struct 和 *struct")
 			}
+		case reflect.Map:
+			store = getMapFieldValue(val, fieldName)
 		default:
 			return nil, newKindErr("目前只支持 struct 和 *struct")
 		}
@@ -85,6 +112,29 @@ func SelectField(value interface{}, fieldName string) ([]interface{}, error) {
 
 	return ret, nil
 
+}
+
+func getMapFieldValue(value reflect.Value, fieldName string) interface{} {
+	iter := value.MapRange()
+	for iter.Next() {
+		if iter.Key().String() == fieldName {
+			ret := iter.Value()
+			switch ret.Kind() {
+			case reflect.String:
+				return ret.String()
+			case reflect.Int, reflect.Int16, reflect.Int8, reflect.Int32, reflect.Int64:
+				return ret.Int()
+			case reflect.Uint,reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+				return ret.Uint()
+			case reflect.Interface:
+				return ret.Interface()
+
+			default:
+				return nil
+			}
+		}
+	}
+	return nil
 }
 
 
