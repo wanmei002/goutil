@@ -1,5 +1,8 @@
 # github.com/golang/protobuf v1.4.3
 github.com/golang/protobuf/proto
+# github.com/gomodule/redigo v1.8.5
+## explicit
+github.com/gomodule/redigo/redis
 # google.golang.org/grpc v1.39.0
 ## explicit
 google.golang.org/grpc/attributes
