@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="71ba9caf-357a-4d62-92f2-80e51cc940e6" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/selectx/field.go" beforeDir="false" afterPath="$PROJECT_DIR$/selectx/field.go" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+>>>>>>> 92d9e788357154ebb322c17b6680a08de7718c6e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +53,7 @@
       <package value="github.com/wanmei002/goutil" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/ts.go" />
+<<<<<<< HEAD
       <method v="2" />
     </configuration>
     <configuration name="TestGetInt in github.com/wanmei002/goutil/selectx" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -80,6 +86,10 @@
         <item itemvalue="Go Test.TestGetString in github.com/wanmei002/goutil/selectx" />
       </list>
     </recent_temporary>
+=======
+      <method v="2" />
+    </configuration>
+>>>>>>> 92d9e788357154ebb322c17b6680a08de7718c6e
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
